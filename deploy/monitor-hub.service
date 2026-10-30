@@ -1,0 +1,22 @@
+# 중앙 수집 서버에서 경로·계정·Node 실행 파일을 확인한 뒤 systemd 에 설치합니다.
+[Unit]
+Description=SECURE STARTER TLS Monitoring Hub
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=simple
+User=secure-monitor
+Group=secure-monitor
+WorkingDirectory=/srv/secure-monitor/app
+EnvironmentFile=/etc/secure-monitor/hub.env
+ExecStart=/usr/bin/node /srv/secure-monitor/app/tools/monitoring/hub.mjs
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/secure-monitor/data
+UMask=0077
+[Install]
+WantedBy=multi-user.target

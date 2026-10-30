@@ -1,0 +1,65 @@
+{
+  "sourceLog": "verification\\round6\\2026-10-30T06-04-30-234Z\\round6-native.log",
+  "recovery": {
+    "capturedAt": "2026-10-30T06:04:41.646Z",
+    "restoreMilliseconds": 3042.437900000001,
+    "files": 2,
+    "bytes": 213,
+    "fileHashVerified": true,
+    "metadataAndAuthenticatedDownloadVerified": true,
+    "outsiderStatus": 404,
+    "sourceDatabaseTouched": false,
+    "offsite": false,
+    "productionRtoRpoMeasured": false
+  },
+  "load": {
+    "metrics": [
+      {
+        "name": "login",
+        "count": 4,
+        "concurrency": 2,
+        "errors": 0,
+        "quantileMethod": "nearest-rank",
+        "p50Ms": 323.0123000000003,
+        "p95Ms": 354.40040000000045
+      },
+      {
+        "name": "dashboard",
+        "count": 8,
+        "concurrency": 4,
+        "errors": 0,
+        "quantileMethod": "nearest-rank",
+        "p50Ms": 29.425199999999677,
+        "p95Ms": 80.18369999999959
+      },
+      {
+        "name": "sensors",
+        "count": 4,
+        "concurrency": 2,
+        "errors": 0,
+        "quantileMethod": "nearest-rank",
+        "p50Ms": 14.912800000000061,
+        "p95Ms": 22.555099999999584
+      },
+      {
+        "name": "photo-upload",
+        "count": 2,
+        "concurrency": 1,
+        "errors": 0,
+        "quantileMethod": "nearest-rank",
+        "p50Ms": 20.70849999999882,
+        "p95Ms": 36.14379999999983
+      }
+    ],
+    "apiProcessPid": 36188,
+    "apiProcessWorkingSetBytes": 163106816,
+    "apiIsSeparateFromHarness": true,
+    "databaseConnectionsAtSample": 5,
+    "connectionLimit": 5,
+    "cpuCount": 18,
+    "hostRamBytes": 16737873920,
+    "postgresMemoryLimitMiB": 512,
+    "postgresCpuLimit": 1,
+    "scope": "short isolated run, not sustained capacity or production SLA"
+  }
+}

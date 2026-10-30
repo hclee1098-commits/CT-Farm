@@ -1,0 +1,118 @@
+name: 검증 후 동일 이미지 승격
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      backward_compatible:
+        description: 'DB 변경이 이전 이미지와 호환됨을 검토했습니까?'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: secure-release
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '22', cache: npm}
+      - run: npm ci --ignore-scripts
+      - run: npm run db:generate
+      - run: npm test
+      - run: npm run test:monitoring && npm run test:deployment && npm run test:portal && npm run test:docs
+      - run: npm run test:sql && npm run test:backup && npm run build
+      - run: npm run test:web-observed
+      - run: npm audit --audit-level=high
+  build:
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions: {contents: read, packages: write}
+    outputs:
+      version: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with: {registry: ghcr.io, username: '${{ github.actor }}', password: '${{ secrets.GITHUB_TOKEN }}'}
+      - id: names
+        env: {REPOSITORY: '${{ github.repository }}'}
+        run: echo "base=ghcr.io/${REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+      - id: api
+        uses: docker/build-push-action@v6
+        with: {context: ., file: deploy/Dockerfile.api, push: true, tags: '${{ steps.names.outputs.base }}/api:${{ github.sha }}'}
+      - id: web
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: deploy/Dockerfile.web
+          push: true
+          tags: ${{ steps.names.outputs.base }}/web:${{ github.sha }}
+          build-args: NEXT_PUBLIC_API_BASE_URL=same-origin
+      - id: migrate
+        uses: docker/build-push-action@v6
+        with: {context: ., file: deploy/Dockerfile.migrate, push: true, tags: '${{ steps.names.outputs.base }}/migrate:${{ github.sha }}'}
+      - id: collector
+        uses: docker/build-push-action@v6
+        with: {context: ., file: deploy/Dockerfile.collector, push: true, tags: '${{ steps.names.outputs.base }}/collector:${{ github.sha }}'}
+      - name: 불변 이미지 명세 생성
+        env:
+          BASE: ${{ steps.names.outputs.base }}
+          API: ${{ steps.api.outputs.digest }}
+          WEB: ${{ steps.web.outputs.digest }}
+          MIGRATE: ${{ steps.migrate.outputs.digest }}
+          COLLECTOR: ${{ steps.collector.outputs.digest }}
+          VERSION: ${{ github.sha }}
+          COMPATIBLE: ${{ inputs.backward_compatible }}
+        run: |
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          const images=Object.fromEntries(['api','web','migrate','collector'].map(k=>[k,`${process.env.BASE}/${k}@${process.env[k.toUpperCase()]}`]));
+          fs.writeFileSync('release.json',JSON.stringify({format:1,version:process.env.VERSION,verified:true,backwardCompatible:process.env.COMPATIBLE==='true',images}));
+          JS
+      - uses: actions/upload-artifact@v4
+        with: {name: release, path: release.json, retention-days: 7}
+  staging:
+    needs: build
+    # 서버의 전용 runner. 다른 프로젝트와 공유하거나 PR 코드에 사용하지 마세요.
+    runs-on: [self-hosted, secure-staging]
+    environment: staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: {name: release, path: release-input}
+      - name: 서버 고정 배포 진입점
+        env: {RELEASE_FILE: '${{ github.workspace }}/release-input/release.json'}
+        run: /srv/secure-starter/bin/deploy-reviewed-release "$RELEASE_FILE"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staging-receipt
+          path: release-input/release.json.staging.json
+          if-no-files-found: error
+          retention-days: 1
+  production:
+    needs: [build, staging]
+    # GitHub Settings > Environments > production 에 Required reviewers 반드시 설정
+    environment: production
+    runs-on: [self-hosted, secure-production]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: {name: release, path: release-input}
+      - uses: actions/download-artifact@v4
+        with: {name: staging-receipt, path: release-input}
+      - name: 승인 서명 생성
+        env:
+          APPROVAL_KEY: ${{ secrets.PRODUCTION_APPROVAL_PRIVATE_KEY }}
+        run: |
+          umask 077
+          keyfile="$(mktemp)"
+          trap 'rm -f "$keyfile"' EXIT
+          printf '%s' "$APPROVAL_KEY" > "$keyfile"
+          PRODUCTION_APPROVAL_PRIVATE_KEY="$keyfile" node tools/deployment/release.mjs approve release-input/release.json
+      - name: 운영 서버 고정 배포 진입점
+        env: {RELEASE_FILE: '${{ github.workspace }}/release-input/release.json'}
+        run: /srv/secure-starter/bin/deploy-reviewed-release "$RELEASE_FILE"

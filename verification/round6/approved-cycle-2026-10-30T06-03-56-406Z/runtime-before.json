@@ -1,0 +1,30 @@
+{
+    "version":  2,
+    "project":  "ssf872ba531d9a",
+    "root":  "C:\\workspace\\CT-Farm",
+    "api":  {
+                "name":  "api",
+                "mode":  "node-v2",
+                "pid":  6392,
+                "started":  "2026-10-30T05:59:52.4818325Z",
+                "script":  "C:\\workspace\\CT-Farm\\node_modules\\tsx\\dist\\cli.mjs",
+                "port":  4000
+            },
+    "web":  {
+                "name":  "web",
+                "mode":  "node-v2",
+                "pid":  40228,
+                "started":  "2026-10-30T05:59:52.5914431Z",
+                "script":  "C:\\workspace\\CT-Farm\\node_modules\\next\\dist\\bin\\next",
+                "port":  3000
+            },
+    "collector":  {
+                      "name":  "collector",
+                      "mode":  "node-v2",
+                      "pid":  2444,
+                      "started":  "2026-10-30T05:59:52.6912400Z",
+                      "script":  "C:\\workspace\\CT-Farm\\tools\\monitoring\\collector.mjs",
+                      "apiPort":  4000,
+                      "webPort":  3000
+                  }
+}

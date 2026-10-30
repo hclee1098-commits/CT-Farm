@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-30T01:43:56.470Z",
+  "uploads": {
+    "files": 2,
+    "aggregateSha256": "2cce959003b55baf1b280b9fe5858303873c3bc9a89219bdf79a5b8df6c02ab0",
+    "namesAndContentsDisclosed": false
+  },
+  "services": [
+    {
+      "port": 3000,
+      "status": "unreachable",
+      "code": "ECONNREFUSED"
+    },
+    {
+      "port": 4000,
+      "status": "unreachable",
+      "code": "ECONNREFUSED"
+    }
+  ],
+  "docker": {
+    "available": false,
+    "reason": "Docker engine unavailable; no start/stop attempted"
+  },
+  "originalDatabaseAccessed": false,
+  "originalDatabaseMigrated": false,
+  "servicesStartedOrStopped": false,
+  "containersOrVolumesDeleted": false
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-29T12:31:38.654Z",
+  "initialRunningContainersPreserved": 8,
+  "temporaryRedisContainersRemaining": 0,
+  "checks": [
+    {
+      "url": "http://127.0.0.1:4000/health/ready",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/starter",
+      "status": 200
+    },
+    {
+      "url": "http://127.0.0.1:3000/docs-center/index.html",
+      "status": 200
+    }
+  ]
+}

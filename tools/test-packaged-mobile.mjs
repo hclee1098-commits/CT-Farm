@@ -1,0 +1,4 @@
+import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';import {spawn} from 'node:child_process';
+const m=JSON.parse(await fs.readFile('.starter-state/mobile-source-package.json','utf8'));assert(path.resolve(m.sourceDirectory).startsWith(path.resolve('verification/runtime')+path.sep+'ui-mobile-source-'));
+const output=path.join(process.cwd(),'verification/runtime/mobile-package-export');
+const child=spawn(process.execPath,['node_modules/expo/bin/cli','export','--platform','android','--output-dir',output],{cwd:m.sourceDirectory,env:{...process.env,CI:'1',EXPO_NO_TELEMETRY:'1',EXPO_PUBLIC_API_URL:'https://staging.example.invalid/api/v1'},windowsHide:true,stdio:'inherit'});process.exitCode=await new Promise(resolve=>{child.once('error',()=>resolve(1));child.once('exit',c=>resolve(c??1));});

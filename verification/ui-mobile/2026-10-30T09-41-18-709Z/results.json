@@ -1,0 +1,92 @@
+{
+  "startedAt": "2026-10-30T09:41:18.711Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:41:18.712Z",
+      "endedAt": "2026-10-30T09:41:36.277Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\docs.log"
+    },
+    {
+      "name": "design",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/test-design-system.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:41:36.279Z",
+      "endedAt": "2026-10-30T09:41:36.519Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\design.log"
+    },
+    {
+      "name": "web-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/web/tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:41:36.520Z",
+      "endedAt": "2026-10-30T09:41:44.900Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\web-type.log"
+    },
+    {
+      "name": "api-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:41:44.902Z",
+      "endedAt": "2026-10-30T09:41:48.646Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\api-type.log"
+    }
+  ],
+  "endedAt": "2026-10-30T09:41:48.647Z"
+}

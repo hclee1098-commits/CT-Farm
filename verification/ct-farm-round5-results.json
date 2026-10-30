@@ -1,0 +1,430 @@
+{
+  "workDateKorea": "2026-10-30",
+  "status": "partial_local_verified_with_failed_dependency_checks",
+  "sourceBackup": {
+    "path": "backup/ct-farm-round5-before-20261030-103235.zip",
+    "sha256": "EC04FAEC1CC6D9B21389D7830C4B53A6AC98384A5FB12D07138CFFEBB94B43F6"
+  },
+  "latestChecks": {
+    "api": {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round5\\2026-10-30T01-40-40-419Z\\api-vitest.json"
+      ],
+      "startedAt": "2026-10-30T01:40:45.136Z",
+      "endedAt": "2026-10-30T01:40:50.411Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 157,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\api.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-40-40-419Z\\results.json"
+    },
+    "web": {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round5\\2026-10-30T01-40-40-419Z\\web-vitest.json"
+      ],
+      "startedAt": "2026-10-30T01:40:43.967Z",
+      "endedAt": "2026-10-30T01:40:45.134Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\web.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-40-40-419Z\\results.json"
+    },
+    "farm": {
+      "name": "farm",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-farm.mts"
+      ],
+      "startedAt": "2026-10-30T01:39:06.948Z",
+      "endedAt": "2026-10-30T01:39:12.428Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "PGlite",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\round5\\2026-10-30T01-38-50-994Z\\farm.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-38-50-994Z\\results.json"
+    },
+    "platform": {
+      "name": "platform",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-platform.mjs"
+      ],
+      "startedAt": "2026-10-30T01:34:04.442Z",
+      "endedAt": "2026-10-30T01:34:17.358Z",
+      "exitCode": 1,
+      "status": "failed",
+      "database": "PGlite",
+      "passed": 0,
+      "failed": null,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\platform.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-33-40-264Z\\results.json"
+    },
+    "mail": {
+      "name": "mail",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-mail.mts"
+      ],
+      "startedAt": "2026-10-30T01:34:17.359Z",
+      "endedAt": "2026-10-30T01:34:20.076Z",
+      "exitCode": 1,
+      "status": "failed",
+      "database": "PGlite",
+      "passed": 0,
+      "failed": null,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\mail.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-33-40-264Z\\results.json"
+    },
+    "sql": {
+      "name": "sql",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-migrations.mjs"
+      ],
+      "startedAt": "2026-10-30T01:36:12.432Z",
+      "endedAt": "2026-10-30T01:36:14.738Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-05-719Z\\sql.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-36-05-719Z\\results.json"
+    },
+    "backup": {
+      "name": "backup",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-backup.mjs"
+      ],
+      "startedAt": "2026-10-30T01:36:14.739Z",
+      "endedAt": "2026-10-30T01:36:14.838Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-05-719Z\\backup.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-36-05-719Z\\results.json"
+    },
+    "incidents": {
+      "name": "incidents",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/incidents.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:43:02.035Z",
+      "endedAt": "2026-10-30T01:43:02.263Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-43-01-488Z\\incidents.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-43-01-488Z\\results.json"
+    },
+    "capabilities": {
+      "name": "capabilities",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/round5/capabilities.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:42:19.158Z",
+      "endedAt": "2026-10-30T01:42:21.147Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-42-19-155Z\\capabilities.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-42-19-155Z\\results.json"
+    },
+    "web-typecheck": {
+      "name": "web-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/web/tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-30T01:43:02.264Z",
+      "endedAt": "2026-10-30T01:43:07.626Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round5\\2026-10-30T01-43-01-488Z\\web-typecheck.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-43-01-488Z\\results.json"
+    },
+    "api-typecheck": {
+      "name": "api-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-30T01:43:07.627Z",
+      "endedAt": "2026-10-30T01:43:11.008Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round5\\2026-10-30T01-43-01-488Z\\api-typecheck.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-43-01-488Z\\results.json"
+    },
+    "delivery": {
+      "name": "delivery",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/delivery.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:43:01.491Z",
+      "endedAt": "2026-10-30T01:43:02.033Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-43-01-488Z\\delivery.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-43-01-488Z\\results.json"
+    },
+    "monitoring": {
+      "name": "monitoring",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/monitoring.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:40:40.422Z",
+      "endedAt": "2026-10-30T01:40:41.527Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\monitoring.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-40-40-419Z\\results.json"
+    },
+    "disks": {
+      "name": "disks",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/disks.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:42:24.116Z",
+      "endedAt": "2026-10-30T01:42:24.293Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-42-19-155Z\\disks.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-42-19-155Z\\results.json"
+    },
+    "recovery": {
+      "name": "recovery",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--max-old-space-size=512",
+        "--test",
+        "tools/round5/recovery.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:42:21.149Z",
+      "endedAt": "2026-10-30T01:42:24.115Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-42-19-155Z\\recovery.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-42-19-155Z\\results.json"
+    },
+    "docs-center": {
+      "name": "docs-center",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:47:03.861Z",
+      "endedAt": "2026-10-30T01:47:04.474Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-47-03-858Z\\docs-center.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-47-03-858Z\\results.json"
+    },
+    "docs": {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:47:04.476Z",
+      "endedAt": "2026-10-30T01:47:07.690Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-47-03-858Z\\docs.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-47-03-858Z\\results.json"
+    },
+    "deployment": {
+      "name": "deployment",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/deployment/release.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:47:07.691Z",
+      "endedAt": "2026-10-30T01:47:08.128Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-47-03-858Z\\deployment.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-47-03-858Z\\results.json"
+    }
+  },
+  "allRunResults": [
+    "verification\\round5\\2026-10-30T01-33-40-264Z\\results.json",
+    "verification\\round5\\2026-10-30T01-36-05-719Z\\results.json",
+    "verification\\round5\\2026-10-30T01-36-28-410Z\\results.json",
+    "verification\\round5\\2026-10-30T01-38-50-994Z\\results.json",
+    "verification\\round5\\2026-10-30T01-40-40-419Z\\results.json",
+    "verification\\round5\\2026-10-30T01-42-19-155Z\\results.json",
+    "verification\\round5\\2026-10-30T01-43-01-488Z\\results.json",
+    "verification\\round5\\2026-10-30T01-47-03-858Z\\results.json"
+  ],
+  "failedCommands": [
+    {
+      "name": "platform",
+      "exitCode": 1,
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\platform.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-33-40-264Z\\results.json"
+    },
+    {
+      "name": "mail",
+      "exitCode": 1,
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\mail.log",
+      "resultFile": "verification\\round5\\2026-10-30T01-33-40-264Z\\results.json"
+    }
+  ],
+  "preservation": {
+    "originalDatabaseAccessed": false,
+    "originalDatabaseMigrated": false,
+    "serviceControlAttempted": false,
+    "containerOrVolumeDeletionAttempted": false,
+    "uploadAggregateUnchangedDuringMeasuredInterval": true,
+    "measurementStartedAfterInitialImplementationAndIsolatedTests": true,
+    "before": "verification/round5/preservation-before.json",
+    "after": "verification/round5/preservation-after.json",
+    "databaseRowsAndContainerIdsCurrentlyVerified": false
+  },
+  "implementation": {
+    "capabilityModule": "candidate SQL service module, PGlite verified, NOT mounted in existing API",
+    "migration": "tools/round5/migrations/20261030020000_collaboration/migration.sql; pending native restore proof and separate approval",
+    "mobile": "pagination and tab-scoped drafts implemented, unit/type checked, browser unverified",
+    "alerts": "state locks, adapters and queue implemented/tested; automatic outbound dispatch, authorized operator UI and remote sync incomplete",
+    "staging": "full local Compose/TLS candidate files only; Docker validation/build/runtime unverified",
+    "recovery": "8MiB synthetic files and PGlite snapshot; NOT native/offsite/authenticated-download recovery"
+  },
+  "notExecuted": [
+    "native PostgreSQL role race and restore",
+    "full Compose/web/API/proxy build and local TLS runtime",
+    "public TLS staging deployment",
+    "external SMTP/oncall receipt",
+    "browser/mobile/WCAG audit",
+    "login/photo/sensor load and API RSS"
+  ],
+  "approvalTargets": [
+    "existing database migration after isolated backup/restore/native proof",
+    "actual cloud/production deployment"
+  ],
+  "externalInputsNeeded": [
+    "Docker engine or isolated native PostgreSQL and Redis environment",
+    "staging server/domain/DNS access and image digests",
+    "dedicated test recipient and SMTP/oncall credentials",
+    "offsite backup/key-vault location and access policy"
+  ],
+  "resumeDocument": "docs/09-CT-Farm-안내/5차-검증과-권한확장.md"
+}

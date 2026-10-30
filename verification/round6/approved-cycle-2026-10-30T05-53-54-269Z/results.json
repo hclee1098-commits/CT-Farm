@@ -1,0 +1,2537 @@
+{
+  "authorization": "user explicitly approved original STOP→START in this chat",
+  "startedAt": "2026-10-30T05:53:54.279Z",
+  "checks": [
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "SECURE-LIFECYCLE.ps1",
+        "-Action",
+        "STOP"
+      ],
+      "action": "STOP",
+      "startedAt": "2026-10-30T05:54:23.374Z",
+      "endedAt": "2026-10-30T05:55:09.086Z",
+      "exitCode": 0,
+      "rawLog": "verification\\round6\\approved-cycle-2026-10-30T05-53-54-269Z\\0-STOP.log"
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "SECURE-LIFECYCLE.ps1",
+        "-Action",
+        "STARTER"
+      ],
+      "action": "STARTER",
+      "startedAt": "2026-10-30T05:55:23.182Z",
+      "endedAt": "2026-10-30T05:59:15.534Z",
+      "exitCode": 1,
+      "rawLog": "verification\\round6\\approved-cycle-2026-10-30T05-53-54-269Z\\1-STARTER.log"
+    },
+    {
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "SECURE-LIFECYCLE.ps1",
+        "-Action",
+        "STARTER"
+      ],
+      "action": "STARTER",
+      "startedAt": "2026-10-30T05:59:15.543Z",
+      "endedAt": "2026-10-30T06:03:15.570Z",
+      "exitCode": 0,
+      "rawLog": "verification\\round6\\approved-cycle-2026-10-30T05-53-54-269Z\\2-STARTER.log"
+    }
+  ],
+  "sourceMigrationApplied": false,
+  "databaseReset": false,
+  "volumeDeletion": false,
+  "before": [
+    {
+      "id": "022e31f8a1c7fc6b231fdbe90743bb75c5750b7b81291e15f6f4a28d4b83fd4a",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "03fea2ca554910b482ce02e913368c801a8d96ffb7cb63c9be0c2983caa5bfbe",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "06c5cd516a992777b77387904622a1b35368ecdd0c6be535aff4552e54c03287",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "0ec1c6d295db4e69314d8c1a66c0a7a38cfb95e0e4ee1629ab3b9e28433c7631",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "0f3ff0b6476626be0a9d10d8a77065f78ad3c7f79bad3ea953e457f55eb9f7ef",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "11093787e8be05c81570d911385b2c4970f46b11793ac2cfcad37e62ba2a9a86",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "1987a239e78b49fc42fdfe161e73bfc15d2eab3410b64bc1f0732b2f99e4a57d",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "1c82b763d2a37c56f357931d0110ecb1362bc64704a03bbd252e6de0cf33c80b",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "22bcc6aab5fc12535349217f1fd1189ca9d16c7a2fde853217c1c474694bce99",
+      "running": true,
+      "project": "ssf872ba531d9a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssf872ba531d9a_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "28c60e0655789de298a79c21f253c714962a258fa057adbfdcb27402a652325b",
+      "running": false,
+      "project": "secure-starter",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "2b0ab01face2542b356c631c04ec3284f4164120de3c3aeba2932d198a00baee",
+      "running": false,
+      "project": "ss6ce7c7f563c3",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss6ce7c7f563c3_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "2e60462c8833f3caf9cbce81415c100882cc6580fa26a0ca855c748f198c1c1b",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "2f961cfd666ba0d1808aedc0db6b6bc5cbe33efe00ff69459ec2b3ede5253840",
+      "running": false,
+      "project": "ss01a0413a5d0a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss01a0413a5d0a_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "413f241db5e38edddba98a45b86197088c0797ef13859a5cf1f8c049f6a4c8e5",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "4369da7bedb5284ae809208cfe161a5b30a1f79deaac800aaa95480bc2ed8c17",
+      "running": false,
+      "project": "ss176505e8f121",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss176505e8f121_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "4483df27eb2cf3e742b552ff9d151e019ec4ac8f7002da506335eb4c5ff32b8e",
+      "running": true,
+      "project": "ss30d8e81aba22",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss30d8e81aba22_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "4564f424090e90b65f0c8386722d91e742926c2ade1da20f0e96369858d5e4bf",
+      "running": false,
+      "project": "ss34917433702e",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss34917433702e_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "460739c6b704f71053c7a7d2bd6574d2a564fbd1f7f8b27c87a39f6819159cbc",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "4691b5dbb0d26cae921ed49ea0f8e3757cc3e2da865d7def6abcaf73d22c14c6",
+      "running": false,
+      "project": "ss01a0413a5d0a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss01a0413a5d0a_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "485744dd084dfa549447755d7238ef9a61b367202a8d01106af1eebaf36e6a7e",
+      "running": false,
+      "project": "ssca6e1b602562",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssca6e1b602562_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "50cf543407ec293f7b74f1837be5c46fb80b388ad10b84258b3e5e2007cf4126",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "51f6e87ca65f0d0b47fc2aeb817ea43a99b9696fc5518e3c5341004575d8b060",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "5576fa1a08d591f10f00861a22ad7f63dd59489d5aab1760a623a9d4a3b1bbdb",
+      "running": true,
+      "project": "ssf872ba531d9a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssf872ba531d9a_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "577bfee03b9ff172f2536c3bc7a48fd504978d200f643daca2635609f87ba0c4",
+      "running": true,
+      "project": "ss30d8e81aba22",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss30d8e81aba22_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "57ff6acacb841054532b2d980bc338e688a3581a760eb46f4ad4dbdea58ec93e",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "5b62f2dcd544924141e67e47e996e46e217c397549b71e2ed015954ecbd1042f",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "5ddb895bff3ad90af6625d112b69ec091f93275ee7605050492d60acda0b0a84",
+      "running": false,
+      "project": "secure-starter-integration",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter-integration_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "5e04a96a272d588daa8356d52ae6cd42c88e25e1559b7167435ef130bdabaf40",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "6ad28224312f47e7de286dde48e57f38d8b24b0b9c1a576841b2a924527647fd",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "6fde42668a3525d0ab6ad965bb5cd8decfe3f6227bcbca76dabf1dac02a858ed",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "70f8c0945d208acb9b95285755e39259e748ddca64c1580e33b5a075bda49893",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "764287f413321f534ab361b33ac1d438ad12ebe6c3f9e5c53b917c07fc13dece",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "79f805bc8fbbc10c8b3791457f7ae3940773f95e1c656399445570b5aef3c26e",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "7b135b7cfe8ae54a196d66268be32addd2bd5e3d21fdf909f3e39c7069d9abbd",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "80ca099e07ed213d79c7eebb9c8ea93745753748fd9bce4a8a57481a0b239805",
+      "running": false,
+      "project": "secure-starter-integration",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "e873ffc6a6c50d19a440bc26ca20ab1882f94dc14cc89bbe9f31a23bde88723a",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "83782db8311e92c5f6c22d585b81c24d08d0422ddee5607d0b4775a2180b0c96",
+      "running": false,
+      "project": "ssbb4bf0d07993",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssbb4bf0d07993_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "87684ff3c5c944f1084dd282aa9b6818b1914f249e7b8bb09f797f3ac6d919a1",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "87cc6b019359bf4c2df7f5f6b15ced196a7e07f3d548d4813264a3c1fb3d781b",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "8c27dda0cacdfdcfe88347917f9d3fdc55b335257fcf7d3c94114beb5eae6481",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "8f05f48b6dc2bf25a0311b19fbefa5c5621ba001a8c894aabc64da2f6ed72221",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "92f7f157b9757ca087bc8805df25232ff318b0de3da4e0a70ad6ae00e1f048da",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "93266ebdb1c6016feb09f33d334d81e8117a2ec208319a189f627d1a23c4ee56",
+      "running": false,
+      "project": "ss34917433702e",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss34917433702e_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "9af95981597c87aa33c040b1b3debf41d5897d3b4360ee19b5f51e1fb8c1755b",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "9f01dc7ec4cb7640cea1b5d202138a018ff54b4399a5279ce9e61b1858e8c192",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "a84e8d6401ed365f7d9af54738ace048392a9b2dfbf8914b973683b591e30dd5",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "ab292e03d143708ba428f2b559ce41c37ca9493e3add46a9cbb939da7950556e",
+      "running": false,
+      "project": "ssca6e1b602562",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssca6e1b602562_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "b2e11a2f7f3e66141d29fd8983526244048ba27a78cc3bd75cb58b008bffa01d",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "b3bca6cb3b219b9f2472ccbec1a198ec861692e38bc522bddd2c34f7cfec8fff",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "b85c31a1531bb1835bfb74800aa7cfb3f4834d75846bd647085cf9209aae47c0",
+      "running": true,
+      "project": "ct-farm",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ct-farm_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "bca89e4c29669b4c4ef009105947a9b9886f83503ab03543fbc2166f741b42bb",
+      "running": true,
+      "project": "ssc3e94bbfb9e1",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssc3e94bbfb9e1_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "bcd7b5318cea3a023541dd405b4f6cea5c9b4265818fd12261fbd114c8b6eeab",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "bd60dc6bae6900a8494f76850fc4b6758a4763ccc0c628c47482bc54fc95b442",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "c1b2c6ee0eaa0c58b2b7d202ab22f998934a65345408f4cff9cb1169514a765c",
+      "running": false,
+      "project": "secure-starter",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "c4a31e5b8978f9a77d340d3d844782291fb7c004cd98def4d4850f780cce7857",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "c70909efc8dcfcc933bef91af35682037653bacf99f9a244c38240af4529dded",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "c75a327701ef0c24ee3217931fea259b007b61693ff03a2d84cb2719c999bf95",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "c82825bd955d45e5de455d52fc9ab885807e9c1bded81d8572b61b02631d0336",
+      "running": false,
+      "project": "ss176505e8f121",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss176505e8f121_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "c9792d49445cf4d4f4f3cc0e830f65c748f02c576a155d67873d72a0c992d7c5",
+      "running": false,
+      "project": "ssbb4bf0d07993",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssbb4bf0d07993_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "ce4b63451a12069d7210278b4b80db7ceda567502a4f317652606fd935832545",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "d308e834dcbcb7fdaaa9b956f496032832f8e847aec09f7a58681482b9eae324",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "d855c8b4496fad30af08db4c49dd49597fbd2fd0d3c6b2d2eb85b565a774e2eb",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "ddb55650364ebe61b7bcd5e28d5a4cba3ea23e80a1ae244c46728d94a6a35b52",
+      "running": true,
+      "project": "ssc3e94bbfb9e1",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssc3e94bbfb9e1_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "e04457ce7fd8a4976573b02fd678473adcc4b74de74a3b9ecc8e5969266c79c9",
+      "running": false,
+      "project": "ss6ce7c7f563c3",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss6ce7c7f563c3_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "e4b36ff0d09687096e3a94210b95d578c0a7237bd683a7156242fec0e9cf7fce",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "e4eac4da86e5189da31e15efe225669f52b614c450ff8604316469b2dfd21b7d",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "e73cdde9626b8f13a7d4fafbc943f873de0e8c5feab7b1a6833e6d2d777b1572",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "eb4a4b1cae87954d236d6e04eed0a0cc4cca3b0d4ebd67b6c04ac2f6ebc92e45",
+      "running": true,
+      "project": "ct-farm",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ct-farm_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "ebb09103b25e158dbebde539bb94e85ed0661604d26dfa684b2604d3e8e7f9c2",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "ef37bb25bc6092c5ab250dbd59843cd6e55a3b082b70535bb239ff2983469f62",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "efede9878314407feb07338ce2f95a2508238a53a1659b5ee54a55b7164f5a9a",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "f0ace986faeb470c1b3dfaa49bdfe5a7d58f2f6dde62bb4c1fed74ee5bc394de",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "f90f5b81c028c599233805b9a821f87879da3e7b30d09f81907f05011b6a060a",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    }
+  ],
+  "healthBefore": [
+    {
+      "url": "http://127.0.0.1:4000/health/ready",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/starter",
+      "status": 200
+    }
+  ],
+  "ownershipBefore": [
+    {
+      "name": "api",
+      "pid": 17904,
+      "parentPid": 27600,
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "created": "2026-10-30T03:30:13.3905930Z",
+      "recordedStarted": "2026-10-30T03:30:13.3905939Z",
+      "ownedProcess": true
+    },
+    {
+      "name": "web",
+      "pid": 27224,
+      "parentPid": 27600,
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "created": "2026-10-30T03:30:13.5743390Z",
+      "recordedStarted": "2026-10-30T03:30:13.5743398Z",
+      "ownedProcess": true
+    },
+    {
+      "name": "collector",
+      "pid": 3772,
+      "parentPid": 27600,
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "created": "2026-10-30T03:30:13.7111540Z",
+      "recordedStarted": "2026-10-30T03:30:13.7111549Z",
+      "ownedProcess": true
+    }
+  ],
+  "afterStop": [
+    {
+      "id": "022e31f8a1c7fc6b231fdbe90743bb75c5750b7b81291e15f6f4a28d4b83fd4a",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "03fea2ca554910b482ce02e913368c801a8d96ffb7cb63c9be0c2983caa5bfbe",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "06c5cd516a992777b77387904622a1b35368ecdd0c6be535aff4552e54c03287",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "0ec1c6d295db4e69314d8c1a66c0a7a38cfb95e0e4ee1629ab3b9e28433c7631",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "0f3ff0b6476626be0a9d10d8a77065f78ad3c7f79bad3ea953e457f55eb9f7ef",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "11093787e8be05c81570d911385b2c4970f46b11793ac2cfcad37e62ba2a9a86",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "1987a239e78b49fc42fdfe161e73bfc15d2eab3410b64bc1f0732b2f99e4a57d",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "1c82b763d2a37c56f357931d0110ecb1362bc64704a03bbd252e6de0cf33c80b",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "22bcc6aab5fc12535349217f1fd1189ca9d16c7a2fde853217c1c474694bce99",
+      "running": false,
+      "project": "ssf872ba531d9a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssf872ba531d9a_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "28c60e0655789de298a79c21f253c714962a258fa057adbfdcb27402a652325b",
+      "running": false,
+      "project": "secure-starter",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "2b0ab01face2542b356c631c04ec3284f4164120de3c3aeba2932d198a00baee",
+      "running": false,
+      "project": "ss6ce7c7f563c3",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss6ce7c7f563c3_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "2e60462c8833f3caf9cbce81415c100882cc6580fa26a0ca855c748f198c1c1b",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "2f961cfd666ba0d1808aedc0db6b6bc5cbe33efe00ff69459ec2b3ede5253840",
+      "running": false,
+      "project": "ss01a0413a5d0a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss01a0413a5d0a_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "413f241db5e38edddba98a45b86197088c0797ef13859a5cf1f8c049f6a4c8e5",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "4369da7bedb5284ae809208cfe161a5b30a1f79deaac800aaa95480bc2ed8c17",
+      "running": false,
+      "project": "ss176505e8f121",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss176505e8f121_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "4483df27eb2cf3e742b552ff9d151e019ec4ac8f7002da506335eb4c5ff32b8e",
+      "running": true,
+      "project": "ss30d8e81aba22",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss30d8e81aba22_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "4564f424090e90b65f0c8386722d91e742926c2ade1da20f0e96369858d5e4bf",
+      "running": false,
+      "project": "ss34917433702e",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss34917433702e_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "460739c6b704f71053c7a7d2bd6574d2a564fbd1f7f8b27c87a39f6819159cbc",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "4691b5dbb0d26cae921ed49ea0f8e3757cc3e2da865d7def6abcaf73d22c14c6",
+      "running": false,
+      "project": "ss01a0413a5d0a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss01a0413a5d0a_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "485744dd084dfa549447755d7238ef9a61b367202a8d01106af1eebaf36e6a7e",
+      "running": false,
+      "project": "ssca6e1b602562",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssca6e1b602562_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "50cf543407ec293f7b74f1837be5c46fb80b388ad10b84258b3e5e2007cf4126",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "51f6e87ca65f0d0b47fc2aeb817ea43a99b9696fc5518e3c5341004575d8b060",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "5576fa1a08d591f10f00861a22ad7f63dd59489d5aab1760a623a9d4a3b1bbdb",
+      "running": false,
+      "project": "ssf872ba531d9a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssf872ba531d9a_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "577bfee03b9ff172f2536c3bc7a48fd504978d200f643daca2635609f87ba0c4",
+      "running": true,
+      "project": "ss30d8e81aba22",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss30d8e81aba22_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "57ff6acacb841054532b2d980bc338e688a3581a760eb46f4ad4dbdea58ec93e",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "5b62f2dcd544924141e67e47e996e46e217c397549b71e2ed015954ecbd1042f",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "5ddb895bff3ad90af6625d112b69ec091f93275ee7605050492d60acda0b0a84",
+      "running": false,
+      "project": "secure-starter-integration",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter-integration_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "5e04a96a272d588daa8356d52ae6cd42c88e25e1559b7167435ef130bdabaf40",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "6ad28224312f47e7de286dde48e57f38d8b24b0b9c1a576841b2a924527647fd",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "6fde42668a3525d0ab6ad965bb5cd8decfe3f6227bcbca76dabf1dac02a858ed",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "70f8c0945d208acb9b95285755e39259e748ddca64c1580e33b5a075bda49893",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "764287f413321f534ab361b33ac1d438ad12ebe6c3f9e5c53b917c07fc13dece",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "79f805bc8fbbc10c8b3791457f7ae3940773f95e1c656399445570b5aef3c26e",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "7b135b7cfe8ae54a196d66268be32addd2bd5e3d21fdf909f3e39c7069d9abbd",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "80ca099e07ed213d79c7eebb9c8ea93745753748fd9bce4a8a57481a0b239805",
+      "running": false,
+      "project": "secure-starter-integration",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "e873ffc6a6c50d19a440bc26ca20ab1882f94dc14cc89bbe9f31a23bde88723a",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "83782db8311e92c5f6c22d585b81c24d08d0422ddee5607d0b4775a2180b0c96",
+      "running": false,
+      "project": "ssbb4bf0d07993",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssbb4bf0d07993_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "87684ff3c5c944f1084dd282aa9b6818b1914f249e7b8bb09f797f3ac6d919a1",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "87cc6b019359bf4c2df7f5f6b15ced196a7e07f3d548d4813264a3c1fb3d781b",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "8c27dda0cacdfdcfe88347917f9d3fdc55b335257fcf7d3c94114beb5eae6481",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "8f05f48b6dc2bf25a0311b19fbefa5c5621ba001a8c894aabc64da2f6ed72221",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "92f7f157b9757ca087bc8805df25232ff318b0de3da4e0a70ad6ae00e1f048da",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "93266ebdb1c6016feb09f33d334d81e8117a2ec208319a189f627d1a23c4ee56",
+      "running": false,
+      "project": "ss34917433702e",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss34917433702e_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "9af95981597c87aa33c040b1b3debf41d5897d3b4360ee19b5f51e1fb8c1755b",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "9f01dc7ec4cb7640cea1b5d202138a018ff54b4399a5279ce9e61b1858e8c192",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "a84e8d6401ed365f7d9af54738ace048392a9b2dfbf8914b973683b591e30dd5",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "ab292e03d143708ba428f2b559ce41c37ca9493e3add46a9cbb939da7950556e",
+      "running": false,
+      "project": "ssca6e1b602562",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssca6e1b602562_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "b2e11a2f7f3e66141d29fd8983526244048ba27a78cc3bd75cb58b008bffa01d",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "b3bca6cb3b219b9f2472ccbec1a198ec861692e38bc522bddd2c34f7cfec8fff",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "b85c31a1531bb1835bfb74800aa7cfb3f4834d75846bd647085cf9209aae47c0",
+      "running": true,
+      "project": "ct-farm",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ct-farm_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "bca89e4c29669b4c4ef009105947a9b9886f83503ab03543fbc2166f741b42bb",
+      "running": true,
+      "project": "ssc3e94bbfb9e1",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssc3e94bbfb9e1_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "bcd7b5318cea3a023541dd405b4f6cea5c9b4265818fd12261fbd114c8b6eeab",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "bd60dc6bae6900a8494f76850fc4b6758a4763ccc0c628c47482bc54fc95b442",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "c1b2c6ee0eaa0c58b2b7d202ab22f998934a65345408f4cff9cb1169514a765c",
+      "running": false,
+      "project": "secure-starter",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "c4a31e5b8978f9a77d340d3d844782291fb7c004cd98def4d4850f780cce7857",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "c70909efc8dcfcc933bef91af35682037653bacf99f9a244c38240af4529dded",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "c75a327701ef0c24ee3217931fea259b007b61693ff03a2d84cb2719c999bf95",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "c82825bd955d45e5de455d52fc9ab885807e9c1bded81d8572b61b02631d0336",
+      "running": false,
+      "project": "ss176505e8f121",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss176505e8f121_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "c9792d49445cf4d4f4f3cc0e830f65c748f02c576a155d67873d72a0c992d7c5",
+      "running": false,
+      "project": "ssbb4bf0d07993",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssbb4bf0d07993_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "ce4b63451a12069d7210278b4b80db7ceda567502a4f317652606fd935832545",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "d308e834dcbcb7fdaaa9b956f496032832f8e847aec09f7a58681482b9eae324",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "d855c8b4496fad30af08db4c49dd49597fbd2fd0d3c6b2d2eb85b565a774e2eb",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "ddb55650364ebe61b7bcd5e28d5a4cba3ea23e80a1ae244c46728d94a6a35b52",
+      "running": true,
+      "project": "ssc3e94bbfb9e1",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssc3e94bbfb9e1_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "e04457ce7fd8a4976573b02fd678473adcc4b74de74a3b9ecc8e5969266c79c9",
+      "running": false,
+      "project": "ss6ce7c7f563c3",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss6ce7c7f563c3_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "e4b36ff0d09687096e3a94210b95d578c0a7237bd683a7156242fec0e9cf7fce",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "e4eac4da86e5189da31e15efe225669f52b614c450ff8604316469b2dfd21b7d",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "e73cdde9626b8f13a7d4fafbc943f873de0e8c5feab7b1a6833e6d2d777b1572",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "eb4a4b1cae87954d236d6e04eed0a0cc4cca3b0d4ebd67b6c04ac2f6ebc92e45",
+      "running": true,
+      "project": "ct-farm",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ct-farm_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "ebb09103b25e158dbebde539bb94e85ed0661604d26dfa684b2604d3e8e7f9c2",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "ef37bb25bc6092c5ab250dbd59843cd6e55a3b082b70535bb239ff2983469f62",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "efede9878314407feb07338ce2f95a2508238a53a1659b5ee54a55b7164f5a9a",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "f0ace986faeb470c1b3dfaa49bdfe5a7d58f2f6dde62bb4c1fed74ee5bc394de",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "f90f5b81c028c599233805b9a821f87879da3e7b30d09f81907f05011b6a060a",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    }
+  ],
+  "healthAfterStop": [
+    {
+      "url": "http://127.0.0.1:4000/health/ready",
+      "status": "unreachable"
+    },
+    {
+      "url": "http://localhost:3000/starter",
+      "status": "unreachable"
+    }
+  ],
+  "status": "failed",
+  "error": "STARTER 실패\n\n1 !== 0\n",
+  "recoveryStart": {
+    "command": [
+      "powershell.exe",
+      "-NoProfile",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-File",
+      "SECURE-LIFECYCLE.ps1",
+      "-Action",
+      "STARTER"
+    ],
+    "action": "STARTER",
+    "startedAt": "2026-10-30T05:59:15.543Z",
+    "endedAt": "2026-10-30T06:03:15.570Z",
+    "exitCode": 0,
+    "rawLog": "verification\\round6\\approved-cycle-2026-10-30T05-53-54-269Z\\2-STARTER.log"
+  },
+  "after": [
+    {
+      "id": "022e31f8a1c7fc6b231fdbe90743bb75c5750b7b81291e15f6f4a28d4b83fd4a",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "03fea2ca554910b482ce02e913368c801a8d96ffb7cb63c9be0c2983caa5bfbe",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "06c5cd516a992777b77387904622a1b35368ecdd0c6be535aff4552e54c03287",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "0ec1c6d295db4e69314d8c1a66c0a7a38cfb95e0e4ee1629ab3b9e28433c7631",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "0f3ff0b6476626be0a9d10d8a77065f78ad3c7f79bad3ea953e457f55eb9f7ef",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "11093787e8be05c81570d911385b2c4970f46b11793ac2cfcad37e62ba2a9a86",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "1987a239e78b49fc42fdfe161e73bfc15d2eab3410b64bc1f0732b2f99e4a57d",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "1c82b763d2a37c56f357931d0110ecb1362bc64704a03bbd252e6de0cf33c80b",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "22bcc6aab5fc12535349217f1fd1189ca9d16c7a2fde853217c1c474694bce99",
+      "running": true,
+      "project": "ssf872ba531d9a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssf872ba531d9a_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "28c60e0655789de298a79c21f253c714962a258fa057adbfdcb27402a652325b",
+      "running": false,
+      "project": "secure-starter",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "2b0ab01face2542b356c631c04ec3284f4164120de3c3aeba2932d198a00baee",
+      "running": false,
+      "project": "ss6ce7c7f563c3",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss6ce7c7f563c3_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "2e60462c8833f3caf9cbce81415c100882cc6580fa26a0ca855c748f198c1c1b",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "2f961cfd666ba0d1808aedc0db6b6bc5cbe33efe00ff69459ec2b3ede5253840",
+      "running": false,
+      "project": "ss01a0413a5d0a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss01a0413a5d0a_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "413f241db5e38edddba98a45b86197088c0797ef13859a5cf1f8c049f6a4c8e5",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "4369da7bedb5284ae809208cfe161a5b30a1f79deaac800aaa95480bc2ed8c17",
+      "running": false,
+      "project": "ss176505e8f121",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss176505e8f121_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "4483df27eb2cf3e742b552ff9d151e019ec4ac8f7002da506335eb4c5ff32b8e",
+      "running": true,
+      "project": "ss30d8e81aba22",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss30d8e81aba22_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "4564f424090e90b65f0c8386722d91e742926c2ade1da20f0e96369858d5e4bf",
+      "running": false,
+      "project": "ss34917433702e",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss34917433702e_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "460739c6b704f71053c7a7d2bd6574d2a564fbd1f7f8b27c87a39f6819159cbc",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "4691b5dbb0d26cae921ed49ea0f8e3757cc3e2da865d7def6abcaf73d22c14c6",
+      "running": false,
+      "project": "ss01a0413a5d0a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss01a0413a5d0a_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "485744dd084dfa549447755d7238ef9a61b367202a8d01106af1eebaf36e6a7e",
+      "running": false,
+      "project": "ssca6e1b602562",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssca6e1b602562_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "50cf543407ec293f7b74f1837be5c46fb80b388ad10b84258b3e5e2007cf4126",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "51f6e87ca65f0d0b47fc2aeb817ea43a99b9696fc5518e3c5341004575d8b060",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "5576fa1a08d591f10f00861a22ad7f63dd59489d5aab1760a623a9d4a3b1bbdb",
+      "running": true,
+      "project": "ssf872ba531d9a",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssf872ba531d9a_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "577bfee03b9ff172f2536c3bc7a48fd504978d200f643daca2635609f87ba0c4",
+      "running": true,
+      "project": "ss30d8e81aba22",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss30d8e81aba22_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "57ff6acacb841054532b2d980bc338e688a3581a760eb46f4ad4dbdea58ec93e",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "5b62f2dcd544924141e67e47e996e46e217c397549b71e2ed015954ecbd1042f",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "5ddb895bff3ad90af6625d112b69ec091f93275ee7605050492d60acda0b0a84",
+      "running": false,
+      "project": "secure-starter-integration",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter-integration_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "5e04a96a272d588daa8356d52ae6cd42c88e25e1559b7167435ef130bdabaf40",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "6ad28224312f47e7de286dde48e57f38d8b24b0b9c1a576841b2a924527647fd",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "6fde42668a3525d0ab6ad965bb5cd8decfe3f6227bcbca76dabf1dac02a858ed",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "70f8c0945d208acb9b95285755e39259e748ddca64c1580e33b5a075bda49893",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "764287f413321f534ab361b33ac1d438ad12ebe6c3f9e5c53b917c07fc13dece",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "79f805bc8fbbc10c8b3791457f7ae3940773f95e1c656399445570b5aef3c26e",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "7b135b7cfe8ae54a196d66268be32addd2bd5e3d21fdf909f3e39c7069d9abbd",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "80ca099e07ed213d79c7eebb9c8ea93745753748fd9bce4a8a57481a0b239805",
+      "running": false,
+      "project": "secure-starter-integration",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "e873ffc6a6c50d19a440bc26ca20ab1882f94dc14cc89bbe9f31a23bde88723a",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "83782db8311e92c5f6c22d585b81c24d08d0422ddee5607d0b4775a2180b0c96",
+      "running": false,
+      "project": "ssbb4bf0d07993",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssbb4bf0d07993_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "87684ff3c5c944f1084dd282aa9b6818b1914f249e7b8bb09f797f3ac6d919a1",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "87cc6b019359bf4c2df7f5f6b15ced196a7e07f3d548d4813264a3c1fb3d781b",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "8c27dda0cacdfdcfe88347917f9d3fdc55b335257fcf7d3c94114beb5eae6481",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "8f05f48b6dc2bf25a0311b19fbefa5c5621ba001a8c894aabc64da2f6ed72221",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "92f7f157b9757ca087bc8805df25232ff318b0de3da4e0a70ad6ae00e1f048da",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "93266ebdb1c6016feb09f33d334d81e8117a2ec208319a189f627d1a23c4ee56",
+      "running": false,
+      "project": "ss34917433702e",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss34917433702e_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "9af95981597c87aa33c040b1b3debf41d5897d3b4360ee19b5f51e1fb8c1755b",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-38a9395bd51f_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "9f01dc7ec4cb7640cea1b5d202138a018ff54b4399a5279ce9e61b1858e8c192",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": []
+    },
+    {
+      "id": "a84e8d6401ed365f7d9af54738ace048392a9b2dfbf8914b973683b591e30dd5",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-ac792083105b_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "ab292e03d143708ba428f2b559ce41c37ca9493e3add46a9cbb939da7950556e",
+      "running": false,
+      "project": "ssca6e1b602562",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssca6e1b602562_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "b2e11a2f7f3e66141d29fd8983526244048ba27a78cc3bd75cb58b008bffa01d",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_caddy_config",
+          "destination": "/config"
+        },
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_tls",
+          "destination": "/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile"
+        }
+      ]
+    },
+    {
+      "id": "b3bca6cb3b219b9f2472ccbec1a198ec861692e38bc522bddd2c34f7cfec8fff",
+      "running": false,
+      "project": "ctfarm-round5-38a9395bd51f",
+      "mounts": []
+    },
+    {
+      "id": "b85c31a1531bb1835bfb74800aa7cfb3f4834d75846bd647085cf9209aae47c0",
+      "running": true,
+      "project": "ct-farm",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ct-farm_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "bca89e4c29669b4c4ef009105947a9b9886f83503ab03543fbc2166f741b42bb",
+      "running": true,
+      "project": "ssc3e94bbfb9e1",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssc3e94bbfb9e1_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "bcd7b5318cea3a023541dd405b4f6cea5c9b4265818fd12261fbd114c8b6eeab",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-678208f853d2_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "bd60dc6bae6900a8494f76850fc4b6758a4763ccc0c628c47482bc54fc95b442",
+      "running": false,
+      "project": "ctfarm-round5-678208f853d2",
+      "mounts": []
+    },
+    {
+      "id": "c1b2c6ee0eaa0c58b2b7d202ab22f998934a65345408f4cff9cb1169514a765c",
+      "running": false,
+      "project": "secure-starter",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "secure-starter_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "c4a31e5b8978f9a77d340d3d844782291fb7c004cd98def4d4850f780cce7857",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "c70909efc8dcfcc933bef91af35682037653bacf99f9a244c38240af4529dded",
+      "running": false,
+      "project": "ctfarm-round5-45b1e74e8017",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-45b1e74e8017_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "c75a327701ef0c24ee3217931fea259b007b61693ff03a2d84cb2719c999bf95",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "c82825bd955d45e5de455d52fc9ab885807e9c1bded81d8572b61b02631d0336",
+      "running": false,
+      "project": "ss176505e8f121",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss176505e8f121_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "c9792d49445cf4d4f4f3cc0e830f65c748f02c576a155d67873d72a0c992d7c5",
+      "running": false,
+      "project": "ssbb4bf0d07993",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssbb4bf0d07993_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "ce4b63451a12069d7210278b4b80db7ceda567502a4f317652606fd935832545",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-3eff6ce87048_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "d308e834dcbcb7fdaaa9b956f496032832f8e847aec09f7a58681482b9eae324",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-9c5cc224ddbd_uploads",
+          "destination": "/app/apps/api/uploads"
+        }
+      ]
+    },
+    {
+      "id": "d855c8b4496fad30af08db4c49dd49597fbd2fd0d3c6b2d2eb85b565a774e2eb",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": []
+    },
+    {
+      "id": "ddb55650364ebe61b7bcd5e28d5a4cba3ea23e80a1ae244c46728d94a6a35b52",
+      "running": true,
+      "project": "ssc3e94bbfb9e1",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ssc3e94bbfb9e1_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "e04457ce7fd8a4976573b02fd678473adcc4b74de74a3b9ecc8e5969266c79c9",
+      "running": false,
+      "project": "ss6ce7c7f563c3",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ss6ce7c7f563c3_postgres_data",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "e4b36ff0d09687096e3a94210b95d578c0a7237bd683a7156242fec0e9cf7fce",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "e4eac4da86e5189da31e15efe225669f52b614c450ff8604316469b2dfd21b7d",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "e73cdde9626b8f13a7d4fafbc943f873de0e8c5feab7b1a6833e6d2d777b1572",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-cc3240260bd8_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    },
+    {
+      "id": "eb4a4b1cae87954d236d6e04eed0a0cc4cca3b0d4ebd67b6c04ac2f6ebc92e45",
+      "running": true,
+      "project": "ct-farm",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ct-farm_redis_data",
+          "destination": "/data"
+        }
+      ]
+    },
+    {
+      "id": "ebb09103b25e158dbebde539bb94e85ed0661604d26dfa684b2604d3e8e7f9c2",
+      "running": false,
+      "project": "ctfarm-round5-cc3240260bd8",
+      "mounts": []
+    },
+    {
+      "id": "ef37bb25bc6092c5ab250dbd59843cd6e55a3b082b70535bb239ff2983469f62",
+      "running": false,
+      "project": "ctfarm-round5-ac792083105b",
+      "mounts": []
+    },
+    {
+      "id": "efede9878314407feb07338ce2f95a2508238a53a1659b5ee54a55b7164f5a9a",
+      "running": false,
+      "project": "ctfarm-round5-3eff6ce87048",
+      "mounts": []
+    },
+    {
+      "id": "f0ace986faeb470c1b3dfaa49bdfe5a7d58f2f6dde62bb4c1fed74ee5bc394de",
+      "running": false,
+      "project": "ctfarm-round5-9c5cc224ddbd",
+      "mounts": []
+    },
+    {
+      "id": "f90f5b81c028c599233805b9a821f87879da3e7b30d09f81907f05011b6a060a",
+      "running": false,
+      "project": "ctfarm-round5-1245ee795559",
+      "mounts": [
+        {
+          "type": "volume",
+          "name": "ctfarm-round5-1245ee795559_database",
+          "destination": "/var/lib/postgresql/data"
+        }
+      ]
+    }
+  ],
+  "healthAfter": [
+    {
+      "url": "http://127.0.0.1:4000/health/ready",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/starter",
+      "status": 200
+    }
+  ],
+  "containerIdsAndMountsUnchanged": true,
+  "otherContainersRunningStateUnchanged": true,
+  "finalReady": true,
+  "endedAt": "2026-10-30T06:03:29.208Z",
+  "logRedactions": [
+    "PowerShell host User/Computer metadata only"
+  ],
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "osRelease": "10.0.26300",
+    "cpuCount": 18,
+    "ramBytes": 16737873920,
+    "powershellVersion": "5.1.26100.9818",
+    "measuredAt": "2026-10-30T06:12:41.665Z",
+    "measurementTiming": "after cycle, same local host"
+  }
+}

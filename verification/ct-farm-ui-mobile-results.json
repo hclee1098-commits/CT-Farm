@@ -1,0 +1,978 @@
+{
+  "updatedAt": "2026-10-30T10:49:44.303Z",
+  "status": "partial: USB debug APK built and signature verified; actual device validation and mobile dependency remediation pending",
+  "latestChecks": {
+    "mobile-unit": {
+      "name": "mobile-unit",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "--test",
+        "tools/test-mobile-client.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:36:26.082Z",
+      "endedAt": "2026-10-30T09:36:27.182Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 11,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\mobile-unit.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\results.json"
+    },
+    "mobile-type": {
+      "name": "mobile-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T09:36:27.183Z",
+      "endedAt": "2026-10-30T09:36:31.221Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\mobile-type.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\results.json"
+    },
+    "mobile-compat": {
+      "name": "mobile-compat",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "install",
+        "--check"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T08:01:20.100Z",
+      "endedAt": "2026-10-30T08:01:21.265Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\mobile-compat.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\results.json"
+    },
+    "web-type": {
+      "name": "web-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/web/tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:41:36.520Z",
+      "endedAt": "2026-10-30T09:41:44.900Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\web-type.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\results.json"
+    },
+    "api-type": {
+      "name": "api-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:41:44.902Z",
+      "endedAt": "2026-10-30T09:41:48.646Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\api-type.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\results.json"
+    },
+    "android-bundle": {
+      "name": "android-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "android",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\android-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T09:39:08.443Z",
+      "endedAt": "2026-10-30T09:40:00.165Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\android-bundle.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\results.json"
+    },
+    "ios-bundle": {
+      "name": "ios-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "ios",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\ios-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T09:40:00.167Z",
+      "endedAt": "2026-10-30T09:40:14.671Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\ios-bundle.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\results.json"
+    },
+    "mobile-native-api": {
+      "name": "mobile-native-api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-mobile-api.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:36:35.168Z",
+      "endedAt": "2026-10-30T09:37:19.420Z",
+      "exitCode": 0,
+      "database": "native PostgreSQL 16",
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-36-35-165Z\\mobile-native-api.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-36-35-165Z\\results.json"
+    },
+    "api": {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\api-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:42:32.301Z",
+      "endedAt": "2026-10-30T09:42:41.524Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\api.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\results.json"
+    },
+    "web": {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\web-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:42:41.526Z",
+      "endedAt": "2026-10-30T09:42:43.010Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 34,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\web.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\results.json"
+    },
+    "web-build": {
+      "name": "web-build",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/ui-mobile-web-build.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:44:58.204Z",
+      "endedAt": "2026-10-30T07:45:30.955Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\web-build.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\results.json"
+    },
+    "android-prebuild": {
+      "name": "android-prebuild",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "prebuild",
+        "--platform",
+        "android",
+        "--no-install"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:54:35.722Z",
+      "endedAt": "2026-10-30T07:54:42.552Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\android-prebuild.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\results.json"
+    },
+    "build-doctor": {
+      "name": "build-doctor",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/mobile-build-doctor.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T10:26:32.362Z",
+      "endedAt": "2026-10-30T10:26:32.632Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\build-doctor.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\results.json"
+    },
+    "design": {
+      "name": "design",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/test-design-system.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:41:36.279Z",
+      "endedAt": "2026-10-30T09:41:36.519Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\design.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\results.json"
+    },
+    "packaged-android": {
+      "name": "packaged-android",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-packaged-mobile.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:40:14.672Z",
+      "endedAt": "2026-10-30T09:40:31.314Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\packaged-android.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\results.json"
+    },
+    "docs": {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T10:48:05.191Z",
+      "endedAt": "2026-10-30T10:48:21.953Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T10-48-05-188Z\\docs.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T10-48-05-188Z\\results.json"
+    },
+    "farm": {
+      "name": "farm",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-farm.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:56:25.945Z",
+      "endedAt": "2026-10-30T07:56:31.530Z",
+      "exitCode": 0,
+      "database": "PGlite",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-56-25-934Z\\farm.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-56-25-934Z\\results.json"
+    },
+    "phone-adb-list": {
+      "name": "phone-adb-list",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/phone-device-list.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T10:26:31.931Z",
+      "endedAt": "2026-10-30T10:26:32.358Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\phone-adb-list.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\results.json"
+    }
+  },
+  "allRunResults": [
+    "verification\\ui-mobile\\2026-10-30T07-15-36-300Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-19-15-875Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-22-11-824Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-22-58-694Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-28-44-607Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-30-53-655Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-48-14-314Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-52-23-059Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T07-56-25-934Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T08-02-08-685Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T08-05-31-758Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T09-36-35-165Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T10-27-37-362Z\\results.json",
+    "verification\\ui-mobile\\2026-10-30T10-48-05-188Z\\results.json"
+  ],
+  "failedOrBlockedCommands": [
+    {
+      "name": "mobile-unit",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "--test",
+        "tools/test-mobile-client.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:15:36.316Z",
+      "endedAt": "2026-10-30T07:15:36.783Z",
+      "exitCode": 1,
+      "passed": 7,
+      "failed": 1,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-15-36-300Z\\mobile-unit.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-15-36-300Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\results.json; original failure retained"
+    },
+    {
+      "name": "android-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "android",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\android-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:16:59.937Z",
+      "endedAt": "2026-10-30T07:17:28.111Z",
+      "exitCode": 1,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\android-bundle.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\results.json; original failure retained"
+    },
+    {
+      "name": "ios-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "ios",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\ios-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:17:28.114Z",
+      "endedAt": "2026-10-30T07:17:30.956Z",
+      "exitCode": 1,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\ios-bundle.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\results.json; original failure retained"
+    },
+    {
+      "name": "mobile-native-api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-mobile-api.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:19:15.882Z",
+      "endedAt": "2026-10-30T07:19:57.555Z",
+      "exitCode": 1,
+      "passed": 7,
+      "failed": null,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-19-15-875Z\\mobile-native-api.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-19-15-875Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T09-36-35-165Z\\results.json; original failure retained"
+    },
+    {
+      "name": "build-doctor",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/mobile-build-doctor.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:27:49.138Z",
+      "endedAt": "2026-10-30T07:27:49.288Z",
+      "exitCode": 2,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\build-doctor.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\results.json; original failure retained"
+    },
+    {
+      "name": "design",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/test-design-system.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:28:44.618Z",
+      "endedAt": "2026-10-30T07:28:44.992Z",
+      "exitCode": 1,
+      "passed": 2,
+      "failed": 1,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-28-44-607Z\\design.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T07-28-44-607Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T09-41-18-709Z\\results.json; original failure retained"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T08:01:21.267Z",
+      "endedAt": "2026-10-30T08:01:27.232Z",
+      "exitCode": 1,
+      "database": "not applicable / see raw log",
+      "passed": 5,
+      "failed": 1,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\docs.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T10-48-05-188Z\\results.json; original failure retained"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T08:02:08.690Z",
+      "endedAt": "2026-10-30T08:02:13.686Z",
+      "exitCode": 1,
+      "database": "not applicable / see raw log",
+      "passed": 5,
+      "failed": 1,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-02-08-685Z\\docs.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T08-02-08-685Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T10-48-05-188Z\\results.json; original failure retained"
+    },
+    {
+      "name": "build-doctor",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/mobile-build-doctor.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:40:31.315Z",
+      "endedAt": "2026-10-30T09:40:31.406Z",
+      "exitCode": 2,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\build-doctor.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T09-39-08-439Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\results.json; original failure retained"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T10:26:32.636Z",
+      "endedAt": "2026-10-30T10:26:56.128Z",
+      "exitCode": 1,
+      "database": "not applicable / see raw log",
+      "passed": 5,
+      "failed": 1,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\docs.log",
+      "resultFile": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\results.json",
+      "resolution": "later same-name check passed: verification\\ui-mobile\\2026-10-30T10-48-05-188Z\\results.json; original failure retained"
+    }
+  ],
+  "publicGuide": "docs/09-CT-Farm-안내/모바일앱과-디자인.md",
+  "documentationPath": "/docs-center/index.html",
+  "webUrl": "http://localhost:3000/starter",
+  "mobileSource": "apps/mobile",
+  "sharedDesign": "packages/design-tokens",
+  "newApi": [
+    "GET /api/v1/farms/:id/diary/:entryId",
+    "optional Idempotency-Key for POST /api/v1/farms and /api/v1/farms/:id/products"
+  ],
+  "schemaChanged": false,
+  "originalMigrationApplied": false,
+  "originalServerStop": false,
+  "databaseReset": false,
+  "databaseDrop": false,
+  "volumeDeletion": false,
+  "gitOperations": false,
+  "safetyEvidence": "verification/ct-farm-ui-mobile-safety.json",
+  "originalContainerIdsPreserved": true,
+  "originalUploadsMatching": true,
+  "rootDependencyLockUnchanged": true,
+  "sourceBackups": [
+    {
+      "file": "backup/ct-farm-round6-before-20261030-111955.zip",
+      "sha256": "c738e2c954225fcacde466758cb9b374eefae3066204c024e9221895ea184c57"
+    },
+    {
+      "file": "backup/ct-farm-round6-resume-20261030-122939.zip",
+      "sha256": "bd12767b196817a4d40d5ffa9243924234baf8bb79ca3861516f256427613441"
+    },
+    {
+      "file": "backup/ct-farm-ui-mobile-before-20261030-154934.zip",
+      "sha256": "0fd918e3544f077674e43b9e843ebfac66d54a105dcd43d9920bed7108727d27"
+    }
+  ],
+  "verificationScope": {
+    "nativePostgres": true,
+    "deviceSecureStore": false,
+    "actualCameraOrGallery": false,
+    "actualMicrophone": false,
+    "actualAndroidInstall": true,
+    "actualIOSInstall": false,
+    "apkProduced": true,
+    "iosBinaryProduced": false,
+    "actualNavigationUI": false,
+    "actualKeyboardScreenReaderZoomSlowNetwork": false,
+    "sourceUIBrowser": false,
+    "browserBlock": "Computer Use ended: could not determine current browser URL safely; no fallback bypass attempted",
+    "androidLoginScreenUserConfirmed": true
+  },
+  "externalOrToolchainRequirements": [
+    "Mac + Xcode and actual iPhone signing environment",
+    "Expo/Apple account and approved signing/distribution configuration for EAS/TestFlight",
+    "isolated device-accessible STAGING HTTPS endpoint with trusted certificate"
+  ],
+  "remainingFeatures": [
+    "compatible remediation of Expo CLI Zod3/deepmerge advisories; native reachability review",
+    "native voice recognition/dialogue",
+    "native GPS/map and parcel editing",
+    "calendar grid and OS push",
+    "native collaboration assignment/report and complete account/admin/IoT/sales management",
+    "actual device full scenario, image permission denial and storage fault tests",
+    "stale result and mutation cancellation tests on actual devices"
+  ],
+  "limits": [
+    "platform JS exports are not native app binaries",
+    "native API scenario uses real app client/workflow with Node transport and in-memory vault; not device UI or SecureStore proof",
+    "web build output is isolated from original .next",
+    "design token contrast is not whole WCAG AA verification",
+    "original collaboration remains disabled pending separate schema/backup/restore approval",
+    "USB debug APK requires PC Metro and isolated API; not a standalone release or store build"
+  ],
+  "sourcePackage": {
+    "sourceDirectory": "C:\\workspace\\CT-Farm\\verification\\runtime\\ui-mobile-source-d70c0475e9e0",
+    "artifact": "artifacts/ct-farm-mobile-source-20261030.zip",
+    "sha256": "200e396e6b5099a5e40d93f7a3e606246cb7eaa26c87de5b13e056eb94dcb3ea",
+    "privateEnvironmentIncluded": false,
+    "nativeBinary": false,
+    "sharedTokenCopy": "generated from canonical JSON; original workspace app keeps shared references"
+  },
+  "changeReport": "verification/ui-mobile/changes.log",
+  "cleanStandaloneDependencyInstallVerified": false,
+  "dependencyAudit": {
+    "rawLog": "verification/ui-mobile/npm-audit.log",
+    "checks": [
+      {
+        "cwd": ".",
+        "command": [
+          "node",
+          "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+          "audit",
+          "--json",
+          "--workspaces=false",
+          "--fetch-retries=0",
+          "--fetch-timeout=15000"
+        ],
+        "startedAt": "2026-10-30T07:57:11.758Z",
+        "endedAt": "2026-10-30T07:57:13.651Z",
+        "exitCode": 0,
+        "vulnerabilities": {
+          "info": 0,
+          "low": 0,
+          "moderate": 0,
+          "high": 0,
+          "critical": 0,
+          "total": 0
+        }
+      },
+      {
+        "cwd": "apps/mobile",
+        "command": [
+          "node",
+          "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js",
+          "audit",
+          "--json",
+          "--workspaces=false",
+          "--fetch-retries=0",
+          "--fetch-timeout=15000"
+        ],
+        "startedAt": "2026-10-30T07:57:13.652Z",
+        "endedAt": "2026-10-30T07:57:17.582Z",
+        "exitCode": 1,
+        "vulnerabilities": {
+          "info": 0,
+          "low": 5,
+          "moderate": 0,
+          "high": 3,
+          "critical": 0,
+          "total": 8
+        }
+      }
+    ]
+  },
+  "earlyEvidenceLimit": "some initial npm/SDK selection failures remain in the chat tool transcript only; no reconstructed command timestamps",
+  "phoneTestEvidence": [
+    {
+      "file": "verification\\ui-mobile\\phone-sdk\\2026-10-30T09-57-25-013Z\\results.json",
+      "status": "installed",
+      "startedAt": "2026-10-30T09:57:25.011Z",
+      "endedAt": "2026-10-30T09:58:54.851Z",
+      "commands": [
+        {
+          "label": "install-sdk",
+          "startedAt": "2026-10-30T09:57:25.213Z",
+          "endedAt": "2026-10-30T09:58:54.847Z",
+          "exitCode": 0,
+          "rawLog": "verification\\ui-mobile\\phone-sdk\\2026-10-30T09-57-25-013Z\\install-sdk.log"
+        }
+      ]
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-sdk\\results.json",
+      "status": "failed_or_license_required",
+      "startedAt": "2026-10-30T09:54:09.949Z",
+      "endedAt": "2026-10-30T09:54:25.968Z",
+      "commands": [
+        {
+          "label": "extract-tools",
+          "startedAt": "2026-10-30T09:54:15.350Z",
+          "endedAt": "2026-10-30T09:54:21.628Z",
+          "exitCode": 0,
+          "rawLog": "verification\\ui-mobile\\phone-sdk\\extract-tools.log"
+        },
+        {
+          "label": "install-sdk",
+          "startedAt": "2026-10-30T09:54:21.647Z",
+          "endedAt": "2026-10-30T09:54:25.966Z",
+          "exitCode": 1,
+          "rawLog": "verification\\ui-mobile\\phone-sdk\\install-sdk.log"
+        }
+      ],
+      "error": "install-sdk failed; see verification\\ui-mobile\\phone-sdk\\install-sdk.log"
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-ninja\\results.json",
+      "status": "verified",
+      "startedAt": "2026-10-30T10:20:19.464Z",
+      "endedAt": "2026-10-30T10:20:21.708Z"
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-build\\2026-10-30T10-00-42-458Z\\results.json",
+      "status": "failed",
+      "startedAt": "2026-10-30T10:00:42.469Z",
+      "endedAt": "2026-10-30T10:19:04.157Z",
+      "commands": [
+        {
+          "label": "prebuild",
+          "command": "& 'C:\\Program Files\\nodejs\\node.exe' 'node_modules/expo/bin/cli' prebuild --platform android --no-install",
+          "startedAt": "2026-10-30T10:00:42.543Z",
+          "endedAt": "2026-10-30T10:00:50.421Z",
+          "exitCode": 0,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-00-42-458Z\\prebuild.log"
+        },
+        {
+          "label": "assemble-debug",
+          "command": "Set-Location -LiteralPath 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\app\\android'; & .\\gradlew.bat :app:assembleDebug --no-daemon --max-workers=2 '-Dorg.gradle.parallel=false' '-Dorg.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m' '-Pkotlin.compiler.execution.strategy=in-process' '-PreactNativeArchitectures=arm64-v8a'",
+          "startedAt": "2026-10-30T10:00:50.732Z",
+          "endedAt": "2026-10-30T10:19:04.137Z",
+          "exitCode": 1,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-00-42-458Z\\assemble-debug.log"
+        }
+      ],
+      "error": "assemble-debug failed: verification\\ui-mobile\\phone-build\\2026-10-30T10-00-42-458Z\\assemble-debug.log"
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-build\\2026-10-30T10-20-29-769Z\\results.json",
+      "status": "failed",
+      "startedAt": "2026-10-30T10:20:29.777Z",
+      "endedAt": "2026-10-30T10:28:27.228Z",
+      "commands": [
+        {
+          "label": "prebuild",
+          "command": "& 'C:\\Program Files\\nodejs\\node.exe' 'node_modules/expo/bin/cli' prebuild --platform android --no-install",
+          "startedAt": "2026-10-30T10:20:29.847Z",
+          "endedAt": "2026-10-30T10:20:35.810Z",
+          "exitCode": 0,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-20-29-769Z\\prebuild.log"
+        },
+        {
+          "label": "assemble-debug",
+          "command": "Set-Location -LiteralPath 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\app\\android'; & .\\gradlew.bat :app:assembleDebug --no-daemon --max-workers=2 '-Dorg.gradle.parallel=false' '-Dorg.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m' '-Pkotlin.compiler.execution.strategy=in-process' '-PreactNativeArchitectures=arm64-v8a'",
+          "startedAt": "2026-10-30T10:20:36.110Z",
+          "endedAt": "2026-10-30T10:28:27.208Z",
+          "exitCode": 1,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-20-29-769Z\\assemble-debug.log"
+        }
+      ],
+      "error": "assemble-debug failed: verification\\ui-mobile\\phone-build\\2026-10-30T10-20-29-769Z\\assemble-debug.log"
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-build\\2026-10-30T10-29-04-927Z\\results.json",
+      "status": "failed",
+      "startedAt": "2026-10-30T10:29:04.938Z",
+      "endedAt": "2026-10-30T10:37:36.823Z",
+      "commands": [
+        {
+          "label": "prebuild",
+          "command": "& 'C:\\Program Files\\nodejs\\node.exe' 'node_modules/expo/bin/cli' prebuild --platform android --no-install",
+          "startedAt": "2026-10-30T10:29:05.016Z",
+          "endedAt": "2026-10-30T10:29:15.695Z",
+          "exitCode": 0,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-29-04-927Z\\prebuild.log"
+        },
+        {
+          "label": "assemble-debug",
+          "command": "Set-Location -LiteralPath 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\app\\android'; & .\\gradlew.bat :app:assembleDebug --init-script 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\short-objects.gradle' --no-daemon --max-workers=2 '-Dorg.gradle.parallel=false' '-Dorg.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m' '-Pkotlin.compiler.execution.strategy=in-process' '-PreactNativeArchitectures=arm64-v8a'",
+          "startedAt": "2026-10-30T10:29:15.942Z",
+          "endedAt": "2026-10-30T10:37:36.807Z",
+          "exitCode": 1,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-29-04-927Z\\assemble-debug.log"
+        }
+      ],
+      "error": "assemble-debug failed: verification\\ui-mobile\\phone-build\\2026-10-30T10-29-04-927Z\\assemble-debug.log"
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-build\\2026-10-30T10-38-47-162Z\\results.json",
+      "status": "built_and_signature_verified",
+      "startedAt": "2026-10-30T10:38:47.176Z",
+      "endedAt": "2026-10-30T10:42:44.904Z",
+      "apk": {
+        "file": "artifacts\\CT-Farm-Android-USB-Test.apk",
+        "bytes": 96557550,
+        "sha256": "80272d5c25b6f015d136957b3d53a37f01f750f1810375be0b404b2287f9d161",
+        "developmentOnly": true,
+        "requiresMetro": true,
+        "apiAddress": "http://127.0.0.1:4084/api/v1"
+      },
+      "commands": [
+        {
+          "label": "assemble-debug",
+          "command": "Set-Location -LiteralPath 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\app\\android'; & .\\gradlew.bat :app:assembleDebug --init-script 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\short-objects.gradle' --no-daemon --max-workers=2 '-Dorg.gradle.parallel=false' '-Dorg.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m' '-Pkotlin.compiler.execution.strategy=in-process' '-PreactNativeArchitectures=arm64-v8a'",
+          "startedAt": "2026-10-30T10:38:47.534Z",
+          "endedAt": "2026-10-30T10:42:42.574Z",
+          "exitCode": 0,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-38-47-162Z\\assemble-debug.log"
+        },
+        {
+          "label": "verify-signature",
+          "command": "& 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\sdk\\build-tools\\37.0.0\\apksigner.bat' verify --verbose 'C:\\workspace\\CT-Farm\\artifacts\\CT-Farm-Android-USB-Test.apk'",
+          "startedAt": "2026-10-30T10:42:42.636Z",
+          "endedAt": "2026-10-30T10:42:44.783Z",
+          "exitCode": 0,
+          "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-38-47-162Z\\verify-signature.log"
+        }
+      ]
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-services\\results.json",
+      "status": "ready",
+      "startedAt": "2026-10-30T10:20:47.568Z",
+      "endedAt": "2026-10-30T10:22:26.560Z"
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-services\\verification.json",
+      "status": "passed",
+      "startedAt": "2026-10-30T10:22:59.512Z",
+      "endedAt": "2026-10-30T10:22:59.617Z",
+      "nativeApi": {
+        "checks": 13,
+        "database": "native PostgreSQL 16",
+        "syntheticOnly": true,
+        "originalDatabaseAccessed": false,
+        "deviceCameraTested": false,
+        "deviceSecureStoreTested": false,
+        "rawLog": "verification\\ui-mobile\\phone-services\\api-regression.log"
+      },
+      "exitCode": 0
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-device\\2026-10-30T10-43-02-920Z\\results.json",
+      "status": "device_checked",
+      "measuredAt": "2026-10-30T10:43:02.920Z",
+      "installed": true,
+      "physicalAuthorized": 1,
+      "launchRequested": true
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-device\\app-proof.json",
+      "status": "not_captured",
+      "startedAt": "2026-10-30T10:43:28.649Z",
+      "endedAt": "2026-10-30T10:43:28.873Z",
+      "error": "시험 앱이 전면에 없어 촬영하지 않습니다."
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-device\\latest.json",
+      "status": "device_checked",
+      "measuredAt": "2026-10-30T10:43:02.920Z",
+      "installed": true,
+      "physicalAuthorized": 1,
+      "launchRequested": true
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-device\\user-confirmation.json",
+      "recordedAt": "2026-10-30T10:46:53.264Z",
+      "loginScreenVisible": true
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-apk\\2026-10-30T10-45-14-588Z\\results.json",
+      "status": "failed",
+      "startedAt": "2026-10-30T10:45:14.592Z",
+      "endedAt": "2026-10-30T10:45:14.909Z",
+      "exitCode": 1,
+      "error": "The input did not match the regular expression /android:allowBackup[^\\n]*0x0\\b/. Input:\n\n'N: android=http://schemas.android.com/apk/res/android (line=2)\\r\\n' +\n  '  E: manifest (line=2)\\r\\n' +\n  '    A: http://schemas.android.com/apk/res/android:versionCode(0x0101021b)=1\\r\\n' +\n  '    A: http://schemas.android.com/apk/res/android:versionName(0x0101021c)=\"0.1.0\" (Raw: \"0.1.0\")\\r\\n' +\n  '    A: http://schemas.android.com/apk/res/android:compileSdkVersion(0x01010572)=37\\r\\n' +\n  '    A: http://schemas.android.com/apk/res/android:compileSdkVersionCodename(0x01010573)=\"17\" (Raw: \"17\")\\r\\n' +\n  '    A: package=\"kr.ctfarm.mobile.phonetest\" (Raw: \"kr.ctfarm.mobile.phonetest\")\\r\\n' +\n  '    A: platformBuildVersionCode=37\\r\\n' +\n  '    A: platformBuildVersionName=17\\r\\n' +\n  '      E: uses-sdk (line=7)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:minSdkVersion(0x0101020c)=24\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:targetSdkVersion(0x01010270)=36\\r\\n' +\n  '      E: uses-permission (line=11)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.SYSTEM_ALERT_WINDOW\" (Raw: \"android.permission.SYSTEM_ALERT_WINDOW\")\\r\\n' +\n  '      E: uses-permission (line=12)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.INTERNET\" (Raw: \"android.permission.INTERNET\")\\r\\n' +\n  '      E: uses-permission (line=13)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.READ_EXTERNAL_STORAGE\" (Raw: \"android.permission.READ_EXTERNAL_STORAGE\")\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:maxSdkVersion(0x01010271)=32\\r\\n' +\n  '      E: uses-permission (line=16)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.VIBRATE\" (Raw: \"android.permission.VIBRATE\")\\r\\n' +\n  '      E: uses-permission (line=17)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.WRITE_EXTERNAL_STORAGE\" (Raw: \"android.permission.WRITE_EXTERNAL_STORAGE\")\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:maxSdkVersion(0x01010271)=32\\r\\n' +\n  '      E: queries (line=21)\\r\\n' +\n  '          E: intent (line=22)\\r\\n' +\n  '              E: action (line=23)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.action.VIEW\" (Raw: \"android.intent.action.VIEW\")\\r\\n' +\n  '              E: category (line=25)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.category.BROWSABLE\" (Raw: \"android.intent.category.BROWSABLE\")\\r\\n' +\n  '              E: data (line=27)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:scheme(0x01010027)=\"https\" (Raw: \"https\")\\r\\n' +\n  '          E: package (line=30)\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"host.exp.exponent\" (Raw: \"host.exp.exponent\")\\r\\n' +\n  '          E: intent (line=31)\\r\\n' +\n  '              E: action (line=32)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.action.OPEN_DOCUMENT_TREE\" (Raw: \"android.intent.action.OPEN_DOCUMENT_TREE\")\\r\\n' +\n  '          E: intent (line=34)\\r\\n' +\n  '              E: action (line=37)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.action.VIEW\" (Raw: \"android.intent.action.VIEW\")\\r\\n' +\n  '              E: data (line=39)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:mimeType(0x01010026)=\"*/*\" (Raw: \"*/*\")\\r\\n' +\n  '          E: intent (line=41)\\r\\n' +\n  '              E: action (line=44)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.media.action.IMAGE_CAPTURE\" (Raw: \"android.media.action.IMAGE_CAPTURE\")\\r\\n' +\n  '          E: intent (line=46)\\r\\n' +\n  '              E: action (line=49)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.media.action.ACTION_VIDEO_CAPTURE\" (Raw: \"android.media.action.ACTION_VIDEO_CAPTURE\")\\r\\n' +\n  '          E: intent (line=51)\\r\\n' +\n  '              E: action (line=52)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.action.GET_CONTENT\" (Raw: \"android.intent.action.GET_CONTENT\")\\r\\n' +\n  '              E: category (line=54)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.category.OPENABLE\" (Raw: \"android.intent.category.OPENABLE\")\\r\\n' +\n  '              E: data (line=56)\\r\\n' +\n  '                A: http://schemas.android.com/apk/res/android:mimeType(0x01010026)=\"*/*\" (Raw: \"*/*\")\\r\\n' +\n  '      E: uses-permission (line=60)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.CHANGE_WIFI_MULTICAST_STATE\" (Raw: \"android.permission.CHANGE_WIFI_MULTICAST_STATE\")\\r\\n' +\n  '      E: uses-permission (line=61)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.ACCESS_NETWORK_STATE\" (Raw: \"android.permission.ACCESS_NETWORK_STATE\")\\r\\n' +\n  '      E: uses-permission (line=66)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.ACCESS_LOCAL_NETWORK\" (Raw: \"android.permission.ACCESS_LOCAL_NETWORK\")\\r\\n' +\n  '      E: uses-permission (line=67)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.CAMERA\" (Raw: \"android.permission.CAMERA\")\\r\\n' +\n  '      E: uses-permission (line=68)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.USE_BIOMETRIC\" (Raw: \"android.permission.USE_BIOMETRIC\")\\r\\n' +\n  '      E: uses-permission (line=69)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.permission.USE_FINGERPRINT\" (Raw: \"android.permission.USE_FINGERPRINT\")\\r\\n' +\n  '      E: permission (line=71)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"kr.ctfarm.mobile.phonetest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\" (Raw: \"kr.ctfarm.mobile.phonetest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\")\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:protectionLevel(0x01010009)=0x00000002\\r\\n' +\n  '      E: uses-permission (line=75)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"kr.ctfarm.mobile.phonetest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\" (Raw: \"kr.ctfarm.mobile.phonetest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION\")\\r\\n' +\n  '      E: application (line=77)\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:theme(0x01010000)=@0x7f13000e\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:label(0x01010001)=@0x7f12001f\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:icon(0x01010002)=@0x7f100000\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"kr.ctfarm.mobile.phonetest.MainApplication\" (Raw: \"kr.ctfarm.mobile.phonetest.MainApplication\")\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:debuggable(0x0101000f)=true\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:allowBackup(0x01010280)=false\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:supportsRtl(0x010103af)=true\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:extractNativeLibs(0x010104ea)=false\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:fullBackupContent(0x010104eb)=@0x7f150009\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:usesCleartextTraffic(0x010104ec)=true\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:roundIcon(0x0101052c)=@0x7f100002\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:appComponentFactory(0x0101057a)=\"androidx.core.app.CoreComponentFactory\" (Raw: \"androidx.core.app.CoreComponentFactory\")\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:dataExtractionRules(0x0101063e)=@0x7f15000a\\r\\n' +\n  '        A: http://schemas.android.com/apk/res/android:enableOnBackInvokedCallback(0x0101066c)=false\\r\\n' +\n  '          E: meta-data (line=92)\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"expo.modules.updates.ENABLED\" (Raw: \"expo.modules.updates.ENABLED\")\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:value(0x01010024)=false\\r\\n' +\n  '          E: meta-data (line=95)\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"expo.modules.updates.ENABLE_BSDIFF_PATCH_SUPPORT\" (Raw: \"expo.modules.updates.ENABLE_BSDIFF_PATCH_SUPPORT\")\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:value(0x01010024)=true\\r\\n' +\n  '          E: meta-data (line=98)\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH\" (Raw: \"expo.modules.updates.EXPO_UPDATES_CHECK_ON_LAUNCH\")\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:value(0x01010024)=\"ALWAYS\" (Raw: \"ALWAYS\")\\r\\n' +\n  '          E: meta-data (line=101)\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS\" (Raw: \"expo.modules.updates.EXPO_UPDATES_LAUNCH_WAIT_MS\")\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:value(0x01010024)=0\\r\\n' +\n  '          E: activity (line=105)\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:theme(0x01010000)=@0x7f13025f\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"kr.ctfarm.mobile.phonetest.MainActivity\" (Raw: \"kr.ctfarm.mobile.phonetest.MainActivity\")\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:exported(0x01010010)=true\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:launchMode(0x0101001d)=2\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:screenOrientation(0x0101001e)=-1\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:configChanges(0x0101001f)=0x80000fb0\\r\\n' +\n  '            A: http://schemas.android.com/apk/res/android:windowSoftInputMode(0x0101022b)=0x00000010\\r\\n' +\n  '              E: intent-filter (line=113)\\r\\n' +\n  '                  E: action (line=114)\\r\\n' +\n  '                    A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.action.MAIN\" (Raw: \"android.intent.action.MAIN\")\\r\\n' +\n  '                  E: category (line=116)\\r\\n' +\n  '                    A: http://schemas.android.com/apk/res/android:name(0x01010003)=\"android.intent.category.LAUNCHER\" (Raw: \"android.intent.category.LAUNCHER\")\\r\\n' +\n  '              E: intent-filter (line=118)\\r\\n' +\n  '                  E: action (line=119)\\r\\n' +\n  '                    A: http://schemas.android.com/apk/res/android:name(0x01010003'... 18630 more characters\n"
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-apk\\2026-10-30T10-45-28-919Z\\results.json",
+      "status": "passed",
+      "startedAt": "2026-10-30T10:45:28.921Z",
+      "endedAt": "2026-10-30T10:45:29.225Z",
+      "exitCode": 0
+    },
+    {
+      "file": "verification\\ui-mobile\\phone-apk\\results.json",
+      "status": "failed",
+      "startedAt": "2026-10-30T10:44:50.998Z",
+      "endedAt": "2026-10-30T10:44:51.295Z",
+      "exitCode": 1,
+      "error": "Expected values to be strictly equal:\n\nundefined !== '24'\n"
+    }
+  ],
+  "androidTestApk": {
+    "file": "artifacts\\CT-Farm-Android-USB-Test.apk",
+    "bytes": 96557550,
+    "sha256": "80272d5c25b6f015d136957b3d53a37f01f750f1810375be0b404b2287f9d161",
+    "developmentOnly": true,
+    "requiresMetro": true,
+    "apiAddress": "http://127.0.0.1:4084/api/v1"
+  },
+  "privateAndroidSdkPrepared": true
+}

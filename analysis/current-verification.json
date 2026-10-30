@@ -1,0 +1,92 @@
+{
+  "at": "2026-10-29",
+  "runtime": "Node.js 24.22.1 / Linux",
+  "scope": "문서센터 개선 작업. DOM 검사는 실제 브라우저 검사가 아님.",
+  "results": [
+    {
+      "name": "prisma-generate",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "unit-api-121",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "unit-web-15",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "build-api-web",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "typecheck-web",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "web-http-13",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "portal-6",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "docs-api-links",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "docs-dom",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "mermaid-parse-8",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "sql-pglite-8",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "backup-unit-7",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "smtp-isolated",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "ps1-bom-17",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "npm-audit-zero",
+      "status": "성공",
+      "durationMs": null
+    },
+    {
+      "name": "real-browser-layout",
+      "status": "미검증",
+      "durationMs": null
+    },
+    {
+      "name": "windows-docker-native-services",
+      "status": "미검증",
+      "durationMs": null
+    }
+  ]
+}

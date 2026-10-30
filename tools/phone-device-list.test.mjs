@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {parseDevices} from './phone-device-list.mjs';
+test('ADB의 실제 공백 정렬 형식도 연결된 기기로 판정한다',()=>{const d=parseDevices('List of devices attached\nsynthetic-id           device product:test model:SM_TEST transport_id:1\n');assert.equal(d.length,1);assert.equal(d[0].status,'device');assert.equal(d[0].model,'SM_TEST');});
+test('탭 형식·미승인·에뮬레이터를 구별하며 헤더와 서버 메시지를 제외한다',()=>{const d=parseDevices('* daemon started successfully *\nList of devices attached\nsynthetic-one\tunauthorized\nemulator-5554\tdevice model:test\n');assert.equal(d.length,2);assert.equal(d[0].status,'unauthorized');assert.equal(d[1].emulator,true);});

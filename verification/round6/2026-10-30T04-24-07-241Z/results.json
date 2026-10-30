@@ -1,0 +1,101 @@
+{
+  "startedAt": "2026-10-30T04:24:07.244Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "web-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/web/tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-30T04:24:07.245Z",
+      "endedAt": "2026-10-30T04:24:12.462Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-24-07-241Z\\web-typecheck.log"
+    },
+    {
+      "name": "api-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-30T04:24:12.464Z",
+      "endedAt": "2026-10-30T04:24:16.530Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-24-07-241Z\\api-typecheck.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T04-24-07-241Z\\web-vitest.json"
+      ],
+      "startedAt": "2026-10-30T04:24:16.531Z",
+      "endedAt": "2026-10-30T04:24:17.961Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-24-07-241Z\\web.log"
+    },
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T04-24-07-241Z\\api-vitest.json"
+      ],
+      "startedAt": "2026-10-30T04:24:17.963Z",
+      "endedAt": "2026-10-30T04:24:23.802Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-24-07-241Z\\api.log"
+    }
+  ],
+  "endedAt": "2026-10-30T04:24:23.803Z"
+}

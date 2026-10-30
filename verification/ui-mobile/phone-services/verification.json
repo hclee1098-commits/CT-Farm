@@ -1,0 +1,31 @@
+{
+  "startedAt": "2026-10-30T10:22:59.512Z",
+  "command": "node tools/verify-phone-services.mjs",
+  "checks": [
+    {
+      "name": "isolated API readiness",
+      "startedAt": "2026-10-30T10:22:59.522Z",
+      "endedAt": "2026-10-30T10:22:59.604Z",
+      "status": 200
+    },
+    {
+      "name": "Metro status",
+      "startedAt": "2026-10-30T10:22:59.608Z",
+      "endedAt": "2026-10-30T10:22:59.615Z",
+      "status": 200
+    }
+  ],
+  "originalApiAccessed": false,
+  "nativeApi": {
+    "checks": 13,
+    "database": "native PostgreSQL 16",
+    "syntheticOnly": true,
+    "originalDatabaseAccessed": false,
+    "deviceCameraTested": false,
+    "deviceSecureStoreTested": false,
+    "rawLog": "verification\\ui-mobile\\phone-services\\api-regression.log"
+  },
+  "status": "passed",
+  "exitCode": 0,
+  "endedAt": "2026-10-30T10:22:59.617Z"
+}

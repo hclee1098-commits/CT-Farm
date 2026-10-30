@@ -1,0 +1,24 @@
+{
+  "name": "@starter/web",
+  "version": "6.0.0-rc.1",
+  "private": true,
+  "scripts": {
+    "dev": "node --require ../../tools/monitoring/web-http.cjs ../../node_modules/next/dist/bin/next dev",
+    "build": "next build",
+    "start": "node --require ../../tools/monitoring/web-http.cjs ../../node_modules/next/dist/bin/next start -p 3000",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "typescript": "^5.9.2",
+    "vitest": "5.0.5"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "results": [
+    {
+      "action": "STATUS",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "SECURE-LIFECYCLE.ps1",
+        "-Action",
+        "STATUS"
+      ],
+      "startedAt": "2026-10-30T04:15:13.057Z",
+      "endedAt": "2026-10-30T04:15:28.110Z",
+      "exitCode": 0,
+      "rawLog": "verification/round6/runtime-1793333712614/0-STATUS.log"
+    },
+    {
+      "action": "DIAGNOSE",
+      "command": [
+        "powershell.exe",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "SECURE-LIFECYCLE.ps1",
+        "-Action",
+        "DIAGNOSE"
+      ],
+      "startedAt": "2026-10-30T04:15:28.110Z",
+      "endedAt": "2026-10-30T04:15:42.636Z",
+      "exitCode": 0,
+      "rawLog": "verification/round6/runtime-1793333712614/1-DIAGNOSE.log"
+    }
+  ],
+  "responses": [
+    {
+      "url": "http://127.0.0.1:4000/health/ready",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:3000/starter",
+      "status": 200
+    }
+  ],
+  "containerIdsAndMountsUnchanged": true,
+  "before": [
+    "17b5b9fdb8559ea1231c3630dbc8204c231771ac78ab050df668325437530380 []",
+    "22bcc6aab5fc12535349217f1fd1189ca9d16c7a2fde853217c1c474694bce99 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssf872ba531d9a_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssf872ba531d9a_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "4483df27eb2cf3e742b552ff9d151e019ec4ac8f7002da506335eb4c5ff32b8e [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ss30d8e81aba22_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ss30d8e81aba22_redis_data/_data\",\"Type\":\"volume\"}]",
+    "5576fa1a08d591f10f00861a22ad7f63dd59489d5aab1760a623a9d4a3b1bbdb [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssf872ba531d9a_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssf872ba531d9a_redis_data/_data\",\"Type\":\"volume\"}]",
+    "577bfee03b9ff172f2536c3bc7a48fd504978d200f643daca2635609f87ba0c4 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ss30d8e81aba22_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ss30d8e81aba22_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "a2197fe6eadcc6efeb72563f3a2c4bfbfb20ba7c102a1451a1ae2c82d4b5b241 []",
+    "b85c31a1531bb1835bfb74800aa7cfb3f4834d75846bd647085cf9209aae47c0 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ct-farm_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ct-farm_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "bca89e4c29669b4c4ef009105947a9b9886f83503ab03543fbc2166f741b42bb [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssc3e94bbfb9e1_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssc3e94bbfb9e1_redis_data/_data\",\"Type\":\"volume\"}]",
+    "ddb55650364ebe61b7bcd5e28d5a4cba3ea23e80a1ae244c46728d94a6a35b52 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssc3e94bbfb9e1_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssc3e94bbfb9e1_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "eb4a4b1cae87954d236d6e04eed0a0cc4cca3b0d4ebd67b6c04ac2f6ebc92e45 [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ct-farm_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ct-farm_redis_data/_data\",\"Type\":\"volume\"}]"
+  ],
+  "after": [
+    "17b5b9fdb8559ea1231c3630dbc8204c231771ac78ab050df668325437530380 []",
+    "22bcc6aab5fc12535349217f1fd1189ca9d16c7a2fde853217c1c474694bce99 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssf872ba531d9a_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssf872ba531d9a_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "4483df27eb2cf3e742b552ff9d151e019ec4ac8f7002da506335eb4c5ff32b8e [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ss30d8e81aba22_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ss30d8e81aba22_redis_data/_data\",\"Type\":\"volume\"}]",
+    "5576fa1a08d591f10f00861a22ad7f63dd59489d5aab1760a623a9d4a3b1bbdb [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssf872ba531d9a_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssf872ba531d9a_redis_data/_data\",\"Type\":\"volume\"}]",
+    "577bfee03b9ff172f2536c3bc7a48fd504978d200f643daca2635609f87ba0c4 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ss30d8e81aba22_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ss30d8e81aba22_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "a2197fe6eadcc6efeb72563f3a2c4bfbfb20ba7c102a1451a1ae2c82d4b5b241 []",
+    "b85c31a1531bb1835bfb74800aa7cfb3f4834d75846bd647085cf9209aae47c0 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ct-farm_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ct-farm_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "bca89e4c29669b4c4ef009105947a9b9886f83503ab03543fbc2166f741b42bb [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssc3e94bbfb9e1_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssc3e94bbfb9e1_redis_data/_data\",\"Type\":\"volume\"}]",
+    "ddb55650364ebe61b7bcd5e28d5a4cba3ea23e80a1ae244c46728d94a6a35b52 [{\"Destination\":\"/var/lib/postgresql/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ssc3e94bbfb9e1_postgres_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ssc3e94bbfb9e1_postgres_data/_data\",\"Type\":\"volume\"}]",
+    "eb4a4b1cae87954d236d6e04eed0a0cc4cca3b0d4ebd67b6c04ac2f6ebc92e45 [{\"Destination\":\"/data\",\"Driver\":\"local\",\"Mode\":\"rw\",\"Name\":\"ct-farm_redis_data\",\"Propagation\":\"\",\"RW\":true,\"Source\":\"/var/lib/docker/volumes/ct-farm_redis_data/_data\",\"Type\":\"volume\"}]"
+  ],
+  "databaseReset": false,
+  "newMigrationApplied": false
+}

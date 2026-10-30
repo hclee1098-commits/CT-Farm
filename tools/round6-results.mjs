@@ -1,0 +1,56 @@
+// 실행 증거를 합치되 실패·미검증·과거 결과를 성공으로 바꾸지 않습니다.
+import fs from 'node:fs/promises';
+import path from 'node:path';
+const base='verification/round6',runs=[],staging=[];
+for(const item of await fs.readdir(base,{withFileTypes:true})){if(!item.isDirectory()||item.name.startsWith('approved-cycle-'))continue;const file=path.join(base,item.name,'results.json');try{const report=JSON.parse(await fs.readFile(file,'utf8'));if(Array.isArray(report.checks)&&report.environment)runs.push({file,...report});else if(item.name.startsWith('staging-')){const entry={directory:path.dirname(file),...report};for(const name of ['http','restart-rollback','cleanup'])try{entry[name]=JSON.parse(await fs.readFile(path.join(base,item.name,name+'.json'),'utf8'));}catch{}staging.push(entry);}}catch{}}
+runs.sort((a,b)=>a.startedAt.localeCompare(b.startedAt));staging.sort((a,b)=>(a.checks[0]?.startedAt||'').localeCompare(b.checks[0]?.startedAt||''));
+const latest={},failures=[];for(const run of runs)for(const check of run.checks){latest[check.name]={...check,resultFile:run.file};if(check.exitCode!==0){let log='';try{log=await fs.readFile(check.rawLog,'utf8');}catch{}failures.push({...check,resultFile:run.file,resolution:log.includes('ISOLATED_LIFECYCLE_FAILED')?'unresolved_isolated_development_launcher':'see_later_check_and_documented_fix'});}}
+const isolatedFailures=[];for(const name of await fs.readdir(base))if(name.startsWith('isolated-lifecycle-')&&name.endsWith('.log')){const data=JSON.parse(await fs.readFile(path.join(base,name),'utf8'));isolatedFailures.push({rawLog:path.join(base,name),startedAt:data.startedAt,endedAt:data.endedAt,exitCode:data.exitCode});}
+// JSON reporter는 오류 본문을 stdout에 쓰지 않습니다. 원문 파일까지 연결해 환경 실패를 숨기지 않습니다.
+for(const failure of failures){
+ if(!['api','web'].includes(failure.name))continue;
+ const reporterFile=path.join(path.dirname(failure.resultFile),failure.name+'-vitest.json');
+ try{
+  const reporter=JSON.parse(await fs.readFile(reporterFile,'utf8'));
+  const messages=reporter.testResults.flatMap(s=>s.assertionResults.filter(t=>t.status==='failed').flatMap(t=>t.failureMessages));
+  failure.failureDetailsFile=reporterFile;
+  if(messages.some(m=>m.includes('EPERM'))&&messages.some(m=>m.includes('fetch failed'))){
+   failure.observedFailureKinds=['local HTTP fetch failed','temporary filesystem junction EPERM'];
+   if(latest[failure.name]?.exitCode===0&&latest[failure.name].startedAt>failure.startedAt){
+    failure.resolution='passed later with local test permissions; restricted-environment failure retained';
+    failure.recheckResultFile=latest[failure.name].resultFile;
+   }
+  }
+ }catch{}
+}
+const native=latest['round6-native'];let recoveryPerformance=null;if(native?.exitCode===0){for(const line of (await fs.readFile(native.rawLog,'utf8')).split('\n'))try{const j=JSON.parse(line);if(j.recovery&&j.load)recoveryPerformance=j;}catch{}}
+if(recoveryPerformance)await fs.writeFile('verification/ct-farm-round6-recovery-performance.json',JSON.stringify({sourceLog:native.rawLog,...recoveryPerformance},null,2));
+let safety=null,audit=null;try{safety=JSON.parse(await fs.readFile('verification/ct-farm-round6-safety.json','utf8'));}catch{}try{const raw=JSON.parse(await fs.readFile(base+'/npm-audit.log','utf8'));audit={exitCode:raw.exitCode,rawLog:base+'/npm-audit.log',vulnerabilities:JSON.parse(raw.stdout).metadata?.vulnerabilities};}catch{}
+const report={workDateKorea:'2026-10-30',status:'partial_local_verified_with_unresolved_development_launcher_and_real_voice_tests',latestChecks:latest,allRunResults:runs.map(r=>r.file),failedCommands:failures,isolatedDevelopmentLauncher:{status:'failed',attempts:isolatedFailures,rootCause:'not determined; copied development web not ready, API ready',originalPortsUsed:false},originalControlTest:{stopStartCycle:'not executed after auto-review rejection',reason:'existing service interruption; isolated alternative attempted',runtimeReadOnlyLog:latest['round6-runtime']?.rawLog,ownershipFunctionsLog:base+'/original-ownership.log',note:'successful repair START and early failures are also in tool transcript; not all early commands had raw log files'},currentServiceResponses:safety?.responses,sourceDataSafetyEvidence:'verification/ct-farm-round6-safety.json',sourceSchemaExpanded:safety?!(safety.sourceNewAuthorColumns===0&&safety.sourceStillViewerOnly):null,sourceMigrationApplied:false,initialEightContainerIdsPreserved:safety?.initialEightContainerIdsPreserved,originalUploadsUnchanged:safety?.uploadAggregateMatchesRound5,sourceDatabaseAccess:'read-only schema metadata and normal service health; synthetic writes only in isolated databases',gitOperations:false,databaseReset:false,volumeDeletion:false,backups:safety?.backups,voice:{implementation:'browser Web Speech recognition request ko-KR, speechSynthesis, deterministic server dialogue and fixed actions',textHttpVerified:native?.exitCode===0,recordedAudioRecognitionVerified:false,realMobileMicrophoneVerified:false,actualSpeakerOutputVerified:false,actualBrowserFlowVerified:false,browserBlock:'Computer Use app approval timed out; no safety barrier bypass',rawAudioStoredByApp:false,actions:['diary fact with unknown product/amount/unit labels','water diary','TASK schedule','assigned task read','confirmed assigned task report with optional private photo'],sessionRetentionSeconds:1800,newSessionsPerUserHalfHour:20,automaticRetransmission:false},collaboration:{sourceRegistered:true,canonical:'apps/api/src/modules/farms/collaboration.core.ts',httpRouter:'apps/api/src/modules/farms/collaboration.controller.ts',migrationCandidate:'tools/round5/migrations/20261030020000_collaboration/migration.sql',nativeIsolatedVerified:native?.exitCode===0,originalDatabaseActivation:'pending separate approval and final schema/backup plan',roles:['OWNER','farm ADMIN','WORKER','VIEWER'],platformAdminBypass:false,legacyOwnerChecksRetained:true},stagingRuns:staging,recoveryPerformanceEvidence:'verification/ct-farm-round6-recovery-performance.json',recoveryScope:'new native database + copied synthetic uploads + separate same-host key path; NOT offsite/production RTO/RPO',performanceScope:'short isolated login/photo/sensor/dashboard run; separate API process WorkingSet; not sustained capacity',dependencyAudit:audit,remaining:['resolve isolated development web launch failure','real Korean microphone/recorded audio/speaker/mobile browser and accessibility/slow-network verification','complete multi-tab Cookie race verification','final Prisma schema/migration agreement and current consistent source backup before original database approval','complete collaborative crop/schedule editing and shared diary photos','offsite recovery, long-running load, real external SMTP/oncall and public TLS staging'],approvalTargets:['existing DB migration and collaborative activation only after reviewable final schema/backup/restore plan','actual cloud/production deployment','original STOP/START verification would interrupt existing services and needs explicit approval'],resumeDocument:'docs/09-CT-Farm-안내/6차-음성과-실행복구.md'};
+// 이후 사용자 승인을 받은 원본 제어 시험도 과거 거부·실패와 구분해 보존합니다.
+const approvedCycles=[];
+for(const entry of await fs.readdir(base,{withFileTypes:true}))if(entry.isDirectory()&&entry.name.startsWith('approved-cycle-')){
+ const file=path.join(base,entry.name,'results.json');try{const cycle=JSON.parse(await fs.readFile(file,'utf8'));if(cycle.endedAt)approvedCycles.push({file,...cycle});}catch{}
+}
+approvedCycles.sort((a,b)=>a.startedAt.localeCompare(b.startedAt));
+isolatedFailures.sort((a,b)=>a.startedAt.localeCompare(b.startedAt));
+const approved=approvedCycles.at(-1),isolatedLatest=isolatedFailures.at(-1);
+report.originalControlTest={...report.originalControlTest,earlierAutoReviewRejectionPreserved:true,approvedCycles};
+if(approved){
+ report.originalControlTest.stopStartCycle=approved.status;
+ report.originalControlTest.reason='user subsequently explicitly approved original STOP→START; see each raw command';
+ report.originalControlTest.latestApprovedResultFile=approved.file;
+ report.originalControlTest.note='first approved cycle failed web readiness, then recovered; latest cycle result governs current status';
+ if(approved.status==='passed')report.approvalTargets=report.approvalTargets.filter(t=>!t.startsWith('original STOP/START'));
+}
+if(isolatedLatest?.exitCode===0){
+ report.isolatedDevelopmentLauncher.status='passed_after_fix';
+ report.isolatedDevelopmentLauncher.rootCause='hidden Windows web launch inherited console input; explicit empty-file stdin resolved the tested path';
+ report.isolatedDevelopmentLauncher.failureAttemptsRetained=isolatedFailures.filter(a=>a.exitCode!==0).length;
+ report.remaining=report.remaining.filter(t=>t!=='resolve isolated development web launch failure');
+ report.status='partial_local_verified_real_voice_and_external_tests_pending';
+ for(const failure of failures)if(failure.resolution==='unresolved_isolated_development_launcher'){
+  failure.resolution='passed after explicit web stdin EOF; earlier failure retained';failure.recheckLog=isolatedLatest.rawLog;
+ }
+}
+await fs.writeFile('verification/ct-farm-round6-results.json',JSON.stringify(report,null,2));console.log(JSON.stringify({runs:runs.length,failedCommandsRetained:failures.length,approvedOriginalCycle:approved?.status||'not yet completed',isolatedLauncher:report.isolatedDevelopmentLauncher.status,latestNative:native?.passed,latestWeb:latest.web?.passed}));

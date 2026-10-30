@@ -1,0 +1,169 @@
+{
+  "startedAt": "2026-10-30T07:43:56.753Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "mobile-unit",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "--test",
+        "tools/test-mobile-client.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:43:56.754Z",
+      "endedAt": "2026-10-30T07:43:57.517Z",
+      "exitCode": 0,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\mobile-unit.log"
+    },
+    {
+      "name": "mobile-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:43:57.519Z",
+      "endedAt": "2026-10-30T07:44:03.461Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\mobile-type.log"
+    },
+    {
+      "name": "mobile-compat",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "install",
+        "--check"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:44:03.463Z",
+      "endedAt": "2026-10-30T07:44:05.061Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\mobile-compat.log"
+    },
+    {
+      "name": "android-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "android",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\android-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:44:05.064Z",
+      "endedAt": "2026-10-30T07:44:31.994Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\android-bundle.log"
+    },
+    {
+      "name": "ios-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "ios",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\ios-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:44:31.996Z",
+      "endedAt": "2026-10-30T07:44:58.202Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\ios-bundle.log"
+    },
+    {
+      "name": "web-build",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/ui-mobile-web-build.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:44:58.204Z",
+      "endedAt": "2026-10-30T07:45:30.955Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\web-build.log"
+    },
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\api-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:45:30.957Z",
+      "endedAt": "2026-10-30T07:45:43.695Z",
+      "exitCode": 0,
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\web-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:45:43.697Z",
+      "endedAt": "2026-10-30T07:45:47.860Z",
+      "exitCode": 0,
+      "passed": 34,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-43-56-748Z\\web.log"
+    }
+  ],
+  "endedAt": "2026-10-30T07:45:47.863Z"
+}

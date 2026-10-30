@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {sendSensorSample} from './sensor-client.mjs';
+const input={origin:'http://localhost:4000',sensorId:'12345678-1234-4234-8234-123456789012',token:'a'.repeat(64),sample:{sampleId:'sample-1',value:30,measuredAt:new Date().toISOString()}};
+test('통신 재시도에서 같은 sampleId와 본문을 유지합니다',async()=>{const bodies=[];let calls=0;await sendSensorSample(input,async(_url,options)=>{bodies.push(options.body);return new Response('',{status:++calls===1?503:201});},async()=>{});assert.equal(calls,2);assert.equal(bodies[0],bodies[1]);});
+test('인증 실패를 재전송하거나 리다이렉트를 따라가지 않습니다',async()=>{let calls=0;await assert.rejects(sendSensorSample(input,async(_url,options)=>{calls++;assert.equal(options.redirect,'error');return new Response('',{status:401});},async()=>{}));assert.equal(calls,1);});
+test('원격 HTTP와 잘못된 장치 키를 전송 전에 거부합니다',async()=>{await assert.rejects(sendSensorSample({...input,origin:'http://remote.example'}));await assert.rejects(sendSensorSample({...input,token:'bad'}));});

@@ -1,0 +1,141 @@
+{
+  "startedAt": "2026-10-30T04:33:50.866Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-30T04:33:50.867Z",
+      "endedAt": "2026-10-30T04:33:55.216Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-33-50-864Z\\api-typecheck.log"
+    },
+    {
+      "name": "api-build",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json"
+      ],
+      "startedAt": "2026-10-30T04:33:55.217Z",
+      "endedAt": "2026-10-30T04:33:59.359Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-33-50-864Z\\api-build.log"
+    },
+    {
+      "name": "platform",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-platform.mjs"
+      ],
+      "startedAt": "2026-10-30T04:33:59.360Z",
+      "endedAt": "2026-10-30T04:34:14.159Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "PGlite",
+      "passed": 30,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round6\\2026-10-30T04-33-50-864Z\\platform.log"
+    },
+    {
+      "name": "monitoring",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/monitoring.test.mjs"
+      ],
+      "startedAt": "2026-10-30T04:34:14.160Z",
+      "endedAt": "2026-10-30T04:34:16.250Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-33-50-864Z\\monitoring.log"
+    },
+    {
+      "name": "deployment",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/deployment/release.test.mjs"
+      ],
+      "startedAt": "2026-10-30T04:34:16.252Z",
+      "endedAt": "2026-10-30T04:34:16.807Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-33-50-864Z\\deployment.log"
+    },
+    {
+      "name": "docs-center",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs"
+      ],
+      "startedAt": "2026-10-30T04:34:16.808Z",
+      "endedAt": "2026-10-30T04:34:17.798Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-33-50-864Z\\docs-center.log"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "startedAt": "2026-10-30T04:34:17.799Z",
+      "endedAt": "2026-10-30T04:34:22.803Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-33-50-864Z\\docs.log"
+    }
+  ],
+  "endedAt": "2026-10-30T04:34:22.805Z"
+}

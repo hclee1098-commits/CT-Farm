@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-30T07:48:14.327Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "packaged-android",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-packaged-mobile.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:48:14.329Z",
+      "endedAt": "2026-10-30T07:48:55.828Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-48-14-314Z\\packaged-android.log"
+    }
+  ],
+  "endedAt": "2026-10-30T07:48:55.832Z"
+}

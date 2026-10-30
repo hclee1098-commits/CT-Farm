@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-30T01:39:12.338Z",
+  "environment": "isolated DB/HTTP, no full Redis middleware",
+  "database": "PGlite",
+  "connectionLimit": "1",
+  "cpuCount": 18,
+  "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+  "ramBytes": 16737873920,
+  "concurrency": 4,
+  "requests": 20,
+  "elapsedMs": 205,
+  "p50Ms": 28.445400000000518,
+  "p95Ms": 39.8139000000001,
+  "errors": 0,
+  "testHarnessRssBytes": 466161664,
+  "scope": "dashboard only; not login/upload/full production load"
+}

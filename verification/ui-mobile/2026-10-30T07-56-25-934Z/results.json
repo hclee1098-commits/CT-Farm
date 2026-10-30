@@ -1,0 +1,32 @@
+{
+  "startedAt": "2026-10-30T07:56:25.942Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "farm",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-farm.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:56:25.945Z",
+      "endedAt": "2026-10-30T07:56:31.530Z",
+      "exitCode": 0,
+      "database": "PGlite",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-56-25-934Z\\farm.log"
+    }
+  ],
+  "endedAt": "2026-10-30T07:56:31.532Z"
+}

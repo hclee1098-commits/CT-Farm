@@ -1,0 +1,6 @@
+{$SITE_DOMAIN} {
+  header Strict-Transport-Security "max-age=31536000"
+  @api path /api/v1/* /health/*
+  reverse_proxy @api api:4000
+  reverse_proxy web:3000
+}

@@ -1,0 +1,29 @@
+// 각 도구의 cwd와 데이터 격리를 고정합니다. 원본 서버 제어와 migration 적용은 없습니다.
+import fs from 'node:fs/promises';import path from 'node:path';import os from 'node:os';import {spawn} from 'node:child_process';
+const root=process.cwd(),dir=path.join(root,'verification/ui-mobile',new Date().toISOString().replace(/[:.]/g,'-'));await fs.mkdir(dir,{recursive:true});
+const node=process.execPath,mobile=path.join(root,'apps/mobile');
+const commands={
+ 'mobile-type':{cwd:mobile,args:['node_modules/typescript/bin/tsc','--noEmit']},
+ 'build-doctor':{cwd:root,args:['tools/mobile-build-doctor.mjs']},
+ 'packaged-android':{cwd:root,args:['tools/test-packaged-mobile.mjs']},
+ 'mobile-compat':{cwd:mobile,args:['node_modules/expo/bin/cli','install','--check']},
+ 'android-bundle':{cwd:mobile,args:['node_modules/expo/bin/cli','export','--platform','android','--output-dir',path.join(dir,'android-export')]},
+ 'ios-bundle':{cwd:mobile,args:['node_modules/expo/bin/cli','export','--platform','ios','--output-dir',path.join(dir,'ios-export')]},
+ 'android-prebuild':{cwd:mobile,args:['node_modules/expo/bin/cli','prebuild','--platform','android','--no-install']},
+ 'mobile-unit':{cwd:root,args:['--import','tsx','--test','tools/test-mobile-client.mts']},
+ 'design':{cwd:root,args:['--test','tools/test-design-system.mjs']},
+ 'mobile-native-api':{cwd:root,args:['--import','tsx','tools/test-mobile-api.mts']},
+ 'farm':{cwd:root,args:['--import','tsx','tools/test-farm.mts']},
+ 'web-build':{cwd:root,args:['tools/ui-mobile-web-build.mjs']},
+ 'web-type':{cwd:root,args:['node_modules/typescript/bin/tsc','-p','apps/web/tsconfig.json','--noEmit','--incremental','false']},
+ 'api-type':{cwd:root,args:['node_modules/typescript/bin/tsc','-p','apps/api/tsconfig.json','--noEmit']},
+ 'api':{cwd:root,args:['node_modules/vitest/vitest.mjs','run','--root','apps/api','--reporter=json','--outputFile',path.join(dir,'api-vitest.json')]},
+ 'web':{cwd:root,args:['node_modules/vitest/vitest.mjs','run','--root','apps/web','--reporter=json','--outputFile',path.join(dir,'web-vitest.json')]},
+ 'docs':{cwd:root,args:['--test','tools/docs-center.test.mjs','tools/dev-portal/docs.test.mjs']}
+};
+const selected=process.argv.slice(2);if(!selected.length||selected.some(n=>!commands[n]))throw Error('검사 이름을 명시하세요.');
+const report={startedAt:new Date().toISOString(),environment:{node:process.version,platform:process.platform,cpuCount:os.cpus().length,ramBytes:os.totalmem()},scope:'isolated synthetic API/database/uploads, isolated web output; no original database migration or process control',checks:[]};
+for(const name of selected){const c=commands[name],startedAt=new Date().toISOString(),env={...process.env,CI:'1',EXPO_NO_TELEMETRY:'1',NEXT_TELEMETRY_DISABLED:'1',EXPO_PUBLIC_API_URL:'https://staging.example.invalid/api/v1'};for(const key of Object.keys(env))if(/^(DATABASE_URL|FARM_TEST_DATABASE_URL|REDIS_URL|SMTP_|MAIL_|MONITOR_|UPLOAD_DIR)/.test(key))delete env[key];let output='';const child=spawn(node,c.args,{cwd:c.cwd,env,windowsHide:true,stdio:['ignore','pipe','pipe']});child.stdout.on('data',b=>output+=b);child.stderr.on('data',b=>output+=b);const exitCode=await new Promise(resolve=>{child.on('error',e=>{output+='\nSPAWN '+e.code;resolve(-1);});child.on('close',code=>resolve(code));});const rawLog=path.join(dir,name+'.log');await fs.writeFile(rawLog,output.replace(/(?:postgres(?:ql)?|redis):\/\/[^\s"']+/gi,'[connection redacted]').replace(/Bearer\s+[\w.-]+/g,'Bearer [redacted]'));let counts={passed:null,failed:null,skipped:null,unit:'command'};if(['api','web'].includes(name))try{const j=JSON.parse(await fs.readFile(path.join(dir,name+'-vitest.json'),'utf8'));counts={passed:j.numPassedTests,failed:j.numFailedTests,skipped:j.numPendingTests,unit:'test'};}catch{}else{const p=output.match(/(?:#|ℹ) pass (\d+)/),f=output.match(/(?:#|ℹ) fail (\d+)/),s=output.match(/(?:#|ℹ) skipped (\d+)/);if(p)counts={passed:+p[1],failed:f?+f[1]:null,skipped:s?+s[1]:null,unit:'test'};if(name==='mobile-native-api')counts={passed:(output.match(/^통과:/gm)||[]).length,failed:exitCode===0?0:null,skipped:0,unit:'group'};}
+if(name==='farm')counts={passed:(output.match(/^통과:/gm)||[]).length,failed:exitCode===0?0:null,skipped:0,unit:'group'};
+report.checks.push({name,command:[node,...c.args],cwd:c.cwd,startedAt,endedAt:new Date().toISOString(),exitCode,database:name==='mobile-native-api'?'native PostgreSQL 16':name==='farm'?'PGlite':'not applicable / see raw log',...counts,rawLog:path.relative(root,rawLog)});await fs.writeFile(path.join(dir,'results.json'),JSON.stringify(report,null,2));console.log(name+': '+exitCode+' '+JSON.stringify(counts));}
+report.endedAt=new Date().toISOString();await fs.writeFile(path.join(dir,'results.json'),JSON.stringify(report,null,2));console.log(path.relative(root,path.join(dir,'results.json')));process.exitCode=report.checks.some(c=>c.exitCode!==0)?1:0;

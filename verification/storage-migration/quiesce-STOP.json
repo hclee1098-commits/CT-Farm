@@ -1,0 +1,9 @@
+{
+    "phoneProcessCount":  2,
+    "action":  "STOP",
+    "dockerControlled":  false,
+    "startedAt":  "2026-10-30T11:19:30.9494785Z",
+    "gitExecuted":  false,
+    "endedAt":  "2026-10-30T11:19:39.1010063Z",
+    "status":  "ctfarm_writers_stopped_docker_preserved"
+}

@@ -1,0 +1,28 @@
+/* 자동 생성: packages/design-tokens/tokens.json */
+.starter-root {
+  --ct-background: #f6f8f5;
+  --ct-surface: #ffffff;
+  --ct-text: #172d24;
+  --ct-muted: #51675c;
+  --ct-primary: #176c45;
+  --ct-primaryStrong: #105232;
+  --ct-soft: #eaf3ec;
+  --ct-border: #cbd9cf;
+  --ct-danger: #a12d2d;
+  --ct-warning: #875800;
+  --ct-touch: 56px;
+}
+@media (prefers-color-scheme: dark) {
+ .starter-root[data-theme="system"] {
+  --ct-background: #101d17;
+  --ct-surface: #192a21;
+  --ct-text: #eff7f0;
+  --ct-muted: #b3c9bb;
+  --ct-primary: #9bdfb4;
+  --ct-primaryStrong: #b7efca;
+  --ct-soft: #253f30;
+  --ct-border: #486351;
+  --ct-danger: #ffb4b4;
+  --ct-warning: #f4ce80;
+ }
+}

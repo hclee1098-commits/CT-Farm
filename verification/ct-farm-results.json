@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Seoul",
+  "overallStatus": "in_progress_external_integrations_unverified",
+  "sourceBackup": "backup/ct-farm-round2-before-20261029-165650.zip",
+  "sourceBackupSha256": "B70AAB5E1FD1DDAEE982DABEAFC9A7383CBAFD10E9CEB5712F35734AA17B53FD",
+  "migrationEvidence": "verification/ct-farm-round2-migration.json",
+  "originalDataPreserved": true,
+  "checks": [
+    {"command":"npm test","status":"passed","api":157,"web":18,"failed":0,"skipped":0},
+    {"command":"npm run build","status":"passed","scope":"API TypeScript and Next.js production build"},
+    {"command":"npm run test:farm","status":"passed","groups":27,"scope":"PGlite + actual Prisma/HTTP; mock external AI and payment provider"},
+    {"command":"node tools/verify-farm-postgres.mjs --test-operations","status":"passed","groups":27,"scope":"native PostgreSQL isolated restore + migration + frozen old-column fingerprints + actual Prisma/HTTP"},
+    {"command":"npm run test:smoke","status":"passed","pages":15},
+    {"command":"npm run test:portal","status":"passed","tests":7},
+    {"command":"npm run test:docs","status":"passed","tests":2},
+    {"command":"npm run test:monitoring","status":"passed","tests":6,"setup":"OPENSSL_BIN explicitly points to installed Git OpenSSL"},
+    {"command":"npm run test:deployment","status":"passed","tests":4,"realDeployment":false},
+    {"command":"npm run test:sql","status":"passed","checks":8},
+    {"command":"npm run test:backup","status":"passed","checks":7},
+    {"command":"node --test tools/sensor-client.test.mjs","status":"passed","tests":3},
+    {"command":"npm run check:source","status":"passed","powershellBomFiles":5},
+    {"command":"npm audit","status":"passed","knownVulnerabilities":0}
+  ],
+  "windowsLinkCoverage": "On file symlink EPERM only, test real NTFS junction rejection; keep original symlink path on capable environments and hardlink tests. No skip. Windows file symlink creation still requires separate privileged coverage.",
+  "browserChecks": [
+    "Naver key missing shows explicit configuration error and retains coordinate drawing",
+    "Reference consultation saved with source navigation links and zero model tokens",
+    "Chemical/fertilizer question marked NEEDS_REVIEW without a dosage answer",
+    "Advice task button disabled until explicit acknowledgement; creates schedule only",
+    "Local payment simulator intent uses saved server order total",
+    "Simulated approval then full refund cancels reserved order and restores stock once"
+  ],
+  "browserEvidence": ["verification/ct-farm-round2-consultation.png","verification/ct-farm-round2-payment.png","verification/ct-farm-round2-final-state.png"],
+  "finalRuntimePaymentMode":"DISABLED",
+  "finalRuntimeBrowserVerified":true,
+  "paidModelCallsPerformed": false,
+  "realPaymentProviderCallsPerformed": false,
+  "livePaymentsEnabled": false,
+  "physicalDeviceControlEnabled": false,
+  "unverified": [
+    "Naver authentication, real SDK tiles and Farmmap WMS/WFS",
+    "Licensed detailed agronomy corpus and evaluated retrieval with document-level evidence",
+    "Real configured OpenAI model, citation and safety evaluations, monetary spend controls",
+    "Physical sensors, calibration, MQTT and remote-control approval/interlock implementation",
+    "Toss test credentials, hosted checkout, verified webhooks, partial refunds, manual recovery and settlement",
+    "Windows native file symlink in a capable privileged environment",
+    "Full mobile, assistive technology, load, retention, offsite DB+uploads recovery and production deployment"
+  ],
+  "resumeDocument":"docs/CT-Farm-개발현황.md"
+}

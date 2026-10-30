@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Seoul",
+  "scope": "SECURE STARTER V6 shared foundation and CT-Farm regression",
+  "status": "local_verified_production_validation_incomplete",
+  "sourceBackup": "backup/ct-farm-foundation-before-20261029-211418.zip",
+  "sourceBackupSha256": "A76BB899DA97392B0C1AB68C727DE5FD40B83874FC5134A23F43327EC3D95EC3",
+  "databaseEvidence": "verification/ct-farm-foundation-postgres.json",
+  "runtimeEvidence": "verification/ct-farm-foundation-runtime.json",
+  "sourceDatabaseReset": false,
+  "appliedMigrationsToSourceDatabase": false,
+  "dockerVolumesDeleted": false,
+  "committedOrPushed": false,
+  "changes": [
+    "SECURE-LIFECYCLE.ps1: START alias, STATUS, RESTART, DIAGNOSE; ownership preflight before stopping dependencies; fail closed on legacy cmd/npm-only ownership",
+    "tools/test-lifecycle.ps1: nine ownership and diagnosis privacy boundaries on Windows PowerShell 5.1",
+    "tools/isolated-redis.mjs: test-only Docker Redis, localhost random port, tmpfs, no persistent/anonymous volume, no image pull",
+    "tools/test-platform.mjs and tools/test-mail.mts: optional Docker Redis and signalCode-aware child cleanup",
+    "tools/dev-portal/docs.test.mjs: preserve Next-generated AGENTS.md as instructions rather than user documentation",
+    "package.json: test:lifecycle script",
+    "docs center allowlist, documentation tests and Korean foundation verification guide"
+  ],
+  "checks": [
+    {"command":"npm test","status":"passed","api":157,"web":18},
+    {"command":"npm run test:platform","status":"passed","checks":29,"scope":"isolated PGlite, actual Prisma/HTTP, actual Docker Redis; exit code zero"},
+    {"command":"npm run test:mail","status":"passed","checks":8,"scope":"MemoryMailTransport; actual DB/HTTP; no external recipient"},
+    {"command":"npm run test:smtp","status":"passed","scope":"Nodemailer to isolated local TCP SMTP receiver"},
+    {"command":"node tools/verify-farm-postgres.mjs --test-operations","status":"passed","groups":27,"preservedTables":20,"scope":"encrypted native dump, isolated pg_restore, migration and schema comparison, preserved old-column fingerprints"},
+    {"command":"npm run test:sql","status":"passed","checks":8},
+    {"command":"npm run test:backup","status":"passed","checks":7},
+    {"command":"npm run test:monitoring","status":"passed","tests":6,"setup":"explicit installed Git OpenSSL path; local actual TLS"},
+    {"command":"npm run test:deployment","status":"passed","tests":4,"actualRemoteDeployment":false},
+    {"command":"npm run test:portal","status":"passed","tests":7},
+    {"command":"npm run test:lifecycle","status":"passed","checks":9},
+    {"command":"powershell.exe -File tools/verify-powershell.ps1","status":"passed","version":"5.1","bomFiles":6},
+    {"command":"npm run check:source","status":"passed"},
+    {"command":"npm run build","status":"passed","scope":"API and Next.js production build"},
+    {"command":"npm audit","status":"passed","knownVulnerabilities":0},
+    {"command":"npm run test:docs-center","status":"passed","tests":4,"publicGuides":10},
+    {"command":"npm run test:docs","status":"passed","tests":2},
+    {"command":"node --test tools/docs-center.http.test.mjs","status":"passed","tests":1},
+    {"command":"npm run test:smoke","status":"passed","pages":15},
+    {"command":"npm run docs:index && npm run docs:check","status":"passed","files":338,"documentLinks":922,"scope":"static hash and path consistency"}
+  ],
+  "lifecycleActualChecks": [
+    "STATUS and DIAGNOSE on live services without runtime ownership: reads state without claiming manual servers",
+    "RESTART while manual server holds API port: rejects before stopping DB or Redis",
+    "START creates owned API, web and collector entries",
+    "duplicate START preserves API 10296, web 14364 and collector 15120 at that checkpoint",
+    "RESTART stops owned servers and only project Docker services, then starts successfully",
+    "STOP releases owned server ports and preserves Docker containers and volumes",
+    "final START restores managed live development services",
+    "collector heartbeat check exits zero; final readiness, web and docs return 200",
+    "all eight initially running container IDs preserved; no test Redis containers remain"
+  ],
+  "resolvedFailures": [
+    "Windows Redis executable missing: added isolated Docker fallback and reran account/platform integrations successfully",
+    "platform test printed success then hung awaiting exit of an already SIGTERM-exited child: check signalCode and rerun to exit zero",
+    "Next dev generated apps/web/AGENTS.md and documentation placement test failed: retain agent instructions and exclude only that instruction filename from user-doc collection"
+  ],
+  "productionGaps": [
+    "Actual Linux staging and production deployment, registry promotion, real operating rollback",
+    "Public HTTPS certificate issuance/renewal, production cookie/proxy/firewall settings and secret rotation",
+    "Offsite restore combining DB, uploads and key availability; measured RTO/RPO and retention policy execution",
+    "External SMTP inbox delivery and external on-call SMS/email/messenger alert delivery",
+    "HA, multi-instance concurrency/load, long-running failures, accessibility and broad Windows/device coverage",
+    "Privileged Windows native file symlink coverage; junction coverage is distinct",
+    "Previously documented real map, AI, sensor and payment provider integrations remain outside verified scope"
+  ],
+  "resumeDocument": "docs/CT-Farm-개발현황.md",
+  "publicGuide": "docs/09-CT-Farm-안내/공통기반-검증.md"
+}

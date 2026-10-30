@@ -1,0 +1,6 @@
+import {it,expect} from 'vitest';
+import {readFieldDraft,saveFieldDraft,clearFieldDrafts,removeFieldDraft} from './field-drafts';
+function store(){const map=new Map<string,string>();return {get length(){return map.size;},key:(i:number)=>[...map.keys()][i]??null,getItem:(k:string)=>map.get(k)??null,setItem:(k:string,v:string)=>{map.set(k,v);},removeItem:(k:string)=>{map.delete(k);}};}
+const data={farmId:'farm',date:'2026-10-30',kind:'물주기',memo:'합성 메모',pending:{signature:'signature',key:'12345678-1234-1234-1234-123456789abc'}};
+it('사용자별 초안·재시도 키 복구와 다른 계정 격리',()=>{const s=store();saveFieldDraft(s,'a','diary',data,100);expect(readFieldDraft(s,'a','diary',101)).toEqual(data);expect(readFieldDraft(s,'b','diary',101)).toBeNull();clearFieldDrafts(s,'b');expect(readFieldDraft(s,'a','diary',101)).toBeNull();});
+it('만료·저장 성공·로그아웃 정리와 다른 저장소 키 보존',()=>{const s=store();s.setItem('unrelated','preserve');saveFieldDraft(s,'a','diary',data,100);expect(readFieldDraft(s,'a','diary',100+86400000)).toBeNull();saveFieldDraft(s,'a','diary',data);removeFieldDraft(s,'a','diary');expect(s.length).toBe(1);saveFieldDraft(s,'a','schedule',data);clearFieldDrafts(s);expect(s.getItem('unrelated')).toBe('preserve');expect(s.length).toBe(1);});

@@ -1,0 +1,51 @@
+{
+  "startedAt": "2026-10-30T09:36:26.081Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "mobile-unit",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "--test",
+        "tools/test-mobile-client.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:36:26.082Z",
+      "endedAt": "2026-10-30T09:36:27.182Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 11,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\mobile-unit.log"
+    },
+    {
+      "name": "mobile-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T09:36:27.183Z",
+      "endedAt": "2026-10-30T09:36:31.221Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-36-26-076Z\\mobile-type.log"
+    }
+  ],
+  "endedAt": "2026-10-30T09:36:31.222Z"
+}

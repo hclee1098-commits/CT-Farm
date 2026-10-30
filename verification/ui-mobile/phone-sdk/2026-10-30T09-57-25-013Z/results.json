@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-30T09:57:25.011Z",
+  "sdkLocation": "project-private .starter-state/phone-test/sdk",
+  "existingSystemSdkModified": false,
+  "newLicenseAcceptedAutomatically": false,
+  "commands": [
+    {
+      "label": "install-sdk",
+      "startedAt": "2026-10-30T09:57:25.213Z",
+      "endedAt": "2026-10-30T09:58:54.847Z",
+      "exitCode": 0,
+      "rawLog": "verification\\ui-mobile\\phone-sdk\\2026-10-30T09-57-25-013Z\\install-sdk.log"
+    }
+  ],
+  "commandLineTools": {
+    "url": "https://dl.google.com/android/repository/commandlinetools-win-15859902_latest.zip",
+    "sha256": "90ae805d20434428bffcb699c290860f19bb5f66a67e6b330067e3de801fb04a",
+    "verified": true
+  },
+  "existingLicenseFilesReused": 2,
+  "requestedPackages": [
+    "platform-tools",
+    "platforms;android-37.0",
+    "build-tools;37.0.0",
+    "ndk;27.1.12297006",
+    "cmake;3.22.1"
+  ],
+  "status": "installed",
+  "endedAt": "2026-10-30T09:58:54.851Z"
+}

@@ -1,0 +1,38 @@
+{
+  "startedAt": "2026-10-30T10:20:29.777Z",
+  "variant": "USB development test",
+  "applicationId": "kr.ctfarm.mobile.phonetest",
+  "originalAppIdModified": false,
+  "originalSdkModified": false,
+  "databaseAccessed": false,
+  "commands": [
+    {
+      "label": "prebuild",
+      "command": "& 'C:\\Program Files\\nodejs\\node.exe' 'node_modules/expo/bin/cli' prebuild --platform android --no-install",
+      "startedAt": "2026-10-30T10:20:29.847Z",
+      "endedAt": "2026-10-30T10:20:35.810Z",
+      "exitCode": 0,
+      "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-20-29-769Z\\prebuild.log"
+    },
+    {
+      "label": "assemble-debug",
+      "command": "Set-Location -LiteralPath 'C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\app\\android'; & .\\gradlew.bat :app:assembleDebug --no-daemon --max-workers=2 '-Dorg.gradle.parallel=false' '-Dorg.gradle.jvmargs=-Xmx2048m -XX:MaxMetaspaceSize=512m' '-Pkotlin.compiler.execution.strategy=in-process' '-PreactNativeArchitectures=arm64-v8a'",
+      "startedAt": "2026-10-30T10:20:36.110Z",
+      "endedAt": "2026-10-30T10:28:27.208Z",
+      "exitCode": 1,
+      "rawLog": "verification\\ui-mobile\\phone-build\\2026-10-30T10-20-29-769Z\\assemble-debug.log"
+    }
+  ],
+  "disk": {
+    "freeBytes": 5508349952,
+    "minimumGiB": 3,
+    "cachedBuild": true
+  },
+  "gradle": {
+    "version": "9.4.1",
+    "distributionSha256": "2ab2958f2a1e51120c326cad6f385153bb11ee93b3c216c5fccebfdfbb7ec6cb"
+  },
+  "status": "failed",
+  "error": "assemble-debug failed: verification\\ui-mobile\\phone-build\\2026-10-30T10-20-29-769Z\\assemble-debug.log",
+  "endedAt": "2026-10-30T10:28:27.228Z"
+}

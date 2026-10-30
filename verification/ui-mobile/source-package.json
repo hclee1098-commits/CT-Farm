@@ -1,0 +1,8 @@
+{
+  "sourceDirectory": "C:\\workspace\\CT-Farm\\verification\\runtime\\ui-mobile-source-d70c0475e9e0",
+  "artifact": "artifacts/ct-farm-mobile-source-20261030.zip",
+  "sha256": "200e396e6b5099a5e40d93f7a3e606246cb7eaa26c87de5b13e056eb94dcb3ea",
+  "privateEnvironmentIncluded": false,
+  "nativeBinary": false,
+  "sharedTokenCopy": "generated from canonical JSON; original workspace app keeps shared references"
+}

@@ -1,0 +1,78 @@
+{
+  "startedAt": "2026-10-30T03:47:42.999Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "round6-native",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/round6-native.mts"
+      ],
+      "startedAt": "2026-10-30T03:47:43.000Z",
+      "endedAt": "2026-10-30T03:47:55.011Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "native PostgreSQL 16",
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round6\\2026-10-30T03-47-42-997Z\\round6-native.log"
+    },
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T03-47-42-997Z\\api-vitest.json"
+      ],
+      "startedAt": "2026-10-30T03:47:55.013Z",
+      "endedAt": "2026-10-30T03:48:01.013Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T03-47-42-997Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T03-47-42-997Z\\web-vitest.json"
+      ],
+      "startedAt": "2026-10-30T03:48:01.014Z",
+      "endedAt": "2026-10-30T03:48:02.542Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 26,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T03-47-42-997Z\\web.log"
+    }
+  ],
+  "endedAt": "2026-10-30T03:48:02.543Z"
+}

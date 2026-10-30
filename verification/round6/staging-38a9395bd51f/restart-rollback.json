@@ -1,0 +1,9 @@
+{
+  "restartVerified": true,
+  "refreshAfterRestart": 200,
+  "rollbackImageId": "sha256:44eee1c3af4a62938cf913645bead5310c0c56655926ecdfef7afebe3ff1c0b8",
+  "rollforwardImageId": "sha256:bf82dc0ac18b40d39b0c77416e2f0b442a24f35a8eecc179c0df99e9905aebc2",
+  "authenticatedMeAfterBoth": 200,
+  "databaseRolledBack": false,
+  "scope": "local compatible schema only, not production rollback"
+}

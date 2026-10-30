@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-29T14:30:53.264Z",
+  "image": "ct-farm-round4-api:local",
+  "platform": "linux",
+  "uid": "1000",
+  "readOnlyRoot": true,
+  "capabilitiesDropped": true,
+  "nativePostgres": true,
+  "isolatedRedis": true,
+  "readiness": true,
+  "elapsedSeconds": 3.503,
+  "appEnvironment": "STAGING",
+  "scope": "local Linux API container only; no real domain, TLS, web container or production rollout",
+  "httpsVerified": false
+}

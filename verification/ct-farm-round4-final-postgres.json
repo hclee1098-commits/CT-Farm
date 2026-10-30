@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-29T14:29:53.672Z",
+  "backup": "backup\\ct-farm-postgres-1793284183223.ssbk",
+  "restoreDatabase": "ct_farm_verify_ee31235a92a4",
+  "nativePostgres": true,
+  "isolatedRestore": true,
+  "migrationDeploy": true,
+  "schemaDiff": false,
+  "preservedTables": 22,
+  "appliedToExisting": false,
+  "uploadsIncluded": false,
+  "restoredFiles": 0,
+  "recoveryDirectory": null,
+  "recoverySeconds": 10.45,
+  "consistency": "database snapshot only",
+  "fileApiVerified": false,
+  "operationsIntegration": true,
+  "totalDrillSeconds": 21.174
+}

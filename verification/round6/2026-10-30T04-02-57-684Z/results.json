@@ -1,0 +1,32 @@
+{
+  "startedAt": "2026-10-30T04:02:57.686Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "round6-native",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/round6-native.mts"
+      ],
+      "startedAt": "2026-10-30T04:02:57.687Z",
+      "endedAt": "2026-10-30T04:06:31.320Z",
+      "exitCode": 1,
+      "status": "failed",
+      "database": "native PostgreSQL 16",
+      "passed": 10,
+      "failed": null,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round6\\2026-10-30T04-02-57-684Z\\round6-native.log"
+    }
+  ],
+  "endedAt": "2026-10-30T04:06:31.323Z"
+}

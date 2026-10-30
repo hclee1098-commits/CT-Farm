@@ -1,0 +1,12 @@
+# 명시적으로 실행하는 로컬 테스트 전용 서비스. 실제 발송을 하지 않습니다.
+services:
+  mailpit:
+    image: axllent/mailpit:v1.27.8
+    ports:
+      - "127.0.0.1:1025:1025"
+      - "127.0.0.1:8025:8025"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]

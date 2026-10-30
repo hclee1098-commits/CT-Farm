@@ -1,0 +1,10 @@
+// 자동 생성: packages/design-tokens/icons.json
+export const navPaths={
+  "home": "m3 10 9-7 9 7v10H3V10m6 10v-7h6v7",
+  "farm": "M12 21V9m0 5C4 14 3 9 3 4c6 0 9 3 9 8m0-3c0-5 4-7 9-7 0 5-2 9-9 9",
+  "diary": "M5 3h14v18H5V3m4 5h6m-6 4h6m-6 4h4",
+  "calendar": "M4 5h16v16H4V5m0 5h16M8 3v4m8-4v4M8 14h2m4 0h2m-8 3h2",
+  "menu": "M4 6h16M4 12h16M4 18h16",
+  "bell": "M6 9a6 6 0 0 1 12 0v6l2 3H4l2-3V9m4 12h4",
+  "voice": "M9 5a3 3 0 0 1 6 0v7a3 3 0 0 1-6 0V5m-3 6v1a6 6 0 0 0 12 0v-1m-6 7v4m-3 0h6"
+} as const;

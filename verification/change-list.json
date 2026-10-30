@@ -1,0 +1,374 @@
+[
+  {
+    "status": "추가",
+    "path": ".dockerignore"
+  },
+  {
+    "status": "추가",
+    "path": ".github/workflows/verify.yml"
+  },
+  {
+    "status": "수정",
+    "path": ".gitignore"
+  },
+  {
+    "status": "수정",
+    "path": "README-START-HERE.md"
+  },
+  {
+    "status": "추가",
+    "path": "README.md"
+  },
+  {
+    "status": "수정",
+    "path": "SECURE STARTER 사용설명서.md"
+  },
+  {
+    "status": "수정",
+    "path": "SECURE-LIFECYCLE.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "SECURE-TEST.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "SECURITY-REVISION.json"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/.env.example"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/package.json"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/prisma/migrations/20261028180000_v6_security/migration.sql"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/prisma/schema.prisma"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/bootstrap/app.http.test.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/bootstrap/app.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/common/auth.middleware.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/config/env.schema.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/infrastructure/logger.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/infrastructure/rate-limit.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/auth/auth.dto.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/auth/auth.repository.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/auth/auth.service.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/auth/auth.session-version.test.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/auth/mfa.test.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/auth/mfa.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/files/files.controller.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/files/files.repository.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/files/files.service.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/files/files.upload.test.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/files/image.processing.test.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/files/image.processing.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/notes/notes.controller.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/notes/notes.dto.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/notes/notes.idempotency.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/api/src/modules/notes/notes.repository.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/platform/account.service.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/platform/admin.controller.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/platform/mail.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/src/modules/platform/platform.controller.ts"
+  },
+  {
+    "status": "추가",
+    "path": "apps/api/vitest.config.mts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/next.config.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/package.json"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/src/app/starter/_components/Shell.tsx"
+  },
+  {
+    "status": "추가",
+    "path": "apps/web/src/app/starter/account/page.tsx"
+  },
+  {
+    "status": "추가",
+    "path": "apps/web/src/app/starter/admin/page.tsx"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/src/app/starter/login/page.tsx"
+  },
+  {
+    "status": "추가",
+    "path": "apps/web/src/app/starter/notifications/page.tsx"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/src/shared/auth/auth-client.ts"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/src/shared/auth/auth-provider.tsx"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/src/shared/ui/index.tsx"
+  },
+  {
+    "status": "수정",
+    "path": "apps/web/src/shared/ui/ui.css"
+  },
+  {
+    "status": "추가",
+    "path": "apps/web/src/shared/ui/ui.test.tsx"
+  },
+  {
+    "status": "추가",
+    "path": "apps/web/vitest.config.mts"
+  },
+  {
+    "status": "추가",
+    "path": "compose.production.yaml"
+  },
+  {
+    "status": "수정",
+    "path": "compose.yaml"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part10.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part11.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part2.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part3.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part4.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part5.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part6.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part7.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part8.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter-part9.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/create-starter.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "create-starter-ps1-shell-script/repair-starter-part8.ps1"
+  },
+  {
+    "status": "추가",
+    "path": "deploy/Caddyfile"
+  },
+  {
+    "status": "추가",
+    "path": "deploy/Dockerfile.api"
+  },
+  {
+    "status": "추가",
+    "path": "deploy/Dockerfile.migrate"
+  },
+  {
+    "status": "추가",
+    "path": "deploy/Dockerfile.web"
+  },
+  {
+    "status": "추가",
+    "path": "deploy/production.env.example"
+  },
+  {
+    "status": "추가",
+    "path": "docs/API.md"
+  },
+  {
+    "status": "추가",
+    "path": "docs/OPERATIONS.md"
+  },
+  {
+    "status": "추가",
+    "path": "docs/SECURITY.md"
+  },
+  {
+    "status": "추가",
+    "path": "docs/V6-REPORT.md"
+  },
+  {
+    "status": "추가",
+    "path": "docs/WINDOWS.md"
+  },
+  {
+    "status": "추가",
+    "path": "docs/openapi.json"
+  },
+  {
+    "status": "수정",
+    "path": "package-lock.json"
+  },
+  {
+    "status": "수정",
+    "path": "package.json"
+  },
+  {
+    "status": "추가",
+    "path": "tools/backup.mjs"
+  },
+  {
+    "status": "추가",
+    "path": "tools/bootstrap-admin.ts"
+  },
+  {
+    "status": "수정",
+    "path": "tools/build-launchers.ps1"
+  },
+  {
+    "status": "추가",
+    "path": "tools/check-files.ts"
+  },
+  {
+    "status": "추가",
+    "path": "tools/license-inventory.mjs"
+  },
+  {
+    "status": "수정",
+    "path": "tools/smoke-web.mjs"
+  },
+  {
+    "status": "추가",
+    "path": "tools/test-backup.mjs"
+  },
+  {
+    "status": "추가",
+    "path": "tools/test-mail.mts"
+  },
+  {
+    "status": "추가",
+    "path": "tools/test-migrations.mjs"
+  },
+  {
+    "status": "추가",
+    "path": "tools/test-platform.mjs"
+  },
+  {
+    "status": "수정",
+    "path": "tools/verify-powershell.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "tools/verify-starter.ps1"
+  },
+  {
+    "status": "수정",
+    "path": "검증결과.md"
+  }
+]

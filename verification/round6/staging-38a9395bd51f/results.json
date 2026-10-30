@@ -1,0 +1,184 @@
+{
+  "project": "ctfarm-round5-38a9395bd51f",
+  "checks": [
+    {
+      "label": "config",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-38a9395bd51f.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "config",
+        "--quiet"
+      ],
+      "startedAt": "2026-10-30T03:56:53.236Z",
+      "endedAt": "2026-10-30T03:56:53.661Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/config.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-38a9395bd51f.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "build"
+      ],
+      "startedAt": "2026-10-30T03:56:53.662Z",
+      "endedAt": "2026-10-30T03:57:22.612Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/build.log"
+    },
+    {
+      "label": "up",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-38a9395bd51f.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "up",
+        "-d",
+        "--wait",
+        "--wait-timeout",
+        "120"
+      ],
+      "startedAt": "2026-10-30T03:57:22.613Z",
+      "endedAt": "2026-10-30T03:57:31.384Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/up.log"
+    },
+    {
+      "label": "proxy-id",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-38a9395bd51f.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "ps",
+        "-q",
+        "proxy"
+      ],
+      "startedAt": "2026-10-30T03:57:31.386Z",
+      "endedAt": "2026-10-30T03:57:31.814Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/proxy-id.log"
+    },
+    {
+      "label": "local-ca",
+      "command": [
+        "docker",
+        "exec",
+        "9af95981597c87aa33c040b1b3debf41d5897d3b4360ee19b5f51e1fb8c1755b",
+        "cat",
+        "/data/caddy/pki/authorities/local/root.crt"
+      ],
+      "startedAt": "2026-10-30T03:57:31.815Z",
+      "endedAt": "2026-10-30T03:57:32.041Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/local-ca.log"
+    },
+    {
+      "label": "restart",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-38a9395bd51f.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "restart",
+        "api",
+        "web"
+      ],
+      "startedAt": "2026-10-30T03:57:32.669Z",
+      "endedAt": "2026-10-30T03:57:33.807Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/restart.log"
+    },
+    {
+      "label": "previous-image",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "--format",
+        "{{.Id}}",
+        "ctfarm-round5-9c5cc224ddbd-api:latest"
+      ],
+      "startedAt": "2026-10-30T03:57:34.300Z",
+      "endedAt": "2026-10-30T03:57:34.507Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/previous-image.log"
+    },
+    {
+      "label": "current-image",
+      "command": [
+        "docker",
+        "image",
+        "inspect",
+        "--format",
+        "{{.Id}}",
+        "ctfarm-round5-38a9395bd51f-api:latest"
+      ],
+      "startedAt": "2026-10-30T03:57:34.508Z",
+      "endedAt": "2026-10-30T03:57:34.723Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/current-image.log"
+    },
+    {
+      "label": "rollback",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-38a9395bd51f.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "-f",
+        ".starter-state/round6-rollback-38a9395bd51f.yaml",
+        "up",
+        "-d",
+        "--no-build",
+        "--no-deps",
+        "api"
+      ],
+      "startedAt": "2026-10-30T03:57:34.725Z",
+      "endedAt": "2026-10-30T03:57:36.012Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/rollback.log"
+    },
+    {
+      "label": "rollforward",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-38a9395bd51f.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "-f",
+        ".starter-state/round6-rollback-38a9395bd51f.yaml",
+        "up",
+        "-d",
+        "--no-build",
+        "--no-deps",
+        "api"
+      ],
+      "startedAt": "2026-10-30T03:57:36.484Z",
+      "endedAt": "2026-10-30T03:57:37.873Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-38a9395bd51f/rollforward.log"
+    }
+  ],
+  "localTlsOnly": true,
+  "productionDeployed": false
+}

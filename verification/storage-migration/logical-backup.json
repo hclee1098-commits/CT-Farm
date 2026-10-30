@@ -1,0 +1,553 @@
+{
+  "startedAt": "2026-10-30T11:20:25.933Z",
+  "command": "node tools/storage-logical-backup.mjs",
+  "liveSnapshot": true,
+  "keyStoredSeparately": true,
+  "keyPath": "C:\\Users\\hyunc\\AppData\\Local\\CT-Farm\\Recovery\\2026-10-30T11-07-09-496Z-471702.key",
+  "originalDatabaseChanged": false,
+  "originalContainersStopped": false,
+  "postgres": [
+    {
+      "container": "32b3ab3a744771e1b146e027330df263db2d245f5cdeb28dffc5592d90f988f7",
+      "name": "ctfarm-mobile-api-7acbebd38d4f",
+      "databases": [
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ctfarm-mobile-api-7acbebd38d4f-db0.enc",
+          "plainBytes": 57637,
+          "plainSha256": "c57857a57e5947adf4435207d16b51efcdb55affc29fe111fb5a5fdc56a6de8a",
+          "commandExitCode": 0,
+          "index": 0,
+          "tableCount": 23,
+          "fingerprintSha256": "0ced4523fe67622a53ac513d098188c8b9588fdc8c0709f3aaa66d8096b4b1cd",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ctfarm-mobile-api-7acbebd38d4f-db1.enc",
+          "plainBytes": 1028,
+          "plainSha256": "f28f5ecc332e4b92bd9339014c2e61b1bf0fdcb16db6368371bb1d93b45fef1e",
+          "commandExitCode": 0,
+          "index": 1,
+          "tableCount": 0,
+          "fingerprintSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 0,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        }
+      ],
+      "startedAt": "2026-10-30T11:20:26.155Z",
+      "globals": {
+        "file": "private\\logical-2026-10-30T11-20-24-214Z\\ctfarm-mobile-api-7acbebd38d4f-globals.enc",
+        "plainBytes": 667,
+        "plainSha256": "80289de5930758e38c9f42efe60b40a169883402b102a700a88891140c07fd11",
+        "commandExitCode": 0
+      },
+      "endedAt": "2026-10-30T11:20:27.879Z"
+    },
+    {
+      "container": "22bcc6aab5fc12535349217f1fd1189ca9d16c7a2fde853217c1c474694bce99",
+      "name": "ssf872ba531d9a-postgres-1",
+      "databases": [
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db0.enc",
+          "plainBytes": 62172,
+          "plainSha256": "1c1ed5273b824add4aa85dd8e17037d322f89525443b9d36d077757c29cdd88d",
+          "commandExitCode": 0,
+          "index": 0,
+          "tableCount": 23,
+          "fingerprintSha256": "3b49f489a22126fcf8f9fefa39fef1db4c1df729694bf377f0f465078667a19c",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db1.enc",
+          "plainBytes": 44122,
+          "plainSha256": "d69767343569a4a9a5ea98479946f35c3e66c21ab78ed73f9467887b866bd1dd",
+          "commandExitCode": 0,
+          "index": 1,
+          "tableCount": 17,
+          "fingerprintSha256": "3b30f48ce72fd14cb0c5b5a2599bf8dc6b842c18b74669db129a1fba0181251c",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 17,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db2.enc",
+          "plainBytes": 39639,
+          "plainSha256": "60635745fb449decedb75a1ae0f77b8216a9dbca83ceec7cf5baf164063d310d",
+          "commandExitCode": 0,
+          "index": 2,
+          "tableCount": 17,
+          "fingerprintSha256": "545af06adefb9f98f1f7cd8509146c866468b6f3f0ec20f44c509e4368900a3c",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 17,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db3.enc",
+          "plainBytes": 39636,
+          "plainSha256": "1f155033e2bd297a7e4d214eac4cfdf3963f7124f2a5361555a5323c11aae968",
+          "commandExitCode": 0,
+          "index": 3,
+          "tableCount": 17,
+          "fingerprintSha256": "9cfff652f2e02dc74cb40e947155f14f201b1b071ca8566352898c99baf687f4",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 17,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db4.enc",
+          "plainBytes": 53239,
+          "plainSha256": "4498acf688529eb59962428013fd5301dc5f4228603be153ae84e275685def6c",
+          "commandExitCode": 0,
+          "index": 4,
+          "tableCount": 21,
+          "fingerprintSha256": "90c524dee8bb8baf615641059160135e85a005e9e0e9023c15bfe669225cdeee",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 21,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db5.enc",
+          "plainBytes": 62335,
+          "plainSha256": "c2d30e29b9f95de636f99df1f898f550b81fe10bd57e370d1b90b32995a49d3d",
+          "commandExitCode": 0,
+          "index": 5,
+          "tableCount": 23,
+          "fingerprintSha256": "4d90b1b3ea2e1abf7a8dd5ffae827930c004c92c418a24995c4313e58240a44b",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db6.enc",
+          "plainBytes": 69746,
+          "plainSha256": "5ee3221bdf1dcbae0a335e109430e69f28bab5ff6c3931ee45a96d21c709be4c",
+          "commandExitCode": 0,
+          "index": 6,
+          "tableCount": 23,
+          "fingerprintSha256": "83680daf24c88b7311c85f3c1c3f6b9be155c372e65c6ce5c91f3887d401522e",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db7.enc",
+          "plainBytes": 62227,
+          "plainSha256": "e184a6463e06136a47ffe9cea512d6facc491fa7a761eecc8ec425c102d009a8",
+          "commandExitCode": 0,
+          "index": 7,
+          "tableCount": 23,
+          "fingerprintSha256": "661b60f45b60b3fe5c072dbfee8acb917227359476f3888f085d4173921df774",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db8.enc",
+          "plainBytes": 46136,
+          "plainSha256": "3fd89f1b5da6367552e46fa9b44f9f2c4616b54d1e52f19555dc3ea334fbe144",
+          "commandExitCode": 0,
+          "index": 8,
+          "tableCount": 17,
+          "fingerprintSha256": "c14bea3d05b8f725f853f9c722e1d1878cd08db094bd0550e1ed34d9bab61fcf",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 17,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db9.enc",
+          "plainBytes": 61331,
+          "plainSha256": "a8587d787625fa06643dfb9d4c85cdd2134c5376c8b5ce6381a15dbf794a0075",
+          "commandExitCode": 0,
+          "index": 9,
+          "tableCount": 21,
+          "fingerprintSha256": "2aa285af368beaffa233413af7cbc4e469ab8c17c2d5a1605c63d1f1768373f6",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 21,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db10.enc",
+          "plainBytes": 25057,
+          "plainSha256": "626faaf78d2750916ccfd54571d4bffd4696422e2bb823d1855e2b18e900bf66",
+          "commandExitCode": 0,
+          "index": 10,
+          "tableCount": 11,
+          "fingerprintSha256": "25a33b82552b78ec21d3ed52f0cf7297c199fc29c50930d0a48586672d8451d7",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 11,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db11.enc",
+          "plainBytes": 63811,
+          "plainSha256": "f19df5d1976a88414f88c4f15e808c27f5cd48abc2ee85a7ce999f22ef08cecb",
+          "commandExitCode": 0,
+          "index": 11,
+          "tableCount": 21,
+          "fingerprintSha256": "575a753fbda2fccc17d2d797ef3e70ea9246751db5415ee715e6151b00b75564",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 21,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db12.enc",
+          "plainBytes": 62564,
+          "plainSha256": "289a6346306e929d70cee80a2f2d3af7e538f80c0f40a7ff2bfd99cefcbc2a0b",
+          "commandExitCode": 0,
+          "index": 12,
+          "tableCount": 21,
+          "fingerprintSha256": "16541ee94eb694b9adf7320cda1eb9b946967c37a154eec74dc1545d4fbc896b",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 21,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db13.enc",
+          "plainBytes": 61293,
+          "plainSha256": "a4b2f0f8ba7d1bde306a0bf0970a4ab5fb953ee9460871ce1d8d56329a97b4cd",
+          "commandExitCode": 0,
+          "index": 13,
+          "tableCount": 21,
+          "fingerprintSha256": "614299bb7a26fc5b3b8093c0d70755da367d0c4c4cc8f8ee5e329742e39ccc32",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 21,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db14.enc",
+          "plainBytes": 62335,
+          "plainSha256": "84aa8a97f862b1fdafcfcf61b12d363d795c35c3eb83982ee6211fc8ad1de423",
+          "commandExitCode": 0,
+          "index": 14,
+          "tableCount": 23,
+          "fingerprintSha256": "a98437ae35870c6cb281fa41aa60a899cbfd00f1055c8f7a00e2afca35f79fe3",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db15.enc",
+          "plainBytes": 70880,
+          "plainSha256": "cac9d66e4a3dade392ee59f4933ab19097e548d912847919d9df6d30976d5b80",
+          "commandExitCode": 0,
+          "index": 15,
+          "tableCount": 23,
+          "fingerprintSha256": "e49ce5a228e91d45c1483d28a0aea86164320538ccb5d6b0e1a4d92ca853a122",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db16.enc",
+          "plainBytes": 70004,
+          "plainSha256": "62f112950b8cebc2c2e70454b86b16496913bc634e81829ce9d2c5190ae3e223",
+          "commandExitCode": 0,
+          "index": 16,
+          "tableCount": 23,
+          "fingerprintSha256": "ba643dffe28c1440ab29c118c87f33857cf4e8206a9a3b96608fbd31942b5ded",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db17.enc",
+          "plainBytes": 1040,
+          "plainSha256": "d3c124439a5e322c1e6b3b3d1cb3256f8f64c962c7fb94f2f07d088820783757",
+          "commandExitCode": 0,
+          "index": 17,
+          "tableCount": 0,
+          "fingerprintSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 0,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-db18.enc",
+          "plainBytes": 64979,
+          "plainSha256": "68499983d8684a3d579d821e3de2ff6c5ccae2d97e3ee40b7dc8cb519767b6dd",
+          "commandExitCode": 0,
+          "index": 18,
+          "tableCount": 23,
+          "fingerprintSha256": "b2866be6d32bad3bfc16949c626dff42138a0d56fe79512fbd91e9c03ef461b5",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 23,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        }
+      ],
+      "startedAt": "2026-10-30T11:20:28.206Z",
+      "globals": {
+        "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-postgres-1-globals.enc",
+        "plainBytes": 679,
+        "plainSha256": "413b921c8869b07a1bd4778e60de600c3f02011298057fcb401ed6fdfe28f4da",
+        "commandExitCode": 0
+      },
+      "endedAt": "2026-10-30T11:20:42.622Z"
+    },
+    {
+      "container": "577bfee03b9ff172f2536c3bc7a48fd504978d200f643daca2635609f87ba0c4",
+      "name": "ss30d8e81aba22-postgres-1",
+      "databases": [
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ss30d8e81aba22-postgres-1-db0.enc",
+          "plainBytes": 1040,
+          "plainSha256": "e08b0a67e07b82b411bc07227744afbea568507c986a9a9fabf08ab93ce3f8a4",
+          "commandExitCode": 0,
+          "index": 0,
+          "tableCount": 0,
+          "fingerprintSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 0,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ss30d8e81aba22-postgres-1-db1.enc",
+          "plainBytes": 19671,
+          "plainSha256": "1adb3d43040ceb6d0dec19d5e8ae1ea85aeca475add3d8b7c7c66113122c94e0",
+          "commandExitCode": 0,
+          "index": 1,
+          "tableCount": 9,
+          "fingerprintSha256": "d8fc600b6384abdec70a9bacac1882f7748a6cfd98dc4ad8480b6e2a5fe7c0ce",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 9,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        }
+      ],
+      "startedAt": "2026-10-30T11:20:42.874Z",
+      "globals": {
+        "file": "private\\logical-2026-10-30T11-20-24-214Z\\ss30d8e81aba22-postgres-1-globals.enc",
+        "plainBytes": 679,
+        "plainSha256": "1e0e4574911d04f3c014fbf1738604e60e46a299068ecef0f1d7ce82ecf85a46",
+        "commandExitCode": 0
+      },
+      "endedAt": "2026-10-30T11:20:44.310Z"
+    },
+    {
+      "container": "ddb55650364ebe61b7bcd5e28d5a4cba3ea23e80a1ae244c46728d94a6a35b52",
+      "name": "ssc3e94bbfb9e1-postgres-1",
+      "databases": [
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssc3e94bbfb9e1-postgres-1-db0.enc",
+          "plainBytes": 1040,
+          "plainSha256": "08d6ad8b9ca3359225b6b4b983f5e350881c5b878902143be8346d95e87626e7",
+          "commandExitCode": 0,
+          "index": 0,
+          "tableCount": 0,
+          "fingerprintSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 0,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssc3e94bbfb9e1-postgres-1-db1.enc",
+          "plainBytes": 18592,
+          "plainSha256": "0374d803d4ddfabce49f064dd2b883629186e96ce7e7f770217bd7c93b8be90c",
+          "commandExitCode": 0,
+          "index": 1,
+          "tableCount": 8,
+          "fingerprintSha256": "fb6149af9d7f609df3ebfccd34cc945bd7bc438197ed78c7f1c83038ee4e6d41",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 8,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        }
+      ],
+      "startedAt": "2026-10-30T11:20:44.536Z",
+      "globals": {
+        "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssc3e94bbfb9e1-postgres-1-globals.enc",
+        "plainBytes": 679,
+        "plainSha256": "2909c2f9e99d05ec02f46c803a24b988903ebcf23c0c721901c03535e2d4391d",
+        "commandExitCode": 0
+      },
+      "endedAt": "2026-10-30T11:20:45.947Z"
+    },
+    {
+      "container": "b85c31a1531bb1835bfb74800aa7cfb3f4834d75846bd647085cf9209aae47c0",
+      "name": "ct-farm-postgres-1",
+      "databases": [
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ct-farm-postgres-1-db0.enc",
+          "plainBytes": 1030,
+          "plainSha256": "ebb31bed320e4385e709459d4d9a3af1b2fe609061ad011afcd0b9c026fb8445",
+          "commandExitCode": 0,
+          "index": 0,
+          "tableCount": 0,
+          "fingerprintSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 0,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        },
+        {
+          "file": "private\\logical-2026-10-30T11-20-24-214Z\\ct-farm-postgres-1-db1.enc",
+          "plainBytes": 824,
+          "plainSha256": "087c9044605124573b4f710989fac68dc8c1320a213219c245a351c94a1459e4",
+          "commandExitCode": 0,
+          "index": 1,
+          "tableCount": 0,
+          "fingerprintSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "restore": {
+            "exitCode": 0,
+            "rowHashesMatch": true,
+            "tableCount": 0,
+            "database": "isolated tmpfs PostgreSQL 16"
+          }
+        }
+      ],
+      "startedAt": "2026-10-30T11:20:46.186Z",
+      "globals": {
+        "file": "private\\logical-2026-10-30T11-20-24-214Z\\ct-farm-postgres-1-globals.enc",
+        "plainBytes": 669,
+        "plainSha256": "1198e2120834c6ab78fb32649c07daa95a1c1cc3c3e8fc9d91efa6e5d460db8d",
+        "commandExitCode": 0
+      },
+      "endedAt": "2026-10-30T11:20:47.609Z"
+    }
+  ],
+  "redis": [
+    {
+      "container": "69403cf6f7491937d69380307ecc8a6cbf8c1c18211d187853803aa8b9585445",
+      "name": "ctfarm-test-redis-0d848077c789a8be",
+      "startedAt": "2026-10-30T11:21:13.805Z",
+      "file": "private\\logical-2026-10-30T11-20-24-214Z\\ctfarm-test-redis-0d848077c789a8be.rdb.enc",
+      "plainBytes": 212,
+      "plainSha256": "de7ceee0d0b78ddcdd2284e954ec86b2174aff8956a47816ef9df2268f8df4ab",
+      "commandExitCode": 0,
+      "rdbVerified": true,
+      "isolatedLoadVerified": true,
+      "endedAt": "2026-10-30T11:21:19.208Z"
+    },
+    {
+      "container": "5576fa1a08d591f10f00861a22ad7f63dd59489d5aab1760a623a9d4a3b1bbdb",
+      "name": "ssf872ba531d9a-redis-1",
+      "startedAt": "2026-10-30T11:21:19.208Z",
+      "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssf872ba531d9a-redis-1.rdb.enc",
+      "plainBytes": 212,
+      "plainSha256": "798c3984607066a6378f88854eaf4d4f85c9580318dd3b980b5775563f550f4c",
+      "commandExitCode": 0,
+      "rdbVerified": true,
+      "isolatedLoadVerified": true,
+      "endedAt": "2026-10-30T11:21:25.228Z"
+    },
+    {
+      "container": "4483df27eb2cf3e742b552ff9d151e019ec4ac8f7002da506335eb4c5ff32b8e",
+      "name": "ss30d8e81aba22-redis-1",
+      "startedAt": "2026-10-30T11:21:25.229Z",
+      "file": "private\\logical-2026-10-30T11-20-24-214Z\\ss30d8e81aba22-redis-1.rdb.enc",
+      "plainBytes": 212,
+      "plainSha256": "8dcf4db2730bd9ea6336c339ba6e427dc9f989876cd08770bfd76d5bfde990d7",
+      "commandExitCode": 0,
+      "rdbVerified": true,
+      "isolatedLoadVerified": true,
+      "endedAt": "2026-10-30T11:21:31.101Z"
+    },
+    {
+      "container": "bca89e4c29669b4c4ef009105947a9b9886f83503ab03543fbc2166f741b42bb",
+      "name": "ssc3e94bbfb9e1-redis-1",
+      "startedAt": "2026-10-30T11:21:31.101Z",
+      "file": "private\\logical-2026-10-30T11-20-24-214Z\\ssc3e94bbfb9e1-redis-1.rdb.enc",
+      "plainBytes": 212,
+      "plainSha256": "9e4fa7d514d186c36c1edecf7e5203ddfffac3bb37e6ad53ebb2c2e32aa44f34",
+      "commandExitCode": 0,
+      "rdbVerified": true,
+      "isolatedLoadVerified": true,
+      "endedAt": "2026-10-30T11:21:37.099Z"
+    },
+    {
+      "container": "eb4a4b1cae87954d236d6e04eed0a0cc4cca3b0d4ebd67b6c04ac2f6ebc92e45",
+      "name": "ct-farm-redis-1",
+      "startedAt": "2026-10-30T11:21:37.100Z",
+      "file": "private\\logical-2026-10-30T11-20-24-214Z\\ct-farm-redis-1.rdb.enc",
+      "plainBytes": 212,
+      "plainSha256": "6daef54781ebaa6eafe24d7e73bd024fa25c8f841608b0b779658efea04fa7c0",
+      "commandExitCode": 0,
+      "rdbVerified": true,
+      "isolatedLoadVerified": true,
+      "endedAt": "2026-10-30T11:21:43.617Z"
+    }
+  ],
+  "failures": [],
+  "status": "logical_backup_restore_verified",
+  "exitCode": 0,
+  "endedAt": "2026-10-30T11:21:54.814Z",
+  "resultFile": "private\\logical-2026-10-30T11-20-24-214Z\\results.json"
+}

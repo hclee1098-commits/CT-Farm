@@ -1,0 +1,107 @@
+name: ${COMPOSE_PROJECT_NAME:?고유_프로젝트_ID_필수}
+services:
+  postgres:
+    networks: [backend]
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:?필수}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?필수}
+      POSTGRES_DB: ${POSTGRES_DB:?필수}
+    volumes: [postgres_data:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U "$$POSTGRES_USER" -d "$$POSTGRES_DB"']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    security_opt: [no-new-privileges:true]
+  redis:
+    networks: [backend]
+    image: redis:7-alpine
+    command: [redis-server, --appendonly, 'yes']
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    security_opt: [no-new-privileges:true]
+  migrate:
+    networks: [backend]
+    profiles: [tools]
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.migrate
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?내부_postgres_URL_필수}
+    depends_on:
+      postgres: {condition: service_healthy}
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+  api:
+    networks: [backend, edge]
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.api
+    environment:
+      APP_ENV: PRODUCTION
+      NODE_ENV: production
+      PORT: 4000
+      DATABASE_URL: ${DATABASE_URL:?내부_postgres_URL_필수}
+      REDIS_URL: redis://redis:6379
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET:?필수}
+      MFA_ENCRYPTION_KEY: ${MFA_ENCRYPTION_KEY:?필수}
+      CORS_ORIGINS: https://${SITE_DOMAIN:?필수}
+      TRUST_PROXY_HOPS: 1
+      UPLOAD_DIR: ./uploads
+    volumes: [uploads:/app/apps/api/uploads]
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: [CMD, node, -e, 'fetch("http://127.0.0.1:4000/health/ready").then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))']
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    stop_grace_period: 20s
+    restart: unless-stopped
+  web:
+    networks: [edge]
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.web
+      args:
+        NEXT_PUBLIC_API_BASE_URL: https://${SITE_DOMAIN:?필수}
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    depends_on:
+      api: {condition: service_healthy}
+    restart: unless-stopped
+  proxy:
+    networks: [edge]
+    image: caddy:2-alpine
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:?필수}
+    ports: ['${HTTP_PORT:-80}:80', '${HTTPS_PORT:-443}:443']
+    volumes: ['./deploy/Caddyfile:/etc/caddy/Caddyfile:ro', 'caddy_data:/data', 'caddy_config:/config']
+    depends_on: [web, api]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+volumes:
+  postgres_data:
+  redis_data:
+  uploads:
+  caddy_data:
+  caddy_config:
+
+networks:
+  backend:
+    internal: true
+  edge:

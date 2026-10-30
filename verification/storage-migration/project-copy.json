@@ -1,0 +1,37 @@
+{
+  "startedAt": "2026-10-30T11:22:00.963Z",
+  "source": "C:\\workspace\\CT-Farm",
+  "destination": "E:\\workspace\\CT-Farm",
+  "backup": "E:\\Backups\\CT-Farm\\2026-10-30T11-07-09-496Z-471702\\project",
+  "originalDeleted": false,
+  "logicalBackup": "private\\logical-2026-10-30T11-20-24-214Z\\results.json",
+  "quiesceEvidence": "verification/storage-migration/quiesce-STOP.json",
+  "copies": [
+    {
+      "label": "backup",
+      "command": "robocopy SOURCE TARGET /E /XJ /COPY:DAT /DCOPY:DAT /R:1 /W:1 /NP /NFL /NDL /NJH /NJS",
+      "startedAt": "2026-10-30T11:22:54.302Z",
+      "endedAt": "2026-10-30T11:27:15.987Z",
+      "exitCode": 3,
+      "rawLog": "private\\copy-backup.log",
+      "filesVerified": 153043,
+      "linksVerified": 17,
+      "bytes": 15630924136,
+      "issues": 0,
+      "manifest": "private\\manifest-backup.json",
+      "manifestSha256": "a8d211a0cdd53893312b5b7cc18f9db59d79859137b9775124f6b69108afce8c"
+    },
+    {
+      "label": "destination",
+      "command": "robocopy SOURCE TARGET /E /XJ /COPY:DAT /DCOPY:DAT /R:1 /W:1 /NP /NFL /NDL /NJH /NJS",
+      "startedAt": "2026-10-30T11:39:20.588Z",
+      "endedAt": "2026-10-30T11:45:02.404Z",
+      "exitCode": 3,
+      "rawLog": "private\\copy-destination.log"
+    }
+  ],
+  "status": "failed",
+  "error": "ENOENT: no such file or directory, scandir 'E:\\workspace\\CT-Farm\\node_modules\\marked'",
+  "exitCode": 1,
+  "endedAt": "2026-10-30T11:51:27.964Z"
+}

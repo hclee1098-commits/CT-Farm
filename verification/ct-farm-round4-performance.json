@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-29T14:30:04.301Z",
+  "environment": "isolated DB/HTTP, no full Redis middleware",
+  "database": "native isolated PostgreSQL",
+  "connectionLimit": "Prisma default",
+  "cpuCount": 18,
+  "cpu": "Intel(R) Core(TM) Ultra 5 125H",
+  "ramBytes": 16737873920,
+  "concurrency": 4,
+  "requests": 20,
+  "elapsedMs": 257,
+  "p50Ms": 37.61000000000058,
+  "p95Ms": 93.70329999999922,
+  "errors": 0,
+  "testHarnessRssBytes": 175087616,
+  "scope": "dashboard only; not login/upload/full production load"
+}

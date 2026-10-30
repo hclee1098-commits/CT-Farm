@@ -1,0 +1,92 @@
+{
+  "startedAt": "2026-10-30T07:22:58.696Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "mobile-native-api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-mobile-api.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:22:58.697Z",
+      "endedAt": "2026-10-30T07:23:11.425Z",
+      "exitCode": 0,
+      "passed": 12,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-22-58-694Z\\mobile-native-api.log"
+    },
+    {
+      "name": "mobile-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:23:11.427Z",
+      "endedAt": "2026-10-30T07:23:15.073Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-22-58-694Z\\mobile-type.log"
+    },
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-22-58-694Z\\api-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:23:15.074Z",
+      "endedAt": "2026-10-30T07:23:21.918Z",
+      "exitCode": 0,
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-22-58-694Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-22-58-694Z\\web-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:23:21.918Z",
+      "endedAt": "2026-10-30T07:23:23.218Z",
+      "exitCode": 0,
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-22-58-694Z\\web.log"
+    }
+  ],
+  "endedAt": "2026-10-30T07:23:23.220Z"
+}

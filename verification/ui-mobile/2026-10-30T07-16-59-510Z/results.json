@@ -1,0 +1,74 @@
+{
+  "startedAt": "2026-10-30T07:16:59.514Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "mobile-unit",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "--test",
+        "tools/test-mobile-client.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:16:59.516Z",
+      "endedAt": "2026-10-30T07:16:59.936Z",
+      "exitCode": 0,
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\mobile-unit.log"
+    },
+    {
+      "name": "android-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "android",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\android-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:16:59.937Z",
+      "endedAt": "2026-10-30T07:17:28.111Z",
+      "exitCode": 1,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\android-bundle.log"
+    },
+    {
+      "name": "ios-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "ios",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\ios-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:17:28.114Z",
+      "endedAt": "2026-10-30T07:17:30.956Z",
+      "exitCode": 1,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-16-59-510Z\\ios-bundle.log"
+    }
+  ],
+  "endedAt": "2026-10-30T07:17:30.958Z"
+}

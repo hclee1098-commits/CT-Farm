@@ -1,0 +1,67 @@
+{
+  "startedAt": "2026-10-30T01:47:03.860Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "docs-center",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:47:03.861Z",
+      "endedAt": "2026-10-30T01:47:04.474Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-47-03-858Z\\docs-center.log"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:47:04.476Z",
+      "endedAt": "2026-10-30T01:47:07.690Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-47-03-858Z\\docs.log"
+    },
+    {
+      "name": "deployment",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/deployment/release.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:47:07.691Z",
+      "endedAt": "2026-10-30T01:47:08.128Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-47-03-858Z\\deployment.log"
+    }
+  ],
+  "endedAt": "2026-10-30T01:47:08.129Z"
+}

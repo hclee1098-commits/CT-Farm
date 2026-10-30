@@ -1,0 +1,131 @@
+{
+  "startedAt": "2026-10-30T01:40:40.421Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "monitoring",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/monitoring.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:40:40.422Z",
+      "endedAt": "2026-10-30T01:40:41.527Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\monitoring.log"
+    },
+    {
+      "name": "disks",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/disks.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:40:41.529Z",
+      "endedAt": "2026-10-30T01:40:41.702Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\disks.log"
+    },
+    {
+      "name": "delivery",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/delivery.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:40:41.703Z",
+      "endedAt": "2026-10-30T01:40:42.041Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\delivery.log"
+    },
+    {
+      "name": "capabilities",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/round5/capabilities.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:40:42.041Z",
+      "endedAt": "2026-10-30T01:40:43.966Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\capabilities.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round5\\2026-10-30T01-40-40-419Z\\web-vitest.json"
+      ],
+      "startedAt": "2026-10-30T01:40:43.967Z",
+      "endedAt": "2026-10-30T01:40:45.134Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\web.log"
+    },
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round5\\2026-10-30T01-40-40-419Z\\api-vitest.json"
+      ],
+      "startedAt": "2026-10-30T01:40:45.136Z",
+      "endedAt": "2026-10-30T01:40:50.411Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 157,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-40-40-419Z\\api.log"
+    }
+  ],
+  "endedAt": "2026-10-30T01:40:50.412Z"
+}

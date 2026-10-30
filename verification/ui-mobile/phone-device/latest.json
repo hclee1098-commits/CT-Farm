@@ -1,0 +1,18 @@
+{
+  "measuredAt": "2026-10-30T10:43:02.920Z",
+  "physicalAuthorized": 1,
+  "unauthorized": 0,
+  "models": [
+    "SM_S928N"
+  ],
+  "serialDisclosed": false,
+  "installed": true,
+  "androidApi": 36,
+  "arm64": true,
+  "reversePorts": [
+    4084,
+    18081
+  ],
+  "launchRequested": true,
+  "status": "device_checked"
+}

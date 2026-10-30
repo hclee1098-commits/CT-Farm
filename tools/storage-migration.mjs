@@ -1,0 +1,26 @@
+// E 드라이브 이전: 원본 삭제·DB 초기화·Docker 정리를 하지 않습니다.
+import fs from 'node:fs/promises';import path from 'node:path';import os from 'node:os';import {createHash,randomBytes} from 'node:crypto';import {execFile} from 'node:child_process';import {promisify} from 'node:util';
+import {fileURLToPath} from 'node:url';
+const exec=promisify(execFile),source='C:\\workspace\\CT-Farm',destination='E:\\workspace\\CT-Farm',base='E:\\Backups\\CT-Farm',state=path.join(source,'.starter-state/storage-migration.json');
+const hash=b=>createHash('sha256').update(b).digest('hex');
+async function command(file,args,extra={}){return exec(file,args,{windowsHide:true,maxBuffer:64*1024*1024,...extra});}
+async function docker(args){return (await command('docker',args)).stdout;}
+async function secure(dir){await fs.mkdir(dir,{recursive:true});const sid=(await command('powershell.exe',['-NoProfile','-Command','[Security.Principal.WindowsIdentity]::GetCurrent().User.Value'])).stdout.trim();if(!/^S-1-[\d-]+$/.test(sid))throw Error('ACL_SID');await command('icacls.exe',[dir,'/inheritance:r','/grant:r','*'+sid+':(OI)(CI)F','*S-1-5-18:(OI)(CI)F','*S-1-5-32-544:(OI)(CI)F','/q']);}
+async function walk(root){const files=[],links=[],directories=[],stack=[''];while(stack.length){const rel=stack.pop(),dir=path.join(root,rel);for(const e of await fs.readdir(dir,{withFileTypes:true})){const r=path.join(rel,e.name),f=path.join(root,r);const s=await fs.lstat(f);if(s.isSymbolicLink()){const target=await fs.readlink(f);links.push({path:r,target});}else if(s.isDirectory()){directories.push(r);stack.push(r);}else if(s.isFile())files.push({path:r,bytes:s.size,mtimeMs:s.mtimeMs});else throw Error('UNSUPPORTED_FILE_TYPE');}}return {files,links,directories,bytes:files.reduce((n,f)=>n+f.bytes,0)};}
+async function load(){const x=JSON.parse(await fs.readFile(state,'utf8'));if(x.source!==source||x.destination!==destination||!path.resolve(x.backup).startsWith(path.resolve(base)+path.sep))throw Error('MIGRATION_OWNER');return x;}
+async function inventory(){
+ try{await fs.access(state);throw Error('기존 이전 상태가 있습니다. 덮어쓰지 않습니다.');}catch(e){if(e.code!=='ENOENT')throw e;}
+ const runId=new Date().toISOString().replace(/[:.]/g,'-')+'-'+randomBytes(3).toString('hex'),backup=path.join(base,runId);await secure(base);await secure(backup);await secure(path.join(backup,'private'));
+ const ids=(await docker(['ps','-aq','--no-trunc'])).trim().split(/\s+/).filter(Boolean),containers=JSON.parse(await docker(['inspect',...ids]));
+ const volumes=(await docker(['volume','ls','-q'])).trim().split(/\s+/).filter(Boolean),volumeMetadata=JSON.parse(await docker(['volume','inspect',...volumes]));
+ const networkIds=(await docker(['network','ls','-q','--no-trunc'])).trim().split(/\s+/).filter(Boolean),networks=JSON.parse(await docker(['network','inspect',...networkIds]));
+ const images=(await docker(['image','ls','--no-trunc','--digests','--format','{{json .}}'])).trim().split(/\r?\n/).filter(Boolean).map(s=>JSON.parse(s));
+ await fs.writeFile(path.join(backup,'private/docker-metadata.json'),JSON.stringify({containers,volumes:volumeMetadata,networks,images},null,2));
+ const project=await walk(source);await fs.writeFile(path.join(backup,'private/project-inventory.json'),JSON.stringify(project));
+ const identity=JSON.parse(await fs.readFile(path.join(source,'.starter-state/identity.json'),'utf8'));
+ const info={runId,source,destination,backup,startedAt:new Date().toISOString(),host:{node:process.version,platform:process.platform},project:{files:project.files.length,links:project.links.length,bytes:project.bytes},docker:{containers:containers.map(c=>({id:c.Id,name:c.Name.slice(1),running:c.State.Running,autoRemove:c.HostConfig.AutoRemove,tmpfs:Object.keys(c.HostConfig.Tmpfs||{}),project:c.Config.Labels?.['com.docker.compose.project'],workdir:c.Config.Labels?.['com.docker.compose.project.working_dir'],image:c.Image,mounts:c.Mounts.map(m=>({type:m.Type,name:m.Name,source:m.Source,destination:m.Destination,readWrite:m.RW}))})),volumes:volumeMetadata.map(v=>({name:v.Name,driver:v.Driver,createdAt:v.CreatedAt,project:v.Labels?.['com.docker.compose.project']})),networks:networks.map(n=>({id:n.Id,name:n.Name,driver:n.Driver})),images},activeInstallation:{project:identity.Project,root:identity.Root,pgPort:identity.PgPort,redisPort:identity.RedisPort},phase:'inventory_complete',originalDeleted:false,dockerStopped:false};
+ await fs.writeFile(state,JSON.stringify(info,null,2));await fs.mkdir('verification/storage-migration',{recursive:true});await fs.writeFile('verification/storage-migration/inventory.json',JSON.stringify(info,null,2));
+ console.log(JSON.stringify({phase:info.phase,backup,project:info.project,containers:containers.length,running:containers.filter(c=>c.State.Running).length,volumes:volumes.length,images:images.length,networks:networks.length,activeProject:identity.Project,links:project.links,ephemeral:info.docker.containers.filter(c=>c.autoRemove||c.tmpfs.length).map(c=>({name:c.name,autoRemove:c.autoRemove,tmpfs:c.tmpfs}))},null,2));
+}
+export {source,destination,base,state,hash,command,docker,secure,walk,load};
+if(path.resolve(process.argv[1]||'')===fileURLToPath(import.meta.url)){if(process.argv[2]==='inventory')await inventory();else throw Error('명시적인 이전 작업 인자가 필요합니다.');}

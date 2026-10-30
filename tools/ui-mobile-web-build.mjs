@@ -1,0 +1,5 @@
+// 실행 중인 원본 .next와 환경파일을 사용하지 않는 웹 빌드입니다.
+import fs from 'node:fs/promises';import path from 'node:path';import {randomBytes} from 'node:crypto';import {spawn} from 'node:child_process';
+const root=process.cwd(),dir=path.join(root,'verification/runtime/ui-mobile-web-'+randomBytes(6).toString('hex'));
+await fs.mkdir(dir,{recursive:true});for(const name of ['src','public'])await fs.cp('apps/web/'+name,path.join(dir,name),{recursive:true});for(const name of ['package.json','tsconfig.json','next-env.d.ts','next.config.ts'])await fs.copyFile('apps/web/'+name,path.join(dir,name));await fs.symlink(path.join(root,'node_modules'),path.join(dir,'node_modules'),'junction');
+const child=spawn(process.execPath,[path.join(root,'node_modules/next/dist/bin/next'),'build',dir],{cwd:dir,env:{...process.env,NODE_ENV:'production',CI:'1',NEXT_PUBLIC_API_BASE_URL:'https://staging.example.invalid/api/v1',NEXT_TELEMETRY_DISABLED:'1'},windowsHide:true,stdio:'inherit'});process.exitCode=await new Promise(resolve=>{child.on('error',()=>resolve(1));child.on('exit',code=>resolve(code??1));});

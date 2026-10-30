@@ -1,0 +1,67 @@
+{
+  "startedAt": "2026-10-30T10:26:31.928Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "phone-adb-list",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/phone-device-list.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T10:26:31.931Z",
+      "endedAt": "2026-10-30T10:26:32.358Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\phone-adb-list.log"
+    },
+    {
+      "name": "build-doctor",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/mobile-build-doctor.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T10:26:32.362Z",
+      "endedAt": "2026-10-30T10:26:32.632Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\build-doctor.log"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T10:26:32.636Z",
+      "endedAt": "2026-10-30T10:26:56.128Z",
+      "exitCode": 1,
+      "database": "not applicable / see raw log",
+      "passed": 5,
+      "failed": 1,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T10-26-31-918Z\\docs.log"
+    }
+  ],
+  "endedAt": "2026-10-30T10:26:56.130Z"
+}

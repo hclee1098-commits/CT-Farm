@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-30T03:47:55.897Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "round6-staging",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/round6-staging.mjs"
+      ],
+      "startedAt": "2026-10-30T03:47:55.898Z",
+      "endedAt": "2026-10-30T03:48:26.269Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T03-47-55-895Z\\round6-staging.log"
+    }
+  ],
+  "endedAt": "2026-10-30T03:48:26.272Z"
+}

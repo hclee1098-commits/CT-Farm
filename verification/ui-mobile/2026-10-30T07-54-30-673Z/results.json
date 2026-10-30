@@ -1,0 +1,125 @@
+{
+  "startedAt": "2026-10-30T07:54:30.675Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "mobile-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:54:30.676Z",
+      "endedAt": "2026-10-30T07:54:35.056Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\mobile-type.log"
+    },
+    {
+      "name": "design",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/test-design-system.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:54:35.059Z",
+      "endedAt": "2026-10-30T07:54:35.719Z",
+      "exitCode": 0,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\design.log"
+    },
+    {
+      "name": "android-prebuild",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "prebuild",
+        "--platform",
+        "android",
+        "--no-install"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:54:35.722Z",
+      "endedAt": "2026-10-30T07:54:42.552Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\android-prebuild.log"
+    },
+    {
+      "name": "android-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "android",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\android-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:54:42.554Z",
+      "endedAt": "2026-10-30T07:54:58.360Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\android-bundle.log"
+    },
+    {
+      "name": "ios-bundle",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "export",
+        "--platform",
+        "ios",
+        "--output-dir",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\ios-export"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:54:58.361Z",
+      "endedAt": "2026-10-30T07:55:11.394Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\ios-bundle.log"
+    },
+    {
+      "name": "packaged-android",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-packaged-mobile.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:55:11.396Z",
+      "endedAt": "2026-10-30T07:55:26.714Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-54-30-673Z\\packaged-android.log"
+    }
+  ],
+  "endedAt": "2026-10-30T07:55:26.715Z"
+}

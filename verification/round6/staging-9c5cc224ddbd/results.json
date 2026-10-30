@@ -1,0 +1,60 @@
+{
+  "project": "ctfarm-round5-9c5cc224ddbd",
+  "checks": [
+    {
+      "label": "config",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-9c5cc224ddbd.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "config",
+        "--quiet"
+      ],
+      "startedAt": "2026-10-30T03:42:21.429Z",
+      "endedAt": "2026-10-30T03:42:21.951Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-9c5cc224ddbd/config.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-9c5cc224ddbd.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "build"
+      ],
+      "startedAt": "2026-10-30T03:42:21.954Z",
+      "endedAt": "2026-10-30T03:44:37.471Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-9c5cc224ddbd/build.log"
+    },
+    {
+      "label": "up",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-9c5cc224ddbd.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "up",
+        "-d",
+        "--wait",
+        "--wait-timeout",
+        "120"
+      ],
+      "startedAt": "2026-10-30T03:44:37.475Z",
+      "endedAt": "2026-10-30T03:44:54.883Z",
+      "exitCode": 1,
+      "log": "verification/round6/staging-9c5cc224ddbd/up.log"
+    }
+  ],
+  "localTlsOnly": true,
+  "productionDeployed": false
+}

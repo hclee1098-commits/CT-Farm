@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-29T08:18:57.182Z",
+  "backup": "backup\\ct-farm-postgres-1793261930444.ssbk",
+  "restoreDatabase": "ct_farm_verify_c3b76f7421f3",
+  "nativePostgres": true,
+  "isolatedRestore": true,
+  "migrationDeploy": true,
+  "schemaDiff": false,
+  "preservedTables": 16,
+  "appliedToExisting": true,
+  "operationsIntegration": true
+}

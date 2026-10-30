@@ -1,0 +1,194 @@
+[
+  {
+    "before": "SECURE STARTER 사용설명서.md",
+    "after": "docs/01-시작하기/설치와-실행.md",
+    "action": "중복 통합·재작성",
+    "originalTitle": "# 🛡️ SECURE STARTER 사용자 설명서",
+    "lines": 420,
+    "sha256": "1e7fa03a3b336d00e686c52de059193904552d32a3e9e11f22fa092634742691"
+  },
+  {
+    "before": "검증결과.md",
+    "after": "docs/08-이전기록/V5-보안수정검증.md",
+    "action": "현재 안내와 분리한 과거 기록",
+    "originalTitle": "# SECURE STARTER V5 수정 및 검증 결과",
+    "lines": 79,
+    "sha256": "1438e79b2114fbb7d3f8b5b2188b6c8d0260df1717878513f85dd45dc70ba532"
+  },
+  {
+    "before": "README.md",
+    "after": "README.md",
+    "action": "중복 통합·재작성",
+    "originalTitle": "# SECURE STARTER V6 · 6.0.0-rc.1",
+    "lines": 69,
+    "sha256": "003081c1828b0d0e6fcd8fd54612887d9fa2aa8cfeb69ccd910bc137c0b2193c"
+  },
+  {
+    "before": "README-START-HERE.md",
+    "after": "docs/01-시작하기/설치와-실행.md",
+    "action": "중복 통합·재작성",
+    "originalTitle": "# SECURE STARTER V6 검증 후보판",
+    "lines": 76,
+    "sha256": "7f94dee9115e410147661a0001e72a1422d4e1b99497dbd9bd0c066b7d0e600e"
+  },
+  {
+    "before": "README-DEVELOPER-PLATFORM.md",
+    "after": "docs/01-시작하기/개발자포털-실행.md",
+    "action": "중복 통합·재작성",
+    "originalTitle": "# 개발 플랫폼 확장본 안내",
+    "lines": 12,
+    "sha256": "e056a4cf931b782f55cf43d50449de48b17d0366967841e3dd979d373f4fc131"
+  },
+  {
+    "before": "docs/CHANGELOG.md",
+    "after": "docs/08-이전기록/V5에서-V6-변경.md",
+    "action": "현재 안내와 분리한 과거 기록",
+    "originalTitle": "# V5 → V6 변경 내역",
+    "lines": 123,
+    "sha256": "0a8cf0a4a554eb503d9f99f1ea013b0e31787bf2d772de661bbbc2da7eccb6ac"
+  },
+  {
+    "before": "docs/SECURITY.md",
+    "after": "docs/05-운영과보안/인증과-파일보안-정책.md",
+    "action": "이동 및 설명 보완",
+    "originalTitle": "# V6 보안 검토",
+    "lines": 41,
+    "sha256": "2ea4da6ee2c2bff5fff6ba8ac9be1bc3499020352eec6dc7d5bf95b38550f3ff"
+  },
+  {
+    "before": "docs/WINDOWS.md",
+    "after": "docs/06-문제해결/Windows-실기검증.md",
+    "action": "이동 및 설명 보완",
+    "originalTitle": "# Windows PowerShell 5.1 실기 검증 필요 항목",
+    "lines": 18,
+    "sha256": "caa62c35360ff1cb8a6d38fb1e8da54476b5aaa1c5a975ef26ab69459bf3d89a"
+  },
+  {
+    "before": "docs/README.md",
+    "after": "docs/README.md",
+    "action": "중복 통합·재작성",
+    "originalTitle": "# SECURE STARTER 통합 문서센터",
+    "lines": 14,
+    "sha256": "3e0104935c4f8ecdd001e4fecf0b8ebe58e9119a8d31651ac0ff589924a502e1"
+  },
+  {
+    "before": "docs/OPERATIONS.md",
+    "after": "docs/05-운영과보안/배포와-백업복구.md",
+    "action": "이동 및 설명 보완",
+    "originalTitle": "# 운영 배포·백업·복원",
+    "lines": 61,
+    "sha256": "f2cbf34ced4b1c0f33412647d219319bf22006915d10d0f3d3e4b9888f3452eb"
+  },
+  {
+    "before": "docs/API.md",
+    "after": "docs/07-기술참고/API-요청과-응답규칙.md",
+    "action": "이동 및 설명 보완",
+    "originalTitle": "# API 공통 규칙",
+    "lines": 19,
+    "sha256": "e4f096a975167ac36230a1223cfa899bc0c36c0cb8a6aa19352e65db8e9ac102"
+  },
+  {
+    "before": "docs/V6-REPORT.md",
+    "after": "docs/08-이전기록/V6-이전구현검증.md",
+    "action": "현재 안내와 분리한 과거 기록",
+    "originalTitle": "# SECURE STARTER V6 구현·검증 보고서",
+    "lines": 133,
+    "sha256": "eb2040c92f81421c7cefccc61ae4b86d7a811279f1dcf4f34acc33b0547af914"
+  },
+  {
+    "before": "docs/files/generated-index.md",
+    "after": "docs/07-기술참고/전체-파일색인.md",
+    "action": "자동 생성 위치 통합",
+    "originalTitle": "# 자동 파일 색인",
+    "lines": 211,
+    "sha256": "91c99eab728d96d3144c639a274415fc75dcd3fb61ae3e2961d39b7be3cfe869"
+  },
+  {
+    "before": "docs/security/platform-review.md",
+    "after": "docs/05-운영과보안/인증과-파일보안-정책.md",
+    "action": "기술 설명 통합·중복 안내 제거",
+    "originalTitle": "# 개발자 플랫폼 보안 검토",
+    "lines": 10,
+    "sha256": "d35ae74d32b37495208f6a0d378bc4f07982100e01fca37087d4c1770a6100f0"
+  },
+  {
+    "before": "docs/operations/email.md",
+    "after": "docs/02-전체기능/이메일-설정과-제한.md",
+    "action": "이동 및 설명 보완",
+    "originalTitle": "# 이메일 설정과 제한",
+    "lines": 11,
+    "sha256": "6c6e9cc8eae328ca77cb0241f298ee48d49fa844c4e68c7b732229ad46ceb27e"
+  },
+  {
+    "before": "docs/workflows/code-flows.md",
+    "after": "docs/03-프로젝트구조/전체구조와-요청흐름.md",
+    "action": "기술 설명 통합·중복 안내 제거",
+    "originalTitle": "# 주요 실행 흐름",
+    "lines": 47,
+    "sha256": "b0d92a5b63ffd1fbefb9fe516bc33d0a734b2ac7c56af7b8172baa0ffeb979b8"
+  },
+  {
+    "before": "docs/testing/current-results.md",
+    "after": "docs/08-이전기록/이전-플랫폼검증.md",
+    "action": "현재 안내와 분리한 과거 기록",
+    "originalTitle": "# 최종 검증 보고서 — 개발 플랫폼 확장본",
+    "lines": 82,
+    "sha256": "943027735842871dae24d93ca90a5e3c1b9e4e931844da0469746dbba092811e"
+  },
+  {
+    "before": "docs/installation/developer-platform.md",
+    "after": "docs/01-시작하기/개발자포털-실행.md",
+    "action": "이동 및 설명 보완",
+    "originalTitle": "# 개발 플랫폼 시작",
+    "lines": 27,
+    "sha256": "5f4a5d18c2f1a0e5b945aea3e5fa75041c004612eab1547af332b9bbf32ed3bf"
+  },
+  {
+    "before": "docs/architecture/developer-platform.md",
+    "after": "docs/03-프로젝트구조/전체구조와-요청흐름.md",
+    "action": "기술 설명 통합·중복 안내 제거",
+    "originalTitle": "# 실제 코드 기반 시스템 구조",
+    "lines": 20,
+    "sha256": "ce6f571fb9b22e1faa3fa2eb579c7d038be96d6d85fbd21aa3a494004d8f9f8b"
+  },
+  {
+    "before": "apps/api/src/bootstrap/README.md",
+    "after": "docs/03-프로젝트구조/전체구조와-요청흐름.md",
+    "action": "기술 설명 통합·중복 안내 제거",
+    "originalTitle": "# Express 통합 서버",
+    "lines": 130,
+    "sha256": "de83d9dc4c0e21de920bf6ec25e17e62782157ddd34201cdb7a4b12664863009"
+  },
+  {
+    "before": "apps/api/src/modules/files/README.md",
+    "after": "docs/07-기술참고/API-요청과-응답규칙.md",
+    "action": "기술 설명 통합·중복 안내 제거",
+    "originalTitle": "# 파일 관리 공통 모듈",
+    "lines": 149,
+    "sha256": "5d0501865b7958103e7d57fcbd32838e0f50aeb14b24ca1531c202d8f9662155"
+  },
+  {
+    "before": "apps/api/src/modules/notes/README.md",
+    "after": "docs/07-기술참고/API-요청과-응답규칙.md",
+    "action": "기술 설명 통합·중복 안내 제거",
+    "originalTitle": "# 게시글 CRUD API 사용 설명서",
+    "lines": 184,
+    "sha256": "1d5a6d304ef9828235e24bec1f8d8ca3f1ae8e73471c072025ce04ede2fb9535"
+  },
+  {
+    "before": "apps/api/src/modules/auth/README.md",
+    "after": "docs/07-기술참고/API-요청과-응답규칙.md",
+    "action": "기술 설명 통합·중복 안내 제거",
+    "originalTitle": "# 인증 API 사용 설명서",
+    "lines": 142,
+    "sha256": "9769f18b96c0b2368ff71b8b37b781da9e1ddf1d66e1c8e4867e441bb2f07406"
+  },
+  {
+    "before": "apps/web/src/shared/api/README.md",
+    "after": "docs/07-기술참고/공통-API클라이언트.md",
+    "action": "이동 및 설명 보완",
+    "originalTitle": "# 공통 API 사용 설명서",
+    "lines": 122,
+    "sha256": "83dc671bb7af0822d4986ee5bdc05dd1709244893d01a48b119d59aaed54898b"
+  }
+]

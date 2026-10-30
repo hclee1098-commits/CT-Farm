@@ -1,0 +1,160 @@
+{
+  "startedAt": "2026-10-30T03:36:33.260Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api-build",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json"
+      ],
+      "startedAt": "2026-10-30T03:36:33.261Z",
+      "endedAt": "2026-10-30T03:36:37.455Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\api-build.log"
+    },
+    {
+      "name": "platform",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-platform.mjs"
+      ],
+      "startedAt": "2026-10-30T03:36:37.456Z",
+      "endedAt": "2026-10-30T03:36:49.270Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "PGlite",
+      "passed": 30,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\platform.log"
+    },
+    {
+      "name": "mail",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-mail.mts"
+      ],
+      "startedAt": "2026-10-30T03:36:49.271Z",
+      "endedAt": "2026-10-30T03:36:56.924Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "PGlite",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\mail.log"
+    },
+    {
+      "name": "farm",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-farm.mts"
+      ],
+      "startedAt": "2026-10-30T03:36:56.925Z",
+      "endedAt": "2026-10-30T03:37:01.105Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "PGlite",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\farm.log"
+    },
+    {
+      "name": "capabilities",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/round5/capabilities.test.mjs"
+      ],
+      "startedAt": "2026-10-30T03:37:01.106Z",
+      "endedAt": "2026-10-30T03:37:03.102Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\capabilities.log"
+    },
+    {
+      "name": "round6-native",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/round6-native.mts"
+      ],
+      "startedAt": "2026-10-30T03:37:03.103Z",
+      "endedAt": "2026-10-30T03:37:10.898Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "native PostgreSQL 16",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\round6-native.log"
+    },
+    {
+      "name": "delivery",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/delivery.test.mjs"
+      ],
+      "startedAt": "2026-10-30T03:37:10.899Z",
+      "endedAt": "2026-10-30T03:37:11.562Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\delivery.log"
+    },
+    {
+      "name": "disks",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/disks.test.mjs"
+      ],
+      "startedAt": "2026-10-30T03:37:11.563Z",
+      "endedAt": "2026-10-30T03:37:11.800Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T03-36-33-257Z\\disks.log"
+    }
+  ],
+  "endedAt": "2026-10-30T03:37:11.801Z"
+}

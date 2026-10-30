@@ -1,0 +1,353 @@
+// filepath: apps/api/prisma/schema.prisma - 회원, 인증 세션, 게시글, 첨부파일의 데이터베이스 모델 정의
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// 회원 정보
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique @db.VarChar(254)
+  passwordHash  String
+  name          String   @db.VarChar(60)
+  tokenVersion  Int      @default(0)
+  failedLoginCount Int @default(0)
+  lockedUntil DateTime?
+  role          String   @default("USER") @db.VarChar(16)
+  suspendedAt   DateTime?
+  deletedAt     DateTime?
+  emailVerifiedAt DateTime?
+  mfaSecret     String?
+  mfaSetupExpiresAt DateTime?
+  mfaEnabled    Boolean  @default(false)
+  mfaLastStep   BigInt   @default(-1)
+  recoveryHashes String[] @default([])
+  notificationEmail Boolean @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  refreshSessions RefreshSession[]
+  notes           Note[]
+  files           StoredFile[]
+  actions         AccountAction[]
+  notifications   Notification[]
+  farms           Farm[]
+  aiQuotas        AiQuota[]
+  farmMemberships FarmMember[]
+}
+
+// Refresh Token 세션
+// 원본 토큰은 저장하지 않고 SHA-256 해시만 저장합니다.
+model RefreshSession {
+  id        String    @id @default(uuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  revokedAt DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+// CRUD 예제 게시글
+model Note {
+  id        String   @id @default(uuid())
+  ownerId   String
+  title     String   @db.VarChar(120)
+  content   String   @db.Text
+  deletedAt DateTime?
+  version   Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+
+  @@index([ownerId, createdAt])
+}
+
+// 업로드 파일 메타데이터
+model StoredFile {
+  id           String   @id @default(uuid())
+  ownerId      String
+  storageKey   String   @unique
+  originalName String   @db.VarChar(255)
+  mimeType     String   @db.VarChar(100)
+  deletedAt    DateTime?
+  sha256       String? @db.VarChar(64)
+  size         Int
+  createdAt    DateTime @default(now())
+
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+
+  @@index([ownerId, createdAt])
+  @@index([ownerId, sha256])
+  diaryPhotos DiaryPhoto[]
+}
+
+
+// 보안 이벤트에는 토큰, 비밀번호, 요청 본문을 저장하지 않습니다.
+model AuditEvent {
+  id String @id @default(uuid())
+  actorId String?
+  action String @db.VarChar(80)
+  targetId String?
+  createdAt DateTime @default(now())
+  @@index([createdAt])
+  @@index([actorId, createdAt])
+}
+model AccountAction {
+  id String @id @default(uuid())
+  userId String
+  pendingEmail String? @db.VarChar(254)
+  issuedVersion Int @default(0)
+  kind String @db.VarChar(20)
+  tokenHash String @unique
+  expiresAt DateTime
+  consumedAt DateTime?
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([expiresAt])
+}
+model Notification {
+  id String @id @default(uuid())
+  userId String
+  title String @db.VarChar(120)
+  message String @db.VarChar(2000)
+  readAt DateTime?
+  createdAt DateTime @default(now())
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  @@index([userId, createdAt])
+}
+
+model IdempotentRequest {
+  id String @id @default(uuid())
+  scope String @db.VarChar(160)
+  key String @db.VarChar(128)
+  requestHash String @db.VarChar(64)
+  response Json
+  createdAt DateTime @default(now())
+  @@unique([scope, key])
+  @@index([createdAt])
+}
+
+// 농장과 일지는 삭제 표시만 하며 기존 데이터를 보존합니다.
+model Farm {
+  id String @id @default(uuid())
+  ownerId String
+  name String @db.VarChar(100)
+  address String @db.VarChar(300)
+  latitude Float
+  longitude Float
+  areaM2 Float
+  crop String @db.VarChar(80)
+  variety String @db.VarChar(80)
+  stage String @default("PREPARING") @db.VarChar(20)
+  version Int @default(1)
+  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  entries FarmDiary[]
+  records FarmRecord[]
+  sensors FarmSensor[]
+  products FarmProduct[]
+  consultations FarmConsultation[]
+    members FarmMember[]
+    invitations FarmInvitation[]
+  @@index([ownerId, createdAt])
+}
+
+// 1차 협업 권한은 읽기 전용입니다. 기존 쓰기 API의 소유자 검사를 유지합니다.
+model FarmMember {
+  id String @id @default(uuid())
+  farmId String
+  userId String
+  role String @default("VIEWER") @db.VarChar(16)
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+  farm Farm @relation(fields: [farmId], references: [id], onDelete: Restrict)
+  user User @relation(fields: [userId], references: [id], onDelete: Restrict)
+  @@unique([farmId,userId])
+  @@index([userId,revokedAt])
+}
+
+model FarmInvitation {
+  id String @id @default(uuid())
+  farmId String
+  email String @db.VarChar(254)
+  tokenHash String @unique
+  expiresAt DateTime
+  usedAt DateTime?
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+  farm Farm @relation(fields: [farmId], references: [id], onDelete: Restrict)
+  @@index([farmId,createdAt])
+}
+
+model FarmDiary {
+  id String @id @default(uuid())
+  farmId String
+  workDate String @db.VarChar(10)
+  title String @db.VarChar(120)
+  content String @db.VarChar(5000)
+  version Int @default(1)
+  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  farm Farm @relation(fields: [farmId], references: [id], onDelete: Restrict)
+  photos DiaryPhoto[]
+  @@index([farmId, workDate])
+}
+
+// 필지·작기·일정·경영 기록은 종류별 strict DTO로 검증합니다.
+model FarmRecord {
+  id String @id @default(uuid())
+  farmId String
+  kind String @db.VarChar(16)
+  data Json
+  provenance Json?
+  version Int @default(1)
+  deletedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  farm Farm @relation(fields: [farmId], references: [id], onDelete: Restrict)
+  @@index([farmId, kind, createdAt])
+}
+
+model DiaryPhoto {
+  id String @id @default(uuid())
+  diaryId String
+  fileId String
+  caption String @db.VarChar(200)
+  createdAt DateTime @default(now())
+  diary FarmDiary @relation(fields: [diaryId], references: [id], onDelete: Restrict)
+  file StoredFile @relation(fields: [fileId], references: [id], onDelete: Restrict)
+  @@unique([diaryId, fileId])
+}
+
+model FarmSensor {
+  id String @id @default(uuid())
+  farmId String
+  name String @db.VarChar(100)
+  kind String @db.VarChar(20)
+  minValue Float
+  maxValue Float
+  staleMinutes Int @default(60)
+  tokenHash String @unique @db.VarChar(64)
+  simulated Boolean @default(false)
+  revokedAt DateTime?
+  createdAt DateTime @default(now())
+  farm Farm @relation(fields: [farmId], references: [id], onDelete: Restrict)
+  readings SensorReading[]
+  @@index([farmId, createdAt])
+}
+
+model SensorReading {
+  id String @id @default(uuid())
+  sensorId String
+  sampleId String @db.VarChar(80)
+  value Float
+  measuredAt DateTime
+  receivedAt DateTime @default(now())
+  sensor FarmSensor @relation(fields: [sensorId], references: [id], onDelete: Restrict)
+  @@unique([sensorId, sampleId])
+  @@index([sensorId, measuredAt])
+}
+
+model FarmProduct {
+  id String @id @default(uuid())
+  farmId String
+  name String @db.VarChar(120)
+  unit String @db.VarChar(40)
+  priceWon Int
+  stock Int
+  version Int @default(1)
+  archivedAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  farm Farm @relation(fields: [farmId], references: [id], onDelete: Restrict)
+  orders FarmOrder[]
+  @@index([farmId, createdAt])
+}
+
+// 결제와 구분한 농장주의 수기 주문 관리입니다.
+model FarmOrder {
+  id String @id @default(uuid())
+  productId String
+  requestKey String @db.VarChar(80)
+  buyerLabel String @db.VarChar(80)
+  quantity Int
+  totalWon Int
+  status String @default("RESERVED") @db.VarChar(16)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  product FarmProduct @relation(fields: [productId], references: [id], onDelete: Restrict)
+  payment FarmPayment?
+  @@unique([productId, requestKey])
+}
+
+// 상담 턴 단위로 요청 식별자·근거·상태를 보존합니다. 비밀키는 저장하지 않습니다.
+model FarmConsultation {
+  id String @id @default(uuid())
+  farmId String
+  requestKey String @db.VarChar(80)
+  requestHash String @db.VarChar(64)
+  question String @db.VarChar(2000)
+  answer String? @db.VarChar(6000)
+  mode String @db.VarChar(20)
+  status String @db.VarChar(20)
+  sources Json
+  usageTokens Int @default(0)
+  reservedTokens Int @default(0)
+  quotaDay String? @db.VarChar(10)
+  errorCode String? @db.VarChar(60)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  farm Farm @relation(fields: [farmId], references: [id], onDelete: Restrict)
+  @@unique([farmId, requestKey])
+  @@index([farmId, createdAt])
+}
+
+model AiQuota {
+  id String @id @default(uuid())
+  ownerId String
+  day String @db.VarChar(10)
+  reservedTokens Int @default(0)
+  requests Int @default(0)
+  owner User @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  @@unique([ownerId, day])
+}
+
+// 서버 계산 금액과 주문별 한 결제 의도만 저장합니다. 실결제 경로는 제공하지 않습니다.
+model FarmPayment {
+  id String @id @default(uuid())
+  orderId String @unique
+  requestKey String @db.VarChar(80)
+  amountWon Int
+  provider String @db.VarChar(20)
+  status String @default("PENDING") @db.VarChar(20)
+  providerKey String? @unique @db.VarChar(200)
+  eventHash String? @db.VarChar(64)
+  version Int @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  order FarmOrder @relation(fields: [orderId], references: [id], onDelete: Restrict)
+  events PaymentEvent[]
+}
+
+model PaymentEvent {
+  id String @id @default(uuid())
+  paymentId String
+  action String @db.VarChar(32)
+  requestKey String @db.VarChar(80)
+  createdAt DateTime @default(now())
+  payment FarmPayment @relation(fields: [paymentId], references: [id], onDelete: Restrict)
+  @@unique([paymentId, requestKey])
+}

@@ -1,0 +1,155 @@
+{
+  "startedAt": "2026-10-30T05:36:45.449Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T05-36-45-445Z\\api-vitest.json"
+      ],
+      "startedAt": "2026-10-30T05:36:45.450Z",
+      "endedAt": "2026-10-30T05:36:54.074Z",
+      "exitCode": 1,
+      "status": "failed",
+      "database": "see test log",
+      "passed": 137,
+      "failed": 24,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-36-45-445Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T05-36-45-445Z\\web-vitest.json"
+      ],
+      "startedAt": "2026-10-30T05:36:54.076Z",
+      "endedAt": "2026-10-30T05:36:55.645Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-36-45-445Z\\web.log"
+    },
+    {
+      "name": "capabilities",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/round5/capabilities.test.mjs"
+      ],
+      "startedAt": "2026-10-30T05:36:55.646Z",
+      "endedAt": "2026-10-30T05:36:58.051Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-36-45-445Z\\capabilities.log"
+    },
+    {
+      "name": "delivery",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/delivery.test.mjs"
+      ],
+      "startedAt": "2026-10-30T05:36:58.052Z",
+      "endedAt": "2026-10-30T05:36:58.964Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-36-45-445Z\\delivery.log"
+    },
+    {
+      "name": "disks",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/disks.test.mjs"
+      ],
+      "startedAt": "2026-10-30T05:36:58.965Z",
+      "endedAt": "2026-10-30T05:36:59.224Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-36-45-445Z\\disks.log"
+    },
+    {
+      "name": "api-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-30T05:36:59.226Z",
+      "endedAt": "2026-10-30T05:37:06.365Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T05-36-45-445Z\\api-typecheck.log"
+    },
+    {
+      "name": "web-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/web/tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-30T05:37:06.367Z",
+      "endedAt": "2026-10-30T05:37:16.159Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T05-36-45-445Z\\web-typecheck.log"
+    }
+  ],
+  "endedAt": "2026-10-30T05:37:16.162Z"
+}

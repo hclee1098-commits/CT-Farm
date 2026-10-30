@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-29T13:04:44.973Z",
+  "backup": "backup\\ct-farm-postgres-1793279076249.ssbk",
+  "restoreDatabase": "ct_farm_verify_81c4eff2dafe",
+  "nativePostgres": true,
+  "isolatedRestore": true,
+  "migrationDeploy": true,
+  "schemaDiff": false,
+  "preservedTables": 20,
+  "appliedToExisting": true,
+  "uploadsIncluded": true,
+  "restoredFiles": 2,
+  "recoveryDirectory": "verification\\runtime\\restore-ct_farm_verify_81c4eff2dafe",
+  "recoverySeconds": 8.8,
+  "consistency": "local API stopped during capture; external writers must also remain stopped",
+  "fileApiVerified": true,
+  "fileMetadataVerified": 2,
+  "fileApiResult": {
+    "verified": 2,
+    "denied": 2,
+    "scope": "native isolated restore and actual authenticated file API"
+  },
+  "operationsIntegration": true,
+  "totalDrillSeconds": 26.551
+}

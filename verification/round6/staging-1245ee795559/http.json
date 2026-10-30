@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-30T04:53:29.974Z",
+  "localTlsVerified": true,
+  "publicTlsVerified": false,
+  "readiness": 200,
+  "web": 200,
+  "register": 201,
+  "login": 200,
+  "secureHttpOnlyHostCookie": true,
+  "untrustedOrigin": 403,
+  "missingOrigin": 403,
+  "upload": 201,
+  "authenticatedDownload": 200,
+  "rawAudioTested": false
+}

@@ -1,0 +1,331 @@
+[
+  {
+    "path": "README-DEVELOPER-PLATFORM.md",
+    "change": "추가",
+    "afterSha256": "e056a4cf931b782f55cf43d50449de48b17d0366967841e3dd979d373f4fc131"
+  },
+  {
+    "path": "apps/api/.env.example",
+    "change": "수정",
+    "beforeSha256": "be02ca7798b544b31bc0a7f0af954ae8768e24170761ca2b8b16a28b0316a03f",
+    "afterSha256": "4a04560ff4445c458ffd99bcab31add1e8ac1cce826ae754eb6cc45efe3c15a3"
+  },
+  {
+    "path": "apps/api/package.json",
+    "change": "수정",
+    "beforeSha256": "3c5efecc4a3d692e20a546f94dd6b852aa22d57fe953d862087c227248951555",
+    "afterSha256": "aae266d3795abf3f985d01c4ce5d014ad4ea8ff0e5f6e35c6df6ada608ad067d"
+  },
+  {
+    "path": "apps/api/src/bootstrap/app.http.test.ts",
+    "change": "수정",
+    "beforeSha256": "0987b373d48e839602205ccdb8e3b79626b97a36d55dc112758e826c83bcff79",
+    "afterSha256": "43146d49e7ea2b76ad438555334878776d815e3026e34e1fd9d3ad35768d322a"
+  },
+  {
+    "path": "apps/api/src/bootstrap/server.ts",
+    "change": "수정",
+    "beforeSha256": "cce16c64a277e33bab0af0c51a4c92d996632a3b7d821aa1dfdf376a82577053",
+    "afterSha256": "9d60ce80e83cf79e42d4c25fdca3692626b9961dcda97df12a7144b3d6b69e72"
+  },
+  {
+    "path": "apps/api/src/common/auth.middleware.ts",
+    "change": "수정",
+    "beforeSha256": "9d00484933fb7810eaee9d81fc138bfbff8dc06296ee685622023071db6f7351",
+    "afterSha256": "3dd7820c0be177b4beac52ab7d8a3cf5ef6724e776a5a293683af758e9b877bb"
+  },
+  {
+    "path": "apps/api/src/common/validate.ts",
+    "change": "수정",
+    "beforeSha256": "14afd90652da1544a99937ed77495e00808f240bc4d97fbbdc5407f7dff5f30d",
+    "afterSha256": "eb722f2669b5e015620de599f25de0c84fc7c7ab909e7cb07cd387f8f63057e0"
+  },
+  {
+    "path": "apps/api/src/modules/auth/auth.controller.ts",
+    "change": "수정",
+    "beforeSha256": "6ab872c2a90c67a41b883b37b1f64092e80a7dced06f5c2e13c95deb8f2b6f31",
+    "afterSha256": "dcfd419a3e5b22fddf399a39cc5af760c205235d686323b6fd005df89d6b422f"
+  },
+  {
+    "path": "apps/api/src/modules/auth/auth.repository.ts",
+    "change": "수정",
+    "beforeSha256": "4a1b8f77f512c9e8fdf96dd957cfb93f0e23f1327d79ddab2873e29af68c893a",
+    "afterSha256": "b8ab8a3ba0ce5f87d794bf255ac2c847968dbb09278eee25ece1e2c0de3cf78c"
+  },
+  {
+    "path": "apps/api/src/modules/auth/auth.service.ts",
+    "change": "수정",
+    "beforeSha256": "1a4ff701bf675d6d630e1ad7e46f8a67d3544f2b2080fdf771deef8019adeded",
+    "afterSha256": "49ec6fa607a1f39afc1d5ba6e13122830ae274b829d0d00be3e4cb4bc642749b"
+  },
+  {
+    "path": "apps/api/src/modules/auth/mfa.ts",
+    "change": "수정",
+    "beforeSha256": "68d7075a16a854f4ea186140742bccf02d921ce881d38205856061bb172e18ee",
+    "afterSha256": "c62dc3e0dd623dd76ee97deabe0c0097982caecc4b9e16c4c6412fe20624804d"
+  },
+  {
+    "path": "apps/api/src/modules/files/files.controller.ts",
+    "change": "수정",
+    "beforeSha256": "0fc0dde22e2335fe3eb210be880f0f2bb9488635dcfc95e5f313c1e1082c9128",
+    "afterSha256": "0e0bbb3a998acd700b4d7d0434294b5e4c6c4e00526940ece3b3c680ae849d88"
+  },
+  {
+    "path": "apps/api/src/modules/files/files.security.ts",
+    "change": "수정",
+    "beforeSha256": "1c66aee678e3a0ba72cfe919b43ae4320bd766eebbc550c7a568d2df7bf6a1fc",
+    "afterSha256": "9cc326c60f88a7fa26af18aeb022b89c0a1bbf067efa2d738dfa19f406a1591b"
+  },
+  {
+    "path": "apps/api/src/modules/files/files.service.ts",
+    "change": "수정",
+    "beforeSha256": "e43b1c7ad650dbde22fc55abbaaf39ff5b2d4ff758adb28a7f4d1e24119593ba",
+    "afterSha256": "8c1f09a8cbb903f8e6f28eaac32fa068509728806130cfae64fdb826877148e2"
+  },
+  {
+    "path": "apps/api/src/modules/files/image.processing.ts",
+    "change": "수정",
+    "beforeSha256": "7b24d0caf6ae404a9fba36d743f498c398dbb16e8aa49aaf1f134f488c2c444c",
+    "afterSha256": "1f7eac6650ec31b1a4fd7c8c86d3197face9f24b53bc5332102e56b4979f1edd"
+  },
+  {
+    "path": "apps/api/src/modules/notes/notes.controller.ts",
+    "change": "수정",
+    "beforeSha256": "4590b655d35d49549a55e64da30e46c80f23d387f05ab8aa739620dc01812e2e",
+    "afterSha256": "f4f1592a4df13020c310a95e86dc78b58d927d5bdbcd03a5595ff3897b1fd339"
+  },
+  {
+    "path": "apps/api/src/modules/notes/notes.idempotency.ts",
+    "change": "수정",
+    "beforeSha256": "5b7bbfdb1d526a54d415118924f917d36211db7998eea4369d6e922cfb68a6bc",
+    "afterSha256": "d2cc6dc2bb8e8a34580ba241187bdaf8beda9a320ee39551a85612cdd3ed9e63"
+  },
+  {
+    "path": "apps/api/src/modules/notes/notes.repository.ts",
+    "change": "수정",
+    "beforeSha256": "ef8c91fe3b72399ca8a47565412ba62527c93fdc3dce5344a92080d5f6a3515e",
+    "afterSha256": "89cf58a58b231077262afc9a5360967dd483ee9139eabd3e5d40a2705d038c03"
+  },
+  {
+    "path": "apps/api/src/modules/notes/notes.service.ts",
+    "change": "수정",
+    "beforeSha256": "eb2bb0268d2e69b63ef9af5be659d477631fa356ac28eb11e1d90248fb948547",
+    "afterSha256": "37c8fff4d6ef2f6d04006812e41f71a2dbfe63cf5a952c4a1683175baaceb151"
+  },
+  {
+    "path": "apps/api/src/modules/platform/account.service.ts",
+    "change": "수정",
+    "beforeSha256": "bc9c2e5dac3d07ce54e1c6a1a1c279dfe0641b7f04f8fc782dcf4fe2c5e50bb3",
+    "afterSha256": "2a45a3bb6d23d2ef14d54d11fc374f6e92f5d49de11326d0ea417516235b9a5d"
+  },
+  {
+    "path": "apps/api/src/modules/platform/admin.controller.ts",
+    "change": "수정",
+    "beforeSha256": "2bce7c6b8b5f3f51e02365553f1e073a6db36864dcf235e6b93ee5c1c16de49b",
+    "afterSha256": "14965a0afc1c6cc994dc13e3a0f85dddc010091f271c63eca23378cafdf7c204"
+  },
+  {
+    "path": "apps/api/src/modules/platform/mail.ts",
+    "change": "수정",
+    "beforeSha256": "33635b857e34dea18dbc362f41f3fb1a60b32f013054baf5f6c0ba7841921400",
+    "afterSha256": "c99d6fb9b03d664f4a9a5fda793618ab95e7447c9c630049773142e41dc5febb"
+  },
+  {
+    "path": "apps/api/src/modules/platform/platform.controller.ts",
+    "change": "수정",
+    "beforeSha256": "f29a6fd33bee284ad12934d2b7f7e88df7733116f65679f1a89b55728c54438a",
+    "afterSha256": "3dc7e4aa6c70706412768034a94a0ab143eae8877bcfd8f5faa1eb5db74f5a53"
+  },
+  {
+    "path": "apps/api/src/modules/platform/smtp.test.ts",
+    "change": "추가",
+    "afterSha256": "88fd92fa08228fdba9d69d397338f17ce237fb527cd87c3e8dc12e500b6cd376"
+  },
+  {
+    "path": "apps/api/src/modules/platform/smtp.ts",
+    "change": "추가",
+    "afterSha256": "f325f1e4f24e8911099da322080fdb2f3f9adb55770b0555aaa6ffd4c03413c4"
+  },
+  {
+    "path": "apps/web/next-env.d.ts",
+    "change": "추가",
+    "afterSha256": "1862ac4bbbc5192d4bf562161df66ea547ed3e67173100656ab606ae9797db2b"
+  },
+  {
+    "path": "apps/web/src/app/starter/email/page.tsx",
+    "change": "추가",
+    "afterSha256": "3e7681cceb28b50701fc096ae5e2bb94d749e51bd67ebccf3c7fceab30b5b8df"
+  },
+  {
+    "path": "compose.mail-dev.yaml",
+    "change": "추가",
+    "afterSha256": "dc3a863d3df08f483c18f9f310cc7d1f96238c864fc58a9d885d4dcbb6a8e9e3"
+  },
+  {
+    "path": "docs/README.md",
+    "change": "추가",
+    "afterSha256": "3e0104935c4f8ecdd001e4fecf0b8ebe58e9119a8d31651ac0ff589924a502e1"
+  },
+  {
+    "path": "docs/architecture/developer-platform.md",
+    "change": "추가",
+    "afterSha256": "ce6f571fb9b22e1faa3fa2eb579c7d038be96d6d85fbd21aa3a494004d8f9f8b"
+  },
+  {
+    "path": "docs/files/generated-index.md",
+    "change": "추가",
+    "afterSha256": "91c99eab728d96d3144c639a274415fc75dcd3fb61ae3e2961d39b7be3cfe869"
+  },
+  {
+    "path": "docs/installation/developer-platform.md",
+    "change": "추가",
+    "afterSha256": "5f4a5d18c2f1a0e5b945aea3e5fa75041c004612eab1547af332b9bbf32ed3bf"
+  },
+  {
+    "path": "docs/operations/email.md",
+    "change": "추가",
+    "afterSha256": "6c6e9cc8eae328ca77cb0241f298ee48d49fa844c4e68c7b732229ad46ceb27e"
+  },
+  {
+    "path": "docs/security/platform-review.md",
+    "change": "추가",
+    "afterSha256": "d35ae74d32b37495208f6a0d378bc4f07982100e01fca37087d4c1770a6100f0"
+  },
+  {
+    "path": "docs/testing/current-results.md",
+    "change": "추가",
+    "afterSha256": "943027735842871dae24d93ca90a5e3c1b9e4e931844da0469746dbba092811e"
+  },
+  {
+    "path": "docs/workflows/code-flows.md",
+    "change": "추가",
+    "afterSha256": "b0d92a5b63ffd1fbefb9fe516bc33d0a734b2ac7c56af7b8172baa0ffeb979b8"
+  },
+  {
+    "path": "package-lock.json",
+    "change": "수정",
+    "beforeSha256": "85770580c8d8133e549296a3fcc4054f6b5445461d0542f5e27fb349a80e5a36",
+    "afterSha256": "99719bed7608bdae70a16fef1e4be33b871154f3212d06f632fcb0196d4b229b"
+  },
+  {
+    "path": "package.json",
+    "change": "수정",
+    "beforeSha256": "499cc127b3842af099edad8b2da21f2364fceb77af0dcb3b91dc5385ef1f0845",
+    "afterSha256": "743e3064da336af367ed9b09b1ac3f0596090d7b9f4416d74a0e98673b554d75"
+  },
+  {
+    "path": "tools/analyze-project.mjs",
+    "change": "추가",
+    "afterSha256": "f3afee6837f7912d72358e9f468facb550fc9e9cf48a494078655b58b456664d"
+  },
+  {
+    "path": "tools/build-component-preview.mjs",
+    "change": "추가",
+    "afterSha256": "334f51f05827e0528207129bbd1c31a356f28077e2d826105e7e4496965716b5"
+  },
+  {
+    "path": "tools/dev-observed.mjs",
+    "change": "추가",
+    "afterSha256": "cc7c959e935ffda3a2bb1ddcd4897968c54233cc418f22e0242394f3f6f13222"
+  },
+  {
+    "path": "tools/dev-portal/app.js",
+    "change": "추가",
+    "afterSha256": "b7410edf0e0e9f883c88bd302aae091c01968a118a3fed2ac316a02ad650f419"
+  },
+  {
+    "path": "tools/dev-portal/components.tsx",
+    "change": "추가",
+    "afterSha256": "2d0d96aec15e2bc17616cf9d9de0083827cf08a1d38ba8f0178bab660a6cbf46"
+  },
+  {
+    "path": "tools/dev-portal/events.mjs",
+    "change": "추가",
+    "afterSha256": "5e49c0a9bf8b86ad8d34911d5a5d845693ebffabce6bdb01be7edc4e2d0211c9"
+  },
+  {
+    "path": "tools/dev-portal/events.test.mjs",
+    "change": "추가",
+    "afterSha256": "c2b901bbe6f310c41adb2d4611136f7bb829d6855d15b80f672dea681a652263"
+  },
+  {
+    "path": "tools/dev-portal/index.html",
+    "change": "추가",
+    "afterSha256": "37dfc64418adc255ba3c7ad12d7bfa00f6e6b2a1a431d2f82e9019b299b42d2b"
+  },
+  {
+    "path": "tools/dev-portal/portal.test.mjs",
+    "change": "추가",
+    "afterSha256": "c064f3a0da206c9c3793119df1e3d131ff2d4fe6d8f902e868ac412ed8c3cb33"
+  },
+  {
+    "path": "tools/dev-portal/server.mjs",
+    "change": "추가",
+    "afterSha256": "40f15924ad42cbea7256b4969d583685e7c9dcb05173ffbdacb3f43d1abaeb0d"
+  },
+  {
+    "path": "tools/dev-portal/style.css",
+    "change": "추가",
+    "afterSha256": "c1e9775907ad03ba632ea00c506383ef7374ae40bc067c7ae3c80f571b25c5fc"
+  },
+  {
+    "path": "tools/developer-event.mjs",
+    "change": "추가",
+    "afterSha256": "af6bef62fcd8a5a36e3e56e16f990d90b46955dc09dd7ec2618737e4649ef6a3"
+  },
+  {
+    "path": "tools/developer-event.test.mjs",
+    "change": "추가",
+    "afterSha256": "316f4d4384ad92b1f0b080f16c26bbf7a041d2e1a5e7867ce4a609913832e3f1"
+  },
+  {
+    "path": "tools/docs-index.mjs",
+    "change": "추가",
+    "afterSha256": "77b56804c90d057087b34b6fb478ddc27a0c55d74919a2b9d7b228344ff71c9d"
+  },
+  {
+    "path": "tools/process-definitions.mjs",
+    "change": "추가",
+    "afterSha256": "8298885166af2423e04efbb3c0603fc30a81224be8334049d968796f992b6c87"
+  },
+  {
+    "path": "tools/smoke-web.mjs",
+    "change": "수정",
+    "beforeSha256": "d1c9ec5535282a08ced3da2ba6aea907d2505c1b531128b8ba2374e55156d955",
+    "afterSha256": "ebc64f833a66c489ef793f2ad829b02c4017b5f6352dd92141f3d2faf5eadb4b"
+  },
+  {
+    "path": "tools/test-smtp.mts",
+    "change": "추가",
+    "afterSha256": "c4642b814cad9dedd3f6cc6fcbbe9a89c72eb01440f82d2a461251f6612f5615"
+  },
+  {
+    "path": "tools/verify-platform.mjs",
+    "change": "추가",
+    "afterSha256": "66d818e6d6c15aede37877601a664f59175e0e82ba440a4840df86303977882b"
+  },
+  {
+    "path": "verification/mail.log",
+    "change": "삭제",
+    "reason": "과거 검증 출력. 원본 첨부 ZIP에서 복원 가능. 기능 입력 아님.",
+    "beforeSha256": "9c881f312b4106755a20a6f1a79563478e773e60c7a3690d2bccc77f8fccc70b"
+  },
+  {
+    "path": "verification/platform.log",
+    "change": "삭제",
+    "reason": "과거 검증 출력. 원본 첨부 ZIP에서 복원 가능. 기능 입력 아님.",
+    "beforeSha256": "6580c544ba9b882058e61189124b8ffc57b6ede30b0d2b9e877a5e7571975066"
+  },
+  {
+    "path": "verification/verify.log",
+    "change": "삭제",
+    "reason": "과거 검증 출력. 원본 첨부 ZIP에서 복원 가능. 기능 입력 아님.",
+    "beforeSha256": "80020d21bee55788328b9a94b699bdf258cbe83850d79d28b5d4b223ca492e72"
+  },
+  {
+    "path": "verification/web-smoke.log",
+    "change": "삭제",
+    "reason": "과거 검증 출력. 원본 첨부 ZIP에서 복원 가능. 기능 입력 아님.",
+    "beforeSha256": "64d286e47bd3404aca68c3151f3ec857ec69d0f5fb8056336a0fa9763c0c5270"
+  }
+]

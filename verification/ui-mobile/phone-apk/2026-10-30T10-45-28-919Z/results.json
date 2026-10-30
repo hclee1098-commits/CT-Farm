@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-30T10:45:28.921Z",
+  "command": "node tools/verify-phone-apk.mjs",
+  "checks": [
+    "artifact SHA-256 matches signed build",
+    "test package, minSdk 24, targetSdk 36, arm64",
+    "no microphone permission; Android backup disabled"
+  ],
+  "deviceUIAutomation": false,
+  "permissions": [
+    "android.permission.SYSTEM_ALERT_WINDOW",
+    "android.permission.INTERNET",
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.VIBRATE",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.CHANGE_WIFI_MULTICAST_STATE",
+    "android.permission.ACCESS_NETWORK_STATE",
+    "android.permission.ACCESS_LOCAL_NETWORK",
+    "android.permission.CAMERA",
+    "android.permission.USE_BIOMETRIC",
+    "android.permission.USE_FINGERPRINT",
+    "kr.ctfarm.mobile.phonetest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+  ],
+  "status": "passed",
+  "exitCode": 0,
+  "endedAt": "2026-10-30T10:45:29.225Z"
+}

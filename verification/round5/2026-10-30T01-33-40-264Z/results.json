@@ -1,0 +1,162 @@
+{
+  "startedAt": "2026-10-30T01:33:40.272Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json"
+      ],
+      "startedAt": "2026-10-30T01:33:40.273Z",
+      "endedAt": "2026-10-30T01:33:53.866Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json"
+      ],
+      "startedAt": "2026-10-30T01:33:53.868Z",
+      "endedAt": "2026-10-30T01:33:55.193Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\web.log"
+    },
+    {
+      "name": "farm",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-farm.mts"
+      ],
+      "startedAt": "2026-10-30T01:33:55.194Z",
+      "endedAt": "2026-10-30T01:34:04.441Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "PGlite",
+      "passed": 33,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "group",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\farm.log"
+    },
+    {
+      "name": "platform",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-platform.mjs"
+      ],
+      "startedAt": "2026-10-30T01:34:04.442Z",
+      "endedAt": "2026-10-30T01:34:17.358Z",
+      "exitCode": 1,
+      "status": "failed",
+      "database": "PGlite",
+      "passed": 0,
+      "failed": null,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\platform.log"
+    },
+    {
+      "name": "mail",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/test-mail.mts"
+      ],
+      "startedAt": "2026-10-30T01:34:17.359Z",
+      "endedAt": "2026-10-30T01:34:20.076Z",
+      "exitCode": 1,
+      "status": "failed",
+      "database": "PGlite",
+      "passed": 0,
+      "failed": null,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\mail.log"
+    },
+    {
+      "name": "sql",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-migrations.mjs"
+      ],
+      "startedAt": "2026-10-30T01:34:20.077Z",
+      "endedAt": "2026-10-30T01:34:22.628Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\sql.log"
+    },
+    {
+      "name": "backup",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-backup.mjs"
+      ],
+      "startedAt": "2026-10-30T01:34:22.629Z",
+      "endedAt": "2026-10-30T01:34:22.731Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\backup.log"
+    },
+    {
+      "name": "incidents",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/incidents.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:34:22.732Z",
+      "endedAt": "2026-10-30T01:34:22.986Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round5\\2026-10-30T01-33-40-264Z\\incidents.log"
+    }
+  ],
+  "endedAt": "2026-10-30T01:34:22.987Z"
+}

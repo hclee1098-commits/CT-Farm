@@ -1,0 +1,86 @@
+{
+  "startedAt": "2026-10-30T08:01:03.994Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "packaged-android",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-packaged-mobile.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T08:01:03.995Z",
+      "endedAt": "2026-10-30T08:01:17.339Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\packaged-android.log"
+    },
+    {
+      "name": "mobile-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T08:01:17.342Z",
+      "endedAt": "2026-10-30T08:01:20.099Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\mobile-type.log"
+    },
+    {
+      "name": "mobile-compat",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "install",
+        "--check"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T08:01:20.100Z",
+      "endedAt": "2026-10-30T08:01:21.265Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\mobile-compat.log"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T08:01:21.267Z",
+      "endedAt": "2026-10-30T08:01:27.232Z",
+      "exitCode": 1,
+      "database": "not applicable / see raw log",
+      "passed": 5,
+      "failed": 1,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-01-03-991Z\\docs.log"
+    }
+  ],
+  "endedAt": "2026-10-30T08:01:27.234Z"
+}

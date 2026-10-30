@@ -1,0 +1,12 @@
+{
+  "startedAt": "2026-10-30T10:44:50.998Z",
+  "command": "node tools/verify-phone-apk.mjs",
+  "checks": [
+    "artifact SHA-256 matches signed build"
+  ],
+  "deviceUIAutomation": false,
+  "status": "failed",
+  "exitCode": 1,
+  "error": "Expected values to be strictly equal:\n\nundefined !== '24'\n",
+  "endedAt": "2026-10-30T10:44:51.295Z"
+}

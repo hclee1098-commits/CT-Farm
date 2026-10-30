@@ -1,0 +1,100 @@
+[
+  {
+    "path": "docs/09-CT-Farm-안내/시작.md",
+    "title": "CT-Farm 문서센터 이용 안내",
+    "category": "시작하기",
+    "modified": "2026-10-30T07:45:35.739Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/기능-설명.md",
+    "title": "전체 기능 사용 방법과 구현 근거",
+    "category": "사용 설명",
+    "modified": "2026-10-30T07:45:35.741Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/설치-운영.md",
+    "title": "처음 설치하고 실행·종료·백업하기",
+    "category": "시작하기",
+    "modified": "2026-10-30T07:45:35.743Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/시스템-구조.md",
+    "title": "실제 코드로 보는 시스템 구조와 기능 흐름",
+    "category": "개발과 구조",
+    "modified": "2026-10-30T07:45:35.796Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/개발자-안내.md",
+    "title": "개발자를 위한 코드·보안·테스트·배포 안내",
+    "category": "개발과 구조",
+    "modified": "2026-10-30T07:45:35.744Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/API-데이터-목록.md",
+    "title": "실제 API 선언과 PostgreSQL 모델 목록",
+    "category": "개발과 구조",
+    "modified": "2026-10-30T07:45:35.794Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/외부-연동.md",
+    "title": "외부 서비스·미완성 기능과 준비 사항",
+    "category": "외부 연동",
+    "modified": "2026-10-30T07:45:35.746Z",
+    "status": "외부 연동 대기"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/브랜드-가이드.md",
+    "title": "CT-Farm 로고·색상·아이콘 사용 가이드",
+    "category": "브랜드",
+    "modified": "2026-10-30T07:45:35.748Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/문서-관리.md",
+    "title": "문서 정리 기준·검증 결과·재개 방법",
+    "category": "문서 관리",
+    "modified": "2026-10-30T07:45:35.748Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/공통기반-검증.md",
+    "title": "SECURE STARTER V6 공통 기반의 실제 검증 상태",
+    "category": "공통 기반 검증",
+    "modified": "2026-10-29T12:31:39.644Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/4차-모바일과-운영.md",
+    "title": "4차 운영 안정화·모바일 농업 앱·읽기 공유 검증",
+    "category": "4차 개발·검증",
+    "modified": "2026-10-29T23:16:00.606Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/5차-검증과-권한확장.md",
+    "title": "5차 검증 증거·협업 권한 후보·운영 개선",
+    "category": "5차 개발·검증",
+    "modified": "2026-10-30T01:48:34.761Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/6차-음성과-실행복구.md",
+    "title": "6차 실행 장애 복구·음성 비서·작업 협업 검증",
+    "category": "6차 음성·협업·복구",
+    "modified": "2026-10-30T06:11:57.294Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  },
+  {
+    "path": "docs/09-CT-Farm-안내/모바일앱과-디자인.md",
+    "title": "CT-Farm 모바일 앱 설치·새 화면·실제 검증 안내",
+    "category": "모바일 앱·디자인",
+    "modified": "2026-10-30T10:46:53.265Z",
+    "status": "안내 · 검증 범위는 본문 참조"
+  }
+]

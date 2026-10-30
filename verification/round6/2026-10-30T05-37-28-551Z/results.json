@@ -1,0 +1,36 @@
+{
+  "startedAt": "2026-10-30T05:37:28.555Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T05-37-28-551Z\\api-vitest.json"
+      ],
+      "startedAt": "2026-10-30T05:37:28.555Z",
+      "endedAt": "2026-10-30T05:37:35.707Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-37-28-551Z\\api.log"
+    }
+  ],
+  "endedAt": "2026-10-30T05:37:35.710Z"
+}

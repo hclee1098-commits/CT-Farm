@@ -1,0 +1,8 @@
+// 실제 외부 발송 없이 로컬 SMTP 프로토콜만 검증합니다.
+import net from 'node:net';
+import assert from 'node:assert/strict';
+import {configureSmtp} from '../apps/api/src/modules/platform/smtp';
+import {getMailTransport} from '../apps/api/src/modules/platform/mail';
+let received='';const sockets=new Set<net.Socket>();
+const server=net.createServer(socket=>{sockets.add(socket);socket.on('close',()=>sockets.delete(socket));socket.write('220 localhost test SMTP\r\n');let pending='',data=false;socket.on('data',buffer=>{pending+=buffer.toString();let end;while((end=pending.indexOf('\r\n'))>=0){const line=pending.slice(0,end);pending=pending.slice(end+2);if(data){if(line==='.') {data=false;socket.write('250 accepted\r\n');}else received+=line+'\n';continue;}if(/^EHLO|^HELO/.test(line))socket.write('250 localhost\r\n');else if(/^MAIL FROM|^RCPT TO/.test(line))socket.write('250 OK\r\n');else if(line==='DATA'){data=true;socket.write('354 send data\r\n');}else if(line==='QUIT')socket.end('221 bye\r\n');else socket.write('250 OK\r\n');}});});
+await new Promise<void>(r=>server.listen(0,'127.0.0.1',r));try{const port=(server.address() as net.AddressInfo).port;configureSmtp({SMTP_HOST:'127.0.0.1',SMTP_PORT:String(port),MAIL_FROM:'starter@example.test',MAIL_PUBLIC_URL:'http://localhost:3000',NODE_ENV:'test'});await getMailTransport().send({to:'receiver@example.test',kind:'VERIFY',token:'a'.repeat(64)});assert.ok(received.includes('receiver@example.test'));assert.ok(received.includes('a'.repeat(64)));assert.ok(!received.includes('password'));console.log('성공: Nodemailer → 격리 TCP SMTP 수신, 수신자/인증 코드 전달 확인. 외부 수신은 미검증.');}finally{for(const s of sockets)s.destroy();await new Promise<void>(r=>server.close(()=>r()));}

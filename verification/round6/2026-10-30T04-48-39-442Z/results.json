@@ -1,0 +1,139 @@
+{
+  "startedAt": "2026-10-30T04:48:39.450Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-30T04:48:39.451Z",
+      "endedAt": "2026-10-30T04:48:43.539Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-48-39-442Z\\api-typecheck.log"
+    },
+    {
+      "name": "api-build",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json"
+      ],
+      "startedAt": "2026-10-30T04:48:43.541Z",
+      "endedAt": "2026-10-30T04:48:47.869Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-48-39-442Z\\api-build.log"
+    },
+    {
+      "name": "round6-native",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "tools/round6-native.mts"
+      ],
+      "startedAt": "2026-10-30T04:48:47.870Z",
+      "endedAt": "2026-10-30T04:49:04.376Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "native PostgreSQL 16",
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round6\\2026-10-30T04-48-39-442Z\\round6-native.log"
+    },
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T04-48-39-442Z\\api-vitest.json"
+      ],
+      "startedAt": "2026-10-30T04:49:04.378Z",
+      "endedAt": "2026-10-30T04:49:11.456Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-48-39-442Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\round6\\2026-10-30T04-48-39-442Z\\web-vitest.json"
+      ],
+      "startedAt": "2026-10-30T04:49:11.457Z",
+      "endedAt": "2026-10-30T04:49:12.892Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-48-39-442Z\\web.log"
+    },
+    {
+      "name": "web-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/web/tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-30T04:49:12.893Z",
+      "endedAt": "2026-10-30T04:49:19.201Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-48-39-442Z\\web-typecheck.log"
+    }
+  ],
+  "endedAt": "2026-10-30T04:49:19.203Z"
+}

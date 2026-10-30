@@ -1,0 +1,75 @@
+# 격리 로컬 STAGING 후보. 기존 compose 프로젝트·포트·볼륨을 참조하지 않습니다.
+name: ctfarm-round5-${ROUND5_RUN_ID:?새_실행_ID_필수}
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: round5
+      POSTGRES_DB: ct_farm_round5
+      POSTGRES_PASSWORD: ${ROUND5_DB_PASSWORD:?시험용_난수_필수}
+    volumes: [database:/var/lib/postgresql/data]
+    networks: [private]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U round5 -d ct_farm_round5']
+      interval: 3s
+      retries: 20
+  redis:
+    image: redis:7-alpine
+    command: [redis-server, --save, '', --appendonly, 'no']
+    tmpfs: [/data]
+    networks: [private]
+  migrate:
+    build: {context: ../.., dockerfile: deploy/round5/Dockerfile.migrate}
+    environment:
+      DATABASE_URL: postgresql://round5:${ROUND5_DB_PASSWORD}@postgres:5432/ct_farm_round5
+    depends_on:
+      postgres: {condition: service_healthy}
+    networks: [private]
+  api:
+    build: {context: ../.., dockerfile: deploy/Dockerfile.api}
+    environment:
+      NODE_ENV: production
+      APP_ENV: STAGING
+      PORT: 4000
+      DATABASE_URL: postgresql://round5:${ROUND5_DB_PASSWORD}@postgres:5432/ct_farm_round5
+      REDIS_URL: redis://redis:6379
+      JWT_ACCESS_SECRET: ${ROUND5_JWT_SECRET:?시험용_난수_필수}
+      MFA_ENCRYPTION_KEY: ${ROUND5_MFA_KEY:?32바이트_HEX_필수}
+      CORS_ORIGINS: https://localhost:18443
+      TRUST_PROXY_HOPS: 1
+      UPLOAD_DIR: /app/apps/api/uploads
+      WEATHER_MODE: DISABLED
+      FARM_ASSISTANT_ENABLED: 'false'
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+      redis: {condition: service_started}
+    volumes: [uploads:/app/apps/api/uploads]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    networks: [private, edge]
+  web:
+    build:
+      context: ../..
+      dockerfile: deploy/Dockerfile.web
+      args: {NEXT_PUBLIC_API_BASE_URL: same-origin}
+    read_only: true
+    tmpfs: [/tmp, /app/apps/web/.next/cache]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    networks: [edge]
+  proxy:
+    image: caddy:2-alpine
+    ports: ['127.0.0.1:18443:443']
+    volumes: ['./Caddyfile.local:/etc/caddy/Caddyfile:ro', tls:/data, caddy_config:/config]
+    depends_on: [api, web]
+    networks: [edge]
+networks:
+  private: {internal: true}
+  edge: {}
+volumes:
+  database: {}
+  uploads: {}
+  tls: {}
+  caddy_config: {}

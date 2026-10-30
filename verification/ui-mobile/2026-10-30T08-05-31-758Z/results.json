@@ -1,0 +1,49 @@
+{
+  "startedAt": "2026-10-30T08:05:31.761Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "packaged-android",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-packaged-mobile.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T08:05:31.762Z",
+      "endedAt": "2026-10-30T08:05:44.221Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-05-31-758Z\\packaged-android.log"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T08:05:44.224Z",
+      "endedAt": "2026-10-30T08:05:49.727Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T08-05-31-758Z\\docs.log"
+    }
+  ],
+  "endedAt": "2026-10-30T08:05:49.729Z"
+}

@@ -1,0 +1,2015 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "SECURE STARTER V6 API",
+    "version": "6.0.0-rc.1",
+    "description": "일부 요청 DTO/페이지네이션 상세는 소스와 docs/07-기술참고/API-요청과-응답규칙.md를 함께 확인하세요. 다운로드는 JSON이 아닌 바이너리입니다."
+  },
+  "servers": [
+    {
+      "url": "/api/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "paths": {
+    "/auth/web/login": {
+      "post": {
+        "summary": "로그인",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "mfaCode": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/web/register": {
+      "post": {
+        "summary": "회원가입",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          },
+          "201": {
+            "description": "회원 및 최초 세션 생성"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string",
+                    "minLength": 12
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password",
+                  "name"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/web/refresh": {
+      "post": {
+        "summary": "web refresh",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        }
+      }
+    },
+    "/auth/web/logout": {
+      "post": {
+        "summary": "web logout",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        }
+      }
+    },
+    "/auth/mobile/login": {
+      "post": {
+        "summary": "로그인",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "mfaCode": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/mobile/register": {
+      "post": {
+        "summary": "회원가입",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          },
+          "201": {
+            "description": "회원 및 최초 세션 생성"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string",
+                    "minLength": 12
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email",
+                  "password",
+                  "name"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/mobile/refresh": {
+      "post": {
+        "summary": "mobile refresh",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        }
+      }
+    },
+    "/auth/mobile/logout": {
+      "post": {
+        "summary": "mobile logout",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        }
+      }
+    },
+    "/auth/me": {
+      "get": {
+        "summary": "내 정보",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/auth/logout-all": {
+      "post": {
+        "summary": "전체 기기 로그아웃",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/notes": {
+      "get": {
+        "summary": "게시글 목록·생성",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "게시글 목록·생성",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          },
+          "201": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Idempotency-Key",
+            "schema": {
+              "type": "string",
+              "minLength": 16,
+              "maxLength": 128
+            },
+            "description": "동일 계정과 키로 생성한 응답 재사용. 다른 본문은 409."
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120
+                  },
+                  "content": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 10000
+                  }
+                },
+                "required": [
+                  "title",
+                  "content"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notes/trash": {
+      "get": {
+        "summary": "게시글 휴지통 (최대 100개)",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/notes/{id}": {
+      "get": {
+        "summary": "게시글 조회·수정·휴지통 이동. 수정 version 전달 시 낙관적 잠금",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      },
+      "put": {
+        "summary": "게시글 조회·수정·휴지통 이동. 수정 version 전달 시 낙관적 잠금",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      },
+      "patch": {
+        "summary": "게시글 조회·수정·휴지통 이동. 수정 version 전달 시 낙관적 잠금",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "summary": "게시글 조회·수정·휴지통 이동. 수정 version 전달 시 낙관적 잠금",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/notes/{id}/restore": {
+      "post": {
+        "summary": "게시글 복구",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/files": {
+      "get": {
+        "summary": "파일 목록·단일 업로드",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "post": {
+        "summary": "파일 목록·단일 업로드",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          },
+          "201": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": [
+                  "file"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/files/batch": {
+      "post": {
+        "summary": "파일별 독립 처리 다중 업로드 (최대 5개)",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          },
+          "207": {
+            "description": "파일별 success/data 또는 errorCode. atomic=false."
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "files": {
+                    "type": "array",
+                    "maxItems": 5,
+                    "items": {
+                      "type": "string",
+                      "format": "binary"
+                    }
+                  }
+                },
+                "required": [
+                  "files"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/files/trash": {
+      "get": {
+        "summary": "파일 휴지통",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/files/{id}": {
+      "get": {
+        "summary": "파일 조회·휴지통 이동",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "summary": "파일 조회·휴지통 이동",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/files/{id}/restore": {
+      "post": {
+        "summary": "비공개 파일 restore",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/files/{id}/download": {
+      "get": {
+        "summary": "비공개 파일 download",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/files/{id}/thumbnail": {
+      "get": {
+        "summary": "비공개 파일 thumbnail",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/account/profile": {
+      "patch": {
+        "summary": "회원정보 수정",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/sessions": {
+      "get": {
+        "summary": "활성 세션",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/sessions/{id}": {
+      "delete": {
+        "summary": "기기 세션 종료",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/account/history": {
+      "get": {
+        "summary": "내 보안 이력",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/export": {
+      "get": {
+        "summary": "개인정보 내보내기 (범주별 최대 1000개)",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/password/change": {
+      "post": {
+        "summary": "비밀번호 변경과 세션 무효화",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/withdraw": {
+      "post": {
+        "summary": "논리적 탈퇴",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/mfa/setup": {
+      "post": {
+        "summary": "MFA 등록 시작 (10분 유효)",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/mfa/enable": {
+      "post": {
+        "summary": "MFA 등록 확인·복구 코드 1회 반환",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/mfa/disable": {
+      "post": {
+        "summary": "MFA 해제 (관리자는 거부)",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/email/request": {
+      "post": {
+        "summary": "인증 메일 요청 (서비스 미설정 시 503)",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "VERIFY",
+                      "RESET"
+                    ]
+                  }
+                },
+                "required": [
+                  "email",
+                  "kind"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/email/verify": {
+      "post": {
+        "summary": "이메일 확인",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "token"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/account/password/reset": {
+      "post": {
+        "summary": "비밀번호 재설정",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string"
+                  },
+                  "newPassword": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "token",
+                  "newPassword"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/dashboard": {
+      "get": {
+        "summary": "관리자 dashboard",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MFA-Code",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{6}$"
+            },
+            "description": "매 요청마다 새로운 TOTP 필요"
+          }
+        ]
+      }
+    },
+    "/admin/users": {
+      "get": {
+        "summary": "관리자 users",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MFA-Code",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{6}$"
+            },
+            "description": "매 요청마다 새로운 TOTP 필요"
+          }
+        ]
+      }
+    },
+    "/admin/audit": {
+      "get": {
+        "summary": "관리자 audit",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "X-MFA-Code",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{6}$"
+            },
+            "description": "매 요청마다 새로운 TOTP 필요"
+          }
+        ]
+      }
+    },
+    "/admin/users/{id}": {
+      "patch": {
+        "summary": "관리자 users/{id}",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "X-MFA-Code",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]{6}$"
+            },
+            "description": "매 요청마다 새로운 TOTP 필요"
+          }
+        ]
+      }
+    },
+    "/notifications": {
+      "get": {
+        "summary": "내 알림 목록",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/notifications/{id}/read": {
+      "patch": {
+        "summary": "알림 읽음 처리",
+        "responses": {
+          "200": {
+            "description": "표준 JSON 응답. success=true의 data에 결과를 반환합니다."
+          },
+          "400": {
+            "description": "입력 오류"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "403": {
+            "description": "권한 없음"
+          },
+          "409": {
+            "description": "동시 변경 또는 중복 요청 충돌"
+          },
+          "429": {
+            "description": "요청 제한"
+          },
+          "503": {
+            "description": "의존 서비스 사용 불가"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ]
+      }
+    },
+    "/account/email/change": {
+      "post": {
+        "summary": "비밀번호/MFA 재인증 후 새 이메일 확인 링크 발송",
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "400": {
+            "description": "유효하지 않은 입력/토큰"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "409": {
+            "description": "상태 충돌"
+          },
+          "503": {
+            "description": "메일 어댑터 미설정"
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/account/email/change/confirm": {
+      "post": {
+        "summary": "새 이메일 소유 확인 후 주소 변경 및 세션 무효화",
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "400": {
+            "description": "유효하지 않은 입력/토큰"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "409": {
+            "description": "상태 충돌"
+          },
+          "503": {
+            "description": "메일 어댑터 미설정"
+          }
+        }
+      }
+    },
+    "/account/recover": {
+      "post": {
+        "summary": "비밀번호/MFA로 탈퇴 후 30일 내 복구",
+        "responses": {
+          "200": {
+            "description": "성공"
+          },
+          "400": {
+            "description": "유효하지 않은 입력/토큰"
+          },
+          "401": {
+            "description": "인증 실패"
+          },
+          "409": {
+            "description": "상태 충돌"
+          },
+          "503": {
+            "description": "메일 어댑터 미설정"
+          }
+        }
+      }
+    }
+  }
+}

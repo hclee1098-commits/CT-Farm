@@ -1,0 +1,49 @@
+{
+  "startedAt": "2026-10-30T05:39:33.695Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "docs-center",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/docs-center.test.mjs"
+      ],
+      "startedAt": "2026-10-30T05:39:33.695Z",
+      "endedAt": "2026-10-30T05:39:34.411Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-39-33-691Z\\docs-center.log"
+    },
+    {
+      "name": "docs",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/dev-portal/docs.test.mjs"
+      ],
+      "startedAt": "2026-10-30T05:39:34.412Z",
+      "endedAt": "2026-10-30T05:39:46.663Z",
+      "exitCode": 1,
+      "status": "failed",
+      "database": "see test log",
+      "passed": 0,
+      "failed": 2,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T05-39-33-691Z\\docs.log"
+    }
+  ],
+  "endedAt": "2026-10-30T05:39:46.663Z"
+}

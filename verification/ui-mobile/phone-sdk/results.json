@@ -1,0 +1,38 @@
+{
+  "startedAt": "2026-10-30T09:54:09.949Z",
+  "sdkLocation": "project-private .starter-state/phone-test/sdk",
+  "existingSystemSdkModified": false,
+  "newLicenseAcceptedAutomatically": false,
+  "commands": [
+    {
+      "label": "extract-tools",
+      "startedAt": "2026-10-30T09:54:15.350Z",
+      "endedAt": "2026-10-30T09:54:21.628Z",
+      "exitCode": 0,
+      "rawLog": "verification\\ui-mobile\\phone-sdk\\extract-tools.log"
+    },
+    {
+      "label": "install-sdk",
+      "startedAt": "2026-10-30T09:54:21.647Z",
+      "endedAt": "2026-10-30T09:54:25.966Z",
+      "exitCode": 1,
+      "rawLog": "verification\\ui-mobile\\phone-sdk\\install-sdk.log"
+    }
+  ],
+  "commandLineTools": {
+    "url": "https://dl.google.com/android/repository/commandlinetools-win-15859902_latest.zip",
+    "sha256": "90ae805d20434428bffcb699c290860f19bb5f66a67e6b330067e3de801fb04a",
+    "verified": true
+  },
+  "existingLicenseFilesReused": 2,
+  "requestedPackages": [
+    "platform-tools",
+    "platforms;android-37",
+    "build-tools;37.0.0",
+    "ndk;27.1.12297006",
+    "cmake;3.22.1"
+  ],
+  "status": "failed_or_license_required",
+  "error": "install-sdk failed; see verification\\ui-mobile\\phone-sdk\\install-sdk.log",
+  "endedAt": "2026-10-30T09:54:25.968Z"
+}

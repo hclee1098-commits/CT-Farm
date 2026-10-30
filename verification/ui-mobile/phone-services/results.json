@@ -1,0 +1,41 @@
+{
+  "startedAt": "2026-10-30T10:20:47.568Z",
+  "projectRoot": "C:\\workspace\\CT-Farm",
+  "appRoot": "C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\app",
+  "processes": [
+    {
+      "name": "phone-api",
+      "pid": 31612,
+      "startedAt": "2026-10-30T10:20:47.581Z",
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "--import",
+        "tsx",
+        "C:\\workspace\\CT-Farm\\tools\\test-mobile-api.mts",
+        "--hold-phone-qa"
+      ],
+      "log": ".starter-state\\phone-test\\phone-api.log"
+    },
+    {
+      "name": "phone-metro",
+      "pid": 24468,
+      "startedAt": "2026-10-30T10:21:47.061Z",
+      "executable": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "C:\\workspace\\CT-Farm\\.starter-state\\phone-test\\app\\node_modules\\expo\\bin\\cli",
+        "start",
+        "--dev-client",
+        "--localhost",
+        "--port",
+        "18081"
+      ],
+      "log": ".starter-state\\phone-test\\phone-metro.log"
+    }
+  ],
+  "originalServersControlled": false,
+  "status": "ready",
+  "phoneApiPort": 4084,
+  "metroPort": 18081,
+  "qaExpiresAfterHours": 2,
+  "endedAt": "2026-10-30T10:22:26.560Z"
+}

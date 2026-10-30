@@ -1,0 +1,51 @@
+{
+  "startedAt": "2026-10-30T04:38:03.143Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "capabilities",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/round5/capabilities.test.mjs"
+      ],
+      "startedAt": "2026-10-30T04:38:03.144Z",
+      "endedAt": "2026-10-30T04:38:05.713Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round6\\2026-10-30T04-38-03-140Z\\capabilities.log"
+    },
+    {
+      "name": "api-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-30T04:38:05.715Z",
+      "endedAt": "2026-10-30T04:38:11.650Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T04-38-03-140Z\\api-typecheck.log"
+    }
+  ],
+  "endedAt": "2026-10-30T04:38:11.652Z"
+}

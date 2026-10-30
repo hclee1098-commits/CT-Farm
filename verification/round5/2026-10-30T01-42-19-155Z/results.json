@@ -1,0 +1,68 @@
+{
+  "startedAt": "2026-10-30T01:42:19.157Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "capabilities",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/round5/capabilities.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:42:19.158Z",
+      "endedAt": "2026-10-30T01:42:21.147Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-42-19-155Z\\capabilities.log"
+    },
+    {
+      "name": "recovery",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--max-old-space-size=512",
+        "--test",
+        "tools/round5/recovery.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:42:21.149Z",
+      "endedAt": "2026-10-30T01:42:24.115Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-42-19-155Z\\recovery.log"
+    },
+    {
+      "name": "disks",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/disks.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:42:24.116Z",
+      "endedAt": "2026-10-30T01:42:24.293Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-42-19-155Z\\disks.log"
+    }
+  ],
+  "endedAt": "2026-10-30T01:42:24.294Z"
+}

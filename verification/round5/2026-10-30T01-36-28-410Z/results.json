@@ -1,0 +1,31 @@
+{
+  "startedAt": "2026-10-30T01:36:28.422Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "capabilities",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/round5/capabilities.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:36:28.423Z",
+      "endedAt": "2026-10-30T01:36:30.149Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-28-410Z\\capabilities.log"
+    }
+  ],
+  "endedAt": "2026-10-30T01:36:30.150Z"
+}

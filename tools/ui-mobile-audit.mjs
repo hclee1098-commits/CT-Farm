@@ -1,0 +1,4 @@
+import {spawnSync} from 'node:child_process';import fs from 'node:fs/promises';import path from 'node:path';
+const cli=path.join(path.dirname(process.execPath),'node_modules/npm/bin/npm-cli.js'),checks=[];
+for(const cwd of ['.','apps/mobile']){const startedAt=new Date().toISOString(),args=[cli,'audit','--json','--workspaces=false','--fetch-retries=0','--fetch-timeout=15000'];const r=spawnSync(process.execPath,args,{cwd,encoding:'utf8',windowsHide:true,maxBuffer:8*1024*1024});let vulnerabilities=null;try{vulnerabilities=JSON.parse(r.stdout).metadata.vulnerabilities;}catch{}checks.push({cwd,command:['node',...args],startedAt,endedAt:new Date().toISOString(),exitCode:r.status,vulnerabilities,stdout:r.stdout,stderr:r.stderr});console.log(JSON.stringify({cwd,exitCode:r.status,vulnerabilities}));}
+await fs.writeFile('verification/ui-mobile/npm-audit.log',JSON.stringify({checks},null,2));process.exitCode=checks.some(c=>c.exitCode!==0)?1:0;

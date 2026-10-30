@@ -1,0 +1,107 @@
+{
+  "startedAt": "2026-10-30T01:36:05.730Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json"
+      ],
+      "startedAt": "2026-10-30T01:36:05.731Z",
+      "endedAt": "2026-10-30T01:36:11.351Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 157,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-05-719Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json"
+      ],
+      "startedAt": "2026-10-30T01:36:11.353Z",
+      "endedAt": "2026-10-30T01:36:12.431Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-05-719Z\\web.log"
+    },
+    {
+      "name": "sql",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-migrations.mjs"
+      ],
+      "startedAt": "2026-10-30T01:36:12.432Z",
+      "endedAt": "2026-10-30T01:36:14.738Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-05-719Z\\sql.log"
+    },
+    {
+      "name": "backup",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/test-backup.mjs"
+      ],
+      "startedAt": "2026-10-30T01:36:14.739Z",
+      "endedAt": "2026-10-30T01:36:14.838Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "check",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-05-719Z\\backup.log"
+    },
+    {
+      "name": "incidents",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--test",
+        "tools/monitoring/incidents.test.mjs"
+      ],
+      "startedAt": "2026-10-30T01:36:14.839Z",
+      "endedAt": "2026-10-30T01:36:15.058Z",
+      "exitCode": 0,
+      "status": "passed",
+      "database": "see test log",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\round5\\2026-10-30T01-36-05-719Z\\incidents.log"
+    }
+  ],
+  "endedAt": "2026-10-30T01:36:15.060Z"
+}

@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-29T07:22:05.953Z",
+  "passed": true,
+  "provider": "Open-Meteo",
+  "days": 3,
+  "coordinate": "공개 서울 중심 좌표",
+  "officialWarnings": false
+}

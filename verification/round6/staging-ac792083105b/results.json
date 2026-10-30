@@ -1,0 +1,110 @@
+{
+  "project": "ctfarm-round5-ac792083105b",
+  "checks": [
+    {
+      "label": "config",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-ac792083105b.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "config",
+        "--quiet"
+      ],
+      "startedAt": "2026-10-30T03:47:56.002Z",
+      "endedAt": "2026-10-30T03:47:56.467Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-ac792083105b/config.log"
+    },
+    {
+      "label": "build",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-ac792083105b.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "build"
+      ],
+      "startedAt": "2026-10-30T03:47:56.469Z",
+      "endedAt": "2026-10-30T03:48:12.270Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-ac792083105b/build.log"
+    },
+    {
+      "label": "up",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-ac792083105b.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "up",
+        "-d",
+        "--wait",
+        "--wait-timeout",
+        "120"
+      ],
+      "startedAt": "2026-10-30T03:48:12.272Z",
+      "endedAt": "2026-10-30T03:48:20.186Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-ac792083105b/up.log"
+    },
+    {
+      "label": "proxy-id",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-ac792083105b.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "ps",
+        "-q",
+        "proxy"
+      ],
+      "startedAt": "2026-10-30T03:48:20.187Z",
+      "endedAt": "2026-10-30T03:48:20.580Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-ac792083105b/proxy-id.log"
+    },
+    {
+      "label": "local-ca",
+      "command": [
+        "docker",
+        "exec",
+        "8c27dda0cacdfdcfe88347917f9d3fdc55b335257fcf7d3c94114beb5eae6481",
+        "cat",
+        "/data/caddy/pki/authorities/local/root.crt"
+      ],
+      "startedAt": "2026-10-30T03:48:20.581Z",
+      "endedAt": "2026-10-30T03:48:20.810Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-ac792083105b/local-ca.log"
+    },
+    {
+      "label": "restart",
+      "command": [
+        "docker",
+        "compose",
+        "--env-file",
+        ".starter-state/round6-staging-ac792083105b.env",
+        "-f",
+        "deploy/round5/compose.local.yaml",
+        "restart",
+        "api",
+        "web"
+      ],
+      "startedAt": "2026-10-30T03:48:21.354Z",
+      "endedAt": "2026-10-30T03:48:22.394Z",
+      "exitCode": 0,
+      "log": "verification/round6/staging-ac792083105b/restart.log"
+    }
+  ],
+  "localTlsOnly": true,
+  "productionDeployed": false
+}

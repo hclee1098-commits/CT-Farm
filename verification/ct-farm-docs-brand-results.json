@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Seoul",
+  "task": "CT-Farm documentation center and brand",
+  "status": "implemented_verified_locally_with_limits",
+  "resumeBackup": "backup/ct-farm-docs-resume-20261029-200436.zip",
+  "resumeBackupSha256": "E08E53D3CB3E5E54FBB043942EF837D264DDA47150B4214F77777FEE05B49572",
+  "databaseChanged": false,
+  "committedOrPushed": false,
+  "documentation": {
+    "url": "/docs-center/index.html",
+    "publicAllowlistedGuides": 9,
+    "classifiedMarkdownDocuments": 38,
+    "deletedDocuments": 0,
+    "featureGroups": 22,
+    "fixedApiDeclarations": 92,
+    "dynamicRoutesSeparatelyExplained": true,
+    "prismaModels": 20,
+    "renderedMermaidDiagrams": 10
+  },
+  "brandDirectory": "apps/web/public/brand",
+  "checks": [
+    {"command":"npm run build","status":"passed","scope":"API TypeScript and Next.js production build"},
+    {"command":"npm test","status":"passed","api":157,"web":18,"failed":0},
+    {"command":"npm run test:farm","status":"passed","groups":27,"database":"isolated PGlite; external providers mocked"},
+    {"command":"npm run test:docs-center","status":"passed","tests":4},
+    {"command":"node --test tools/docs-center.http.test.mjs","status":"passed","tests":1},
+    {"command":"npm run test:docs","status":"passed","tests":2,"documentLinksBeforeFinalIndex":894},
+    {"command":"npm run test:portal","status":"passed","tests":7},
+    {"command":"npm run test:sql","status":"passed","checks":8},
+    {"command":"npm run test:backup","status":"passed","checks":7,"nativeRestorePerformedThisRun":false},
+    {"command":"npm run check:source","status":"passed","powershellBomFiles":5},
+    {"command":"npm audit --omit=dev","status":"passed","knownVulnerabilities":0},
+    {"command":"npm run docs:index && npm run docs:check","status":"passed","sourceFiles":327,"documentLinks":902,"scope":"hash and path consistency, not semantic feature completeness"}
+  ],
+  "browserChecks": [
+    "all 9 public guides opened with expected article headings",
+    "body-only color search and empty result",
+    "10 actual Mermaid SVGs without rendering failure",
+    "TOC click moves sensor section to 24px from viewport top",
+    "390px viewport has no horizontal overflow and collapsible navigation",
+    "app header logo and docs link, image loaded successfully",
+    "no browser console errors during guide traversal"
+  ],
+  "screenshots": [
+    "verification/ct-farm-docs-desktop.png",
+    "verification/ct-farm-docs-mobile.png",
+    "verification/ct-farm-docs-diagrams.png"
+  ],
+  "resolvedFailures": [
+    "Sandbox localhost EACCES and NTFS link EPERM: identical tests passed with reviewed execution permission; no skips or weakened storage protections",
+    "Generated 5.4MB bundle slowed source AST analysis: keep artifact hashing and analyze editable source instead",
+    "Prior build approval review was not executed due to account usage limit; resumed build passed"
+  ],
+  "remaining": [
+    "Mermaid bundle size and loading optimization",
+    "screen-reader, broad device/OS installation, long-run and large-document performance testing",
+    "print wordmark outline finalization and trademark review",
+    "native DB plus uploads offsite restore and actual production deployment were not repeated for this docs-only change",
+    "external Naver/Farmmap, detailed RAG, real model, physical sensors and actual payment provider remain unverified"
+  ],
+  "resumeDocument": "docs/CT-Farm-개발현황.md"
+}

@@ -1,0 +1,59 @@
+{
+  "startedAt": "2026-10-30T09:42:32.300Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "api",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/api",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\api-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:42:32.301Z",
+      "endedAt": "2026-10-30T09:42:41.524Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 161,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\api.log"
+    },
+    {
+      "name": "web",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--root",
+        "apps/web",
+        "--reporter=json",
+        "--outputFile",
+        "C:\\workspace\\CT-Farm\\verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\web-vitest.json"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T09:42:41.526Z",
+      "endedAt": "2026-10-30T09:42:43.010Z",
+      "exitCode": 0,
+      "database": "not applicable / see raw log",
+      "passed": 34,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T09-42-32-297Z\\web.log"
+    }
+  ],
+  "endedAt": "2026-10-30T09:42:43.011Z"
+}

@@ -1,0 +1,8 @@
+{
+ "cli":{"version":">=16.0.0","appVersionSource":"local"},
+ "build":{
+   "development":{"developmentClient":true,"distribution":"internal","android":{"buildType":"apk"},"environment":"development"},
+   "preview":{"distribution":"internal","android":{"buildType":"apk"},"environment":"preview"},
+   "production":{"autoIncrement":true,"environment":"production"}
+ }
+}

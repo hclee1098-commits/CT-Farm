@@ -1,0 +1,103 @@
+{
+  "startedAt": "2026-10-30T07:27:40.852Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated synthetic API/database/uploads, isolated web output; no original database migration or process control",
+  "checks": [
+    {
+      "name": "mobile-unit",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "--import",
+        "tsx",
+        "--test",
+        "tools/test-mobile-client.mts"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:27:40.854Z",
+      "endedAt": "2026-10-30T07:27:41.550Z",
+      "exitCode": 0,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "test",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\mobile-unit.log"
+    },
+    {
+      "name": "mobile-type",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:27:41.553Z",
+      "endedAt": "2026-10-30T07:27:47.534Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\mobile-type.log"
+    },
+    {
+      "name": "mobile-compat",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "install",
+        "--check"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:27:47.536Z",
+      "endedAt": "2026-10-30T07:27:49.136Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\mobile-compat.log"
+    },
+    {
+      "name": "build-doctor",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tools/mobile-build-doctor.mjs"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm",
+      "startedAt": "2026-10-30T07:27:49.138Z",
+      "endedAt": "2026-10-30T07:27:49.288Z",
+      "exitCode": 2,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\build-doctor.log"
+    },
+    {
+      "name": "android-prebuild",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/expo/bin/cli",
+        "prebuild",
+        "--platform",
+        "android",
+        "--no-install"
+      ],
+      "cwd": "C:\\workspace\\CT-Farm\\apps\\mobile",
+      "startedAt": "2026-10-30T07:27:49.290Z",
+      "endedAt": "2026-10-30T07:27:52.589Z",
+      "exitCode": 0,
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "command",
+      "rawLog": "verification\\ui-mobile\\2026-10-30T07-27-40-847Z\\android-prebuild.log"
+    }
+  ],
+  "endedAt": "2026-10-30T07:27:52.591Z"
+}

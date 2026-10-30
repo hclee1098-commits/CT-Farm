@@ -1,0 +1,408 @@
+/* filepath: apps/web/src/shared/ui/ui.css - 재사용 가능한 공통 UI 디자인과 반응형 스타일 */
+/* ============================================================
+   공통 UI 기본 스타일
+   기존 프로젝트의 전역 스타일을 변경하지 않습니다.
+   ============================================================ */
+
+.sk-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 42px;
+  padding: 10px 16px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.sk-button-primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.sk-button-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+.sk-button-secondary {
+  background: #ffffff;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.sk-button-secondary:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+
+.sk-button-danger {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+.sk-button-danger:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.sk-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sk-button:focus-visible,
+.sk-input:focus-visible,
+.sk-modal-close:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   입력창
+   ============================================================ */
+
+.sk-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+}
+
+.sk-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.sk-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #0f172a;
+
+  font: inherit;
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+.sk-input:focus {
+  border-color: #2563eb;
+}
+
+.sk-input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.sk-field-error {
+  margin: 0;
+  font-size: 12px;
+  color: #dc2626;
+}
+
+.sk-field-hint {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ============================================================
+   로딩
+   ============================================================ */
+
+.sk-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 16px;
+
+  color: #475569;
+  font-size: 14px;
+}
+
+.sk-spinner {
+  display: inline-block;
+
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+
+  animation: sk-spin 0.7s linear infinite;
+}
+
+@keyframes sk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   빈 데이터
+   ============================================================ */
+
+.sk-empty {
+  padding: 30px 20px;
+
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+
+  text-align: center;
+  color: #475569;
+}
+
+.sk-empty strong {
+  display: block;
+  font-size: 16px;
+}
+
+.sk-empty p {
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+
+/* ============================================================
+   모달
+   ============================================================ */
+
+.sk-modal {
+  width: min(460px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+
+  padding: 0;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+
+  background: #ffffff;
+  color: #0f172a;
+
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.2);
+}
+
+.sk-modal::backdrop {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.sk-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.sk-modal-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.sk-modal-close {
+  border: 0;
+  background: transparent;
+
+  color: #64748b;
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.sk-modal-body {
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   알림 메시지
+   ============================================================ */
+
+.sk-toast-region {
+  position: fixed;
+  z-index: 9999;
+
+  right: 20px;
+  bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: min(360px, calc(100vw - 40px));
+}
+
+.sk-toast {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  border: 1px solid;
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sk-toast-success {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.sk-toast-error {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #991b1b;
+}
+
+.sk-toast-info {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #1e40af;
+}
+
+.sk-toast button {
+  border: 0;
+  background: transparent;
+
+  color: inherit;
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+/* ============================================================
+   페이지네이션
+   ============================================================ */
+
+.sk-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  padding: 16px 0;
+}
+
+.sk-pagination span {
+  min-width: 70px;
+
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ============================================================
+   공통 기능 확인 화면
+   ============================================================ */
+
+.sk-toolkit {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+
+  color: #0f172a;
+}
+
+.sk-toolkit h1 {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.sk-toolkit-description {
+  margin-bottom: 30px;
+  color: #64748b;
+}
+
+.sk-card {
+  margin-bottom: 20px;
+  padding: 24px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+
+  background: #ffffff;
+}
+
+.sk-card h2 {
+  margin: 0 0 16px;
+  font-size: 19px;
+}
+
+.sk-card p {
+  line-height: 1.6;
+}
+
+.sk-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.sk-status {
+  padding: 12px 14px;
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.sk-demo-list {
+  padding-left: 22px;
+  line-height: 2;
+}
+
+@media (max-width: 600px) {
+
+  .sk-toolkit {
+    padding: 20px 14px 60px;
+  }
+
+  .sk-card {
+    padding: 18px;
+  }
+
+  .sk-toolkit h1 {
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .sk-spinner {
+    animation-duration: 2s;
+  }
+}
+
+
+.ss-card,.ss-modal{background:var(--ss-bg,#fff);color:var(--ss-text,#172033);border:1px solid #9aa7bb;border-radius:14px;padding:clamp(16px,3vw,28px)}
+.ss-button{min-height:44px;padding:8px 16px;border:1px solid #53647e;border-radius:8px;background:var(--ss-bg,#fff);color:var(--ss-text,#172033);cursor:pointer}.ss-button:disabled{opacity:.55;cursor:not-allowed}
+.ss-button:focus-visible,.ss-field input:focus-visible{outline:3px solid #2a73df;outline-offset:3px}.ss-field{display:grid;gap:8px;margin-block:12px}.ss-field input{min-height:44px;padding:10px;border:1px solid #53647e;border-radius:8px;font:inherit}.ss-field p{margin:0;color:#b02020}
+.ss-modal{width:min(90vw,560px);max-height:85vh;overflow:auto}.ss-modal::backdrop{background:#0009}.ss-notice{padding:12px;border-left:4px solid #3377bb}.ss-notice[role=alert]{border-color:#b02020}.ss-empty{padding:24px;text-align:center}.ss-pagination{display:flex;align-items:center;justify-content:center;gap:12px;margin-block:16px}.ss-table{overflow-x:auto}.ss-table table{width:100%;border-collapse:collapse}.ss-table th,.ss-table td{padding:12px;text-align:left;border-bottom:1px solid #9aa7bb}.ss-table caption{text-align:left;font-weight:700;padding:12px}
+.ss-skeleton{height:64px;border-radius:8px;background:#d5dce6;animation:ss-pulse 1s ease-in-out infinite alternate}.ss-sr-only{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}@keyframes ss-pulse{to{opacity:.5}}@media(prefers-reduced-motion:reduce){.ss-skeleton{animation:none}}@media(prefers-color-scheme:dark){.ss-card,.ss-modal,.ss-button{--ss-bg:#182236;--ss-text:#edf2fa}.ss-field input{background:#182236;color:#edf2fa}}

@@ -1,0 +1,83 @@
+# filepath: .gitignore - 민감 정보와 빌드 결과물을 버전 관리에서 제외
+# 의존성
+node_modules/
+
+# 환경 변수 및 비밀 정보
+.env
+.env.*
+**/.env
+**/.env.*
+.env.local
+.env.production
+.env.development
+.env.test
+apps/**/.env
+apps/**/.env.local
+!.env.example
+!.env.*.example
+!**/.env.example
+!**/.env.*.example
+
+
+# 빌드 결과물
+dist/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# 업로드 파일
+uploads/
+apps/api/uploads/
+
+# 로그
+*.log
+logs/
+
+# 운영체제
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# 임시 파일
+*.tmp
+*.bak
+# 백업 폴더 제외
+.starter-backups/
+
+create-starter-ps1-shell-script/
+
+/apps/web/next-env.d.ts
+
+# SECURE STARTER LOCAL SECRETS
+/.env
+/apps/api/.env
+/apps/web/.env.local
+/.starter-backups/
+
+# 로컬 실행 상태 및 로그
+.starter-state/
+
+
+
+# V6 민감 데이터 및 로컬 결과
+backups/
+*.ssbk
+deploy/production.env
+verification/runtime/
+
+monitoring.private.json
+deploy/*.env
+!deploy/*.env.example
+*.key
+*.pem
+
+# SECURE STARTER V4 LOCAL FILES
+/.env
+/apps/api/.env
+/apps/web/.env.local
+/.starter-state/
+/.starter-backups/

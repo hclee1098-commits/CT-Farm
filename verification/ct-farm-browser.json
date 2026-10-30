@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-29",
+  "timezone": "Asia/Seoul",
+  "environment": "local native PostgreSQL + Redis + built Express API + Next web",
+  "testAccount": "ctfarm-ui-20261029-1617@example.test",
+  "syntheticDataRetained": true,
+  "checks": [
+    "회원가입 후 인증 세션 복구와 농장 등록",
+    "JSON Content-Type 누락 발견·공통 클라이언트 수정 후 농장 등록 성공",
+    "한국 기본 작업일로 영농일지 등록·목록 조회",
+    "시험 PNG 업로드→일지 사진 연결→인증 썸네일 표시",
+    "필지 꼭짓점3개 등록→경계 조회→작기와 같은 농장 필지 연결",
+    "작업 일정 등록→근거 표시→기존 알림 1건 생성",
+    "시험 센서 등록→미수집 표시→값10 범위 이탈→값35 정상→시계열과 표",
+    "상품 재고3 등록→수기 주문 수량2→재고1, 결제 미처리 표시",
+    "390x844 센서 화면에서 가로 넘침 없음 (문서375px/뷰포트390px)"
+  ],
+  "screenshots": ["verification/ct-farm-mobile-sensors.png", "verification/ct-farm-diary-photo.png"],
+  "notYetVerified": ["전체 브라우저 오류·복구 흐름", "모든 휴대기기·보조기술", "실장치", "실결제"]
+}

@@ -1,0 +1,33 @@
+{
+  "startedAt": "2026-10-30T03:32:55.635Z",
+  "environment": {
+    "node": "v24.22.1",
+    "platform": "win32",
+    "cpuCount": 18,
+    "ramBytes": 16737873920
+  },
+  "scope": "isolated test fixtures only; no source DB migration or service control",
+  "checks": [
+    {
+      "name": "api-typecheck",
+      "command": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "apps/api/tsconfig.json",
+        "--noEmit"
+      ],
+      "startedAt": "2026-10-30T03:32:55.636Z",
+      "endedAt": "2026-10-30T03:33:01.027Z",
+      "exitCode": 2,
+      "status": "failed",
+      "database": "see test log",
+      "passed": null,
+      "failed": null,
+      "skipped": null,
+      "unit": "unknown",
+      "rawLog": "verification\\round6\\2026-10-30T03-32-55-629Z\\api-typecheck.log"
+    }
+  ],
+  "endedAt": "2026-10-30T03:33:01.032Z"
+}

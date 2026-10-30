@@ -1,0 +1,6 @@
+{
+  "revision": "V6-rc1-20261028",
+  "previousRevision": "V5-security-review-20261028",
+  "legacyGeneratorsBlocked": true,
+  "releaseStatus": "검증 후보: Windows/Docker/네이티브 백업 복원 미검증"
+}

@@ -1,0 +1,15 @@
+import { encryptBackup, decryptBackup, validatePayload } from './backup.mjs';
+import { createHash, randomBytes } from 'node:crypto';
+import assert from 'node:assert/strict';
+const entry = (name, value) => ({ name, data: Buffer.from(value).toString('base64'), sha256: createHash('sha256').update(value).digest('hex') });
+const payload = { version: 1, project: 'starter-test', database: entry('database.dump', 'isolated database fixture'), files: [entry('a.png', 'upload fixture')] };
+const key = randomBytes(32); const bytes = encryptBackup(payload, key);
+assert.deepEqual(decryptBackup(bytes, key), payload); console.log('통과: 암호화 백업 왕복');
+assert(!bytes.includes(Buffer.from('upload fixture'))); console.log('통과: 백업 평문 비노출');
+const altered = Buffer.from(bytes); altered[altered.length - 1] ^= 1;
+assert.throws(() => decryptBackup(altered, key)); console.log('통과: 변조된 백업 거부');
+assert.throws(() => decryptBackup(bytes, randomBytes(32))); console.log('통과: 잘못된 키 거부');
+assert.throws(() => validatePayload({ ...payload, files: [entry('../escape', 'bad')] })); console.log('통과: 경로 탐색 거부');
+assert.throws(() => validatePayload({ ...payload, files: [payload.files[0], payload.files[0]] })); console.log('통과: 중복 파일 거부');
+assert.throws(() => validatePayload({ ...payload, files: [{ ...payload.files[0], sha256: 'wrong' }] })); console.log('통과: SHA-256 불일치 거부');
+console.log('백업 단위 검증 7건 통과. pg_dump/pg_restore 실행은 포함하지 않습니다.');
